@@ -27,30 +27,10 @@ section#exploreTech #techCards {
   width: calc(200% + 0.25em);
   display:none;
   padding:1em;
-  border-right: 1px solid gray !important;
-  border-bottom: 1px solid gray !important;
-  position: relative;
-}
-#exploreTech .tCards .tContent::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: calc(50% + 0.15em);
-  border-top:1px solid gray;
+  margin-top: 0.25em;
 }
 #exploreTech .tCards:nth-child(even) .tContent {
   margin-left: calc(-100% - 0.25em);
-  border-bottom: 1px solid royalblue;
-  border-left:1px solid gray;
-}
-#exploreTech .tCards:nth-child(even) .tContent::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(50% + 0.15em);
-  border-top:1px solid gray;
 }
 #exploreTech .tCards:hover .tContent {
   background-color: hsl(0, 0%, 87.5%);
@@ -83,9 +63,6 @@ section#exploreTech #techCards {
 }
 .tCards:focus-within {
   height: auto;
-  border:none !important;
-  border-top: 1px solid gray !important;
-  border-left: 1px solid gray !important;
 }
 .tCards:focus-within .tContent {
   display: flex !important;
@@ -93,7 +70,7 @@ section#exploreTech #techCards {
   gap:0.25em;
 }
 .tCards:focus-within .tHead {
-  border-right: 1px solid gray !important;
+
 }
 .tCards:focus-within .tHead .tIcons i {
   transform: scale(1.5) !important;
@@ -127,10 +104,6 @@ section#exploreTech #techCards {
 /* End More ways */
 
 
-
-
-
-
 @media (min-width: 1200px) {
   #exploreTech #techCards .tCards {
     width: calc(33.33% - 0.25em);
@@ -140,5 +113,14 @@ section#exploreTech #techCards {
   }
   #exploreTech .tCards .tContent::before {
     width: calc(66.66% + 0.15em);
+  }
+  #exploreTech .tCards:nth-child(3n) .tContent {
+    margin-left: calc(-200% - 0.25em) !important;
+  }
+  #exploreTech .tCards:nth-child(3n+1):not(:first-child) .tContent {
+    margin-left: calc(0% - 0em) !important;
+  }
+  #exploreTech .tCards:nth-child(3n+2) .tContent {
+    margin-left: calc(-100% - 0.25em) !important;
   }
 }

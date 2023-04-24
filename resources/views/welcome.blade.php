@@ -97,14 +97,14 @@
               <i class="far fa-heart"></i>
             </div><!-- .tIcons -->
             <div class="tTexts">
-              <span>Featured</span>
+              <span>1 Featured</span>
               <i class="fas fa-angle-down"></i>
               <i class="fas fa-angle-up"></i>
             </div><!-- .tTexts -->
           </div><!-- .tHead -->
           <div class="tContent">
             <div class="tcHead">
-              <h3>Featured</h3>
+              <h3>1 Featured</h3>
             </div>
             <div class="tcLinks">
               <a herf="#">API Connect</a>
@@ -139,14 +139,14 @@
               <i class="far fa-heart"></i>
             </div><!-- .tIcons -->
             <div class="tTexts">
-              <span>Featured</span>
+              <span>2 Featured</span>
               <i class="fas fa-angle-down"></i>
               <i class="fas fa-angle-up"></i>
             </div><!-- .tTexts -->
           </div><!-- .tHead -->
           <div class="tContent">
             <div class="tcHead">
-              <h3>Featured</h3>
+              <h3>2 Featured</h3>
             </div>
             <div class="tcLinks">
               <a herf="#">API Connect</a>
@@ -161,14 +161,14 @@
               <i class="far fa-heart"></i>
             </div><!-- .tIcons -->
             <div class="tTexts">
-              <span>Featured</span>
+              <span>3 Featured</span>
               <i class="fas fa-angle-down"></i>
               <i class="fas fa-angle-up"></i>
             </div><!-- .tTexts -->
           </div><!-- .tHead -->
           <div class="tContent">
             <div class="tcHead">
-              <h3>Featured</h3>
+              <h3>3 Featured</h3>
             </div>
             <div class="tcLinks">
               <a herf="#">API Connect</a>
@@ -183,14 +183,14 @@
               <i class="far fa-heart"></i>
             </div><!-- .tIcons -->
             <div class="tTexts">
-              <span>Featured</span>
+              <span>4 Featured</span>
               <i class="fas fa-angle-down"></i>
               <i class="fas fa-angle-up"></i>
             </div><!-- .tTexts -->
           </div><!-- .tHead -->
           <div class="tContent">
             <div class="tcHead">
-              <h3>Featured</h3>
+              <h3>4 Featured</h3>
             </div>
             <div class="tcLinks">
               <a herf="#">API Connect</a>
@@ -198,6 +198,51 @@
             </div>
           </div><!-- .tContent -->
         </div> <!-- .tCards -->
+
+        <div class="tCards" tabindex="0">
+          <div class="tHead">
+            <div class="tIcons">
+              <i class="far fa-heart"></i>
+            </div><!-- .tIcons -->
+            <div class="tTexts">
+              <span>5 Featured</span>
+              <i class="fas fa-angle-down"></i>
+              <i class="fas fa-angle-up"></i>
+            </div><!-- .tTexts -->
+          </div><!-- .tHead -->
+          <div class="tContent">
+            <div class="tcHead">
+              <h3>5 Featured</h3>
+            </div>
+            <div class="tcLinks">
+              <a herf="#">API Connect</a>
+              <span>Toolkit to rapidly create, secure and manage APIs</span>
+            </div>
+          </div><!-- .tContent -->
+        </div> <!-- .tCards -->
+
+        <div class="tCards" tabindex="0">
+          <div class="tHead">
+            <div class="tIcons">
+              <i class="far fa-heart"></i>
+            </div><!-- .tIcons -->
+            <div class="tTexts">
+              <span>6 Featured</span>
+              <i class="fas fa-angle-down"></i>
+              <i class="fas fa-angle-up"></i>
+            </div><!-- .tTexts -->
+          </div><!-- .tHead -->
+          <div class="tContent">
+            <div class="tcHead">
+              <h3>6 Featured</h3>
+            </div>
+            <div class="tcLinks">
+              <a herf="#">API Connect</a>
+              <span>Toolkit to rapidly create, secure and manage APIs</span>
+            </div>
+          </div><!-- .tContent -->
+        </div> <!-- .tCards -->
+
       </div> <!-- #techCards --> 
     </section>
 
