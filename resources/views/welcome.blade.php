@@ -13,8 +13,7 @@
   <!-- Font-Awesome 5.15.3 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <!-- Styles -->
-  <link href="/css/style.css" rel="stylesheet">
-  <link href="/css/exploreTech.css" rel="stylesheet">
+  <link id="css-link" href="/css/ge.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,6 +32,7 @@
     <div class="search_user">
       <i class="fas fa-search"></i>
       <i class="far fa-user"></i>
+      <input type="checkbox" id="checkbox">
     </div>
   </section>
 
@@ -279,6 +279,20 @@
   </footer>
 
   <script src="/js/script.js"></script>
+  <script>
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', (event) => {
+  const link = document.getElementById('css-link');
+
+  if (event.target.checked) {
+    link.href = '/css/ibm.css';
+  } else {
+    link.href = '/css/ge.css';
+  }
+});
+</script>
+
 </body>
 
 </html>
