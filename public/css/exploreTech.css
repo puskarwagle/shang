@@ -61,16 +61,19 @@ section#exploreTech #techCards {
 #exploreTech .tCards .tHead .tTexts i:nth-child(3) {
   display:none;
 }
+
+
+/* focus within */
 .tCards:focus-within {
   height: auto;
+}
+.tCards:not(:focus-within) .tContent {
+  display: none !important;
 }
 .tCards:focus-within .tContent {
   display: flex !important;
   flex-wrap: wrap;
   gap:0.25em;
-}
-.tCards:focus-within .tHead {
-
 }
 .tCards:focus-within .tHead .tIcons i {
   transform: scale(1.5) !important;
@@ -84,6 +87,8 @@ section#exploreTech #techCards {
 .tCards:focus-within .tHead .tTexts span {
   display: none !important;
 }
+
+
 #exploreTech .tCards .tContent .tcHead {
   padding-bottom:2em;
   font-size: 120%;

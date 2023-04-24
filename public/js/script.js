@@ -1,6 +1,24 @@
 
-//alert("hii");
-//console.log("hiii");
+
+//console.log("this is script.js from public js");
+
+const tCards = document.querySelectorAll('.tCards');
+
+tCards.forEach((tCard) => {
+  const tHead = tCard.querySelector('.tHead');
+  const tContent = tCard.querySelector('.tContent');
+
+  tHead.addEventListener('click', () => {
+    if (tContent.style.display === 'flex') {
+      tContent.style.display = 'none';
+    } else {
+      tContent.style.display = 'flex';
+    }
+  });
+});
+
+
+
 
 
 

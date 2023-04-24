@@ -127,7 +127,7 @@
               <span>Toolkit to rapidly create, secure and manage APIs</span>
             </div>
             <div class="tcLinks">
-              <a herf="#">API Connect</a>
+              <a href="#">API Connect</a>
               <span>Toolkit to rapidly create, secure and manage APIs</span>
             </div>
           </div><!-- .tContent -->
@@ -149,7 +149,7 @@
               <h3>2 Featured</h3>
             </div>
             <div class="tcLinks">
-              <a herf="#">API Connect</a>
+              <a href="#">API Connect</a>
               <span>Toolkit to rapidly create, secure and manage APIs</span>
             </div>
           </div><!-- .tContent -->
@@ -171,7 +171,7 @@
               <h3>3 Featured</h3>
             </div>
             <div class="tcLinks">
-              <a herf="#">API Connect</a>
+              <a href="#">API Connect</a>
               <span>Toolkit to rapidly create, secure and manage APIs</span>
             </div>
           </div><!-- .tContent -->
@@ -193,7 +193,7 @@
               <h3>4 Featured</h3>
             </div>
             <div class="tcLinks">
-              <a herf="#">API Connect</a>
+              <a href="#">API Connect</a>
               <span>Toolkit to rapidly create, secure and manage APIs</span>
             </div>
           </div><!-- .tContent -->
@@ -215,7 +215,7 @@
               <h3>5 Featured</h3>
             </div>
             <div class="tcLinks">
-              <a herf="#">API Connect</a>
+              <a href="#">API Connect</a>
               <span>Toolkit to rapidly create, secure and manage APIs</span>
             </div>
           </div><!-- .tContent -->
@@ -237,7 +237,7 @@
               <h3>6 Featured</h3>
             </div>
             <div class="tcLinks">
-              <a herf="#">API Connect</a>
+              <a href="#">API Connect</a>
               <span>Toolkit to rapidly create, secure and manage APIs</span>
             </div>
           </div><!-- .tContent -->
