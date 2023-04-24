@@ -1,0 +1,428 @@
+:root {
+  --primary-blue: #044182;
+  --secondary-blue: #0874e8;
+}
+* {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  scroll-snap-type: y mandatory;
+  background-color: hsl(0, 0%, 94%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* header */
+  section#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8vw 2vw;
+    transition: 0.5s ease-in-out;
+    border:2px solid blue;
+  }
+  #header img {
+    max-width: 15%;
+  }
+  #header nav {--primary-blue: #044182;
+    margin-right: auto;
+    display:flex;
+    gap:1em;
+    border:2px solid red;
+    margin-left: auto;
+  }
+  #header nav ul {
+    display:flex;
+    gap:1em;
+  }
+  #header nav ul li {
+    list-style:none;
+  }
+  #header nav ul li a {
+    text-decoration:none;
+    color:#000;
+  }
+  #header .search_user {
+    display: flex;
+    gap:2em;
+  }
+/* End Header and getIn Home page elements */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Intern section Start */
+  section#intern {
+    background-color: var(--primary-blue);
+    padding:1em 2em;
+  }
+  #intern span a {
+    color:#fff;
+    text-decoration: none;
+  }
+/* End of Intern */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MAIN */
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+/* main */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About section Start */
+  section#about {
+    padding:2em;
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+    border:3px dotted #0077B5;
+  }
+  #about .aboutTexts {
+    width:60%;
+    border:3px dotted #0077B5;
+  }
+  #about .aboutTexts p {
+    font-size:2.5em;
+    margin-bottom: 1em;
+  }
+  #about .aboutTexts span:nth-child(2) {
+    display: block;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    font-size: 1.1em;
+  }
+  #about button {
+    max-width:max-content;
+    padding:1em;
+    background-color: var(--secondary-blue);
+    color:#fff;
+    border:none;
+    margin-top: 1em;
+    line-height: 1;
+    font-size: 1em;
+  }
+  #about button i {
+    margin:auto 0 0 4em;
+    
+  }
+/* End of About */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Start of four */
+  section#four {
+    padding:2em;
+    display:flex;
+    flex-wrap: wrap;
+    gap:0.11em 0.11em;
+  }
+  #four .fourCards {
+    flex-basis: calc(50% - 0.1em);
+    display: flex;
+    flex-direction: column;
+    padding:1em;
+    background-color: hsl(0, 0%, 87%);
+  }
+  #four .fourCards:hover {
+    background-color: hsl(0, 0%, 90%);
+  }
+  #four .fourCards:active {
+    outline:2px solid var(--secondary-blue);
+    box-shadow: 0px 3px 0.5em var(--secondary-blue) inset;
+  }
+  #four .fourCards bdo {
+    margin-bottom: 1em;
+  }
+  #four .fourCards p {
+    margin-bottom: 5em;
+  }
+  #four .fourCards i {
+    color: var(--secondary-blue);
+    font-size: 1.2em;
+  }
+/* End of fourCards */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Action Section */
+  section#action {
+    padding:0.8em 2em;
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(0, 0%, 94%);
+    box-shadow: 0px 3px 10px rgb(72, 71, 71);
+    border: 0px solid gray;
+  }
+/* End of Action Section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* More ways */
+  section#moreWays {
+    padding:3em 2em 1em 2em;
+  }
+  #moreWays h3 {
+    margin-bottom: 2em;
+    font-weight: 100;
+    font-size: 2em;
+  }
+/* End More ways */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rough {
+  margin:auto;
+  display: flex;
+  border-radius: 5px;
+  color:blue;
+  border:3px solid purple;
+}
+#rough div {
+  border:1px solid #fff;
+  border-left:1px solid red;
+  padding:0.4em;
+  background-color: hsl(0, 0%, 100%);
+}
+#rough div:hover {
+  background-color: hsl(0, 0%, 20%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* All Rights Reserverd */
+  footer {
+    padding: 2rem 4rem 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rem;
+    border:2px solid cornflowerblue;
+  }
+  footer #icons {
+    display: flex;
+    flex-direction: row;
+  }
+  footer #icons .circle {
+    display: flex;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    margin-right: 1rem;
+    border-radius: 100%;
+    transition: background-color 0.5s ease;
+  }
+  footer #icons .fac {
+    background-color: #3B5998;
+  }
+  footer #icons .twi {
+    background-color: #1DA1F2;
+  }
+  footer #icons .lin {
+    background-color: #0077B5;
+  }
+  footer #icons .circle:hover {
+    background-color: white;
+  }
+  footer #icons .circle:hover i {
+    color: #FFF;
+  }
+  footer #icons .circle a {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+  }
+  footer #icons .circle a:hover {
+    text-decoration: none;
+  }
+/* End of all the default styles */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+  section#about {
+    flex-direction: row;
+  }
+  section#four {
+    padding:2em;
+    border:2px solid red;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:0.1em 0.11em;
+  }
+}
