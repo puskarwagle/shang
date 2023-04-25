@@ -41,6 +41,7 @@
       <a href="">Register now: You're invited to the Shangrila Internship event, 9–11 May, Ghattekulo, Kathmandu
         →</a>
       </span>
+      <strong>X</strong>
   </section>
 
   <main>
@@ -61,32 +62,32 @@
     </section>
 
     <section id="index">
-      <a href="#">Product</a>
-      <a href="#">CSS</a>
-      <a href="#">Dot Net</a>
-      <a href="#">WEB</a>
-      <a href="#">Mobile</a>
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">SERVICES</a>
+      <a href="#">PROJECTS</a>
+      <a href="#">CONTACT</a>
     </section>
 
     <section id="four">
       <div class="fourCards">
-        <bdo>Product</bdo>
-        <p>The IBM z16 platform protects your hybrid cloud before threats happen</p>
+        <bdo>About</bdo>
+        <p>Read about shangria and its influence over IT in nepal.</p>
         <i class="fas fa-arrow-right"></i>
       </div>
       <div class="fourCards">
-        <bdo>Solution</bdo>
-        <p>The IBM z16 platform protects your hybrid cloud before threats happen</p>
+        <bdo>Services</bdo>
+        <p>Learn about  the services provided by this beautiful company.</p>
         <i class="fas fa-arrow-right"></i>
       </div>
       <div class="fourCards">
-        <bdo>Rosource</bdo>
-        <p>The IBM z16 platform protects your hybrid cloud before threats happen</p>
+        <bdo>Projects</bdo>
+        <p>Take a look at the projects we have been working on.</p>
         <i class="fas fa-arrow-right"></i>
       </div>
       <div class="fourCards">
-        <bdo>Explorer</bdo>
-        <p>The IBM z16 platform protects your hybrid cloud before threats happen</p>
+        <bdo>Contact</bdo>
+        <p>Contact us. Preety self explainatory</p>
         <i class="fas fa-arrow-right"></i>
       </div>
     </section>
@@ -292,7 +293,6 @@ const checkbox = document.getElementById('checkbox');
 
 checkbox.addEventListener('change', (event) => {
   const link = document.getElementById('css-link');
-
   if (event.target.checked) {
     link.href = '/css/ibm.css';
   } else {

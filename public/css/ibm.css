@@ -13,7 +13,8 @@ body {
   scroll-snap-type: y mandatory;
   background-color: hsl(0, 0%, 94%);
 }
-
+/* Section id index */
+section#index {display:none !important;border:2px solid red;}
 
 
 
@@ -44,10 +45,11 @@ body {
     max-width: 20%;
   }
   #header ul {
-    margin-right: auto;
+    margin-left: auto;
+    margin-right: 2em;
     display:flex;
     flex-direction: row;
-    gap:1em;
+    gap:1.5em;
   }
   #header ul li {
     color: var(--s-black);
@@ -101,6 +103,10 @@ body {
     color:#fff;
     text-decoration: underline;
   }
+  #intern strong {
+    float:right;
+    cursor:pointer;
+  }
 /* End of Intern */
 
 
@@ -152,10 +158,12 @@ body {
     display: flex;
     flex-direction: column;
     gap:1em;
+    position:relative;
   }
   #about .aboutTexts {
     width:60%;
     padding:2em;
+    color:#fff;
   }
   #about .aboutTexts p {
     font-size:2.5em;
@@ -184,9 +192,13 @@ body {
     display:none;
   }
   #about img {
-    width:100vw;
-    margin-top: 2em;
-    margin-left: -2em;
+    filter:brightness(70%);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    min-height: 100%;
   }
   #about #aRight,#aLeft {display:none;}
 /* End of About */
@@ -214,12 +226,13 @@ body {
     padding:2em;
     display:flex;
     flex-wrap: wrap;
-    gap:0.11em 0.11em;
+    gap:0.25em;
   }
   #four .fourCards {
-    flex-basis: calc(50% - 0.1em);
+    flex-basis: calc(50% - 0.25em);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding:1em;
     background-color: hsl(0, 0%, 87%);
   }
@@ -230,10 +243,14 @@ body {
     outline:3px solid var(--s-blue);
   }
   #four .fourCards bdo {
+    margin-top: 2em;
     margin-bottom: 1em;
+    font-size: 120%;
+    font-weight: 600;
   }
   #four .fourCards p {
-    margin-bottom: 5em;
+    margin-bottom: 2em;
+    font-size: 120%;
   }
   #four .fourCards i {
     color: var(--s-blue);

@@ -78,6 +78,18 @@ const observer = new IntersectionObserver((entries, observer) => {
 observer.observe(sectionA);
 
 
+// Click X to remove intern
+const intern = document.querySelector('#intern');
+const internSTR = document.querySelector('#intern strong');
+
+  internSTR.addEventListener('click', () => {
+    if (intern.style.display === 'block') {
+      intern.style.display = 'none';
+    } else {
+      intern.style.display = 'block';
+    }
+  });
+
 /*
 // happy clients intersection observer
 const boxes2 = document.querySelectorAll('#happy');

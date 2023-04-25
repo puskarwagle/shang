@@ -63,27 +63,27 @@ body {
 
 
 /* Intern section Start */
-section#intern {
-  background-color: var(--p-blue);
-  padding:1em 2em;
-  display:none;
-}
-#intern span a {
-  color:#fff;
-  text-decoration: none;
-}
+  section#intern {
+    background-color: var(--p-blue);
+    padding:1em 2em;
+    display:none;
+  }
+  #intern span a {
+    color:#fff;
+    text-decoration: none;
+  }
 /* End of Intern */
 
 
 
 
 /* MAIN */
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow-x: hidden;
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: hidden;
+  }
 /* main */ 
 
 
@@ -104,7 +104,6 @@ main {
     border-bottom:0.5em solid var(--h-indigo);
     */
     position:relative;
-    
   }
   #about .aboutTexts {
     width: 80%;
@@ -114,6 +113,9 @@ main {
     font-size: 2.5em;
     color:white;
     margin-bottom: 1em;
+    position:absolute;
+    bottom:35%;
+    left:10%;
   }
   #about .aboutTexts span:nth-child(2) {
     display: block;
@@ -133,7 +135,7 @@ main {
     font-weight: 600;
     position:absolute;
     bottom:15%;
-    left:6em;
+    left:10%;
   }
   #about button:hover {
     background-color: var(--p-indigo);
