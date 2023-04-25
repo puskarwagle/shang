@@ -1,0 +1,219 @@
+:root {
+  --p-indigo: hsl(214.5,40%,19.61%);
+  --s-indigo: hsl(214.5,40%,24.61%);
+  --h-indigo: hsl(214.5,40%,29.61%);
+
+  --s-blue: #0874e8;
+  --s-black: hsl(0, 0%, 14%);
+  --s-gray: hsl(0, 0%, 74%);
+}
+* {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  scroll-snap-type: y mandatory;
+  background-color: var(--p-indigo);
+}
+
+
+
+
+
+
+
+
+/* header */
+  section#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 3em;
+    transition: 0.5s ease-in-out;
+    background-color: var(--p-indigo);
+  }
+  #header img {
+    max-width: 20%;
+  }
+  #header ul {
+    margin-left: auto;
+    margin-right: 2em;
+    display:flex;
+    gap:2em;
+    outline:0px solid red;
+    justify-content: space-around;
+  }
+  #header ul li {
+    color: #fff;
+    list-style:none;
+  }
+  #header ul li a {
+    text-decoration:none;
+    color: #fff;
+    font-size: 120%;
+  }
+  #header .search_user {
+    display: flex;
+    gap:1em;
+    color:#fff;
+  }
+/* End Header and getIn Home page elements */
+
+
+/* Intern section Start */
+section#intern {
+  background-color: var(--p-blue);
+  padding:1em 2em;
+  display:none;
+}
+#intern span a {
+  color:#fff;
+  text-decoration: none;
+}
+/* End of Intern */
+
+
+
+
+/* MAIN */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+}
+/* main */ 
+
+
+
+
+
+
+
+
+/* About section Start */
+  section#about {
+    min-height: clamp(80vh,80vh,80vh);
+    display: flex;
+    flex-direction: column;
+    padding:6em 0;
+    gap:2em;
+    /* border-top:0.5em solid var(--s-blue); 
+    border-bottom:0.5em solid var(--h-indigo);
+    */
+    position:relative;
+    
+  }
+  #about .aboutTexts {
+    width: 80%;
+    padding:2em 6em;
+  }
+  #about .aboutTexts p {
+    font-size: 2.5em;
+    color:white;
+    margin-bottom: 1em;
+  }
+  #about .aboutTexts span:nth-child(2) {
+    display: block;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    font-size: 1.1em;
+    display:none;
+  }
+  #about button {
+    max-width: max-content;
+    padding: 1em 1em;
+    color: var(--p-indigo);
+    border-radius: 2em;
+    border:4px groove lightgray;
+    margin-top: 1em;
+    line-height: 1;
+    font-weight: 600;
+    position:absolute;
+    bottom:15%;
+    left:6em;
+  }
+  #about button:hover {
+    background-color: var(--p-indigo);
+    color:#fff;
+  }
+  #about button span {
+    display: none;
+  }
+  #about button::before {
+    content: 'Learn More';
+    text-transform: uppercase;
+    letter-spacing: 150%;
+  }
+  #about button i:nth-child(2) {
+    display:none;
+  }
+  #about button i:nth-child(3) {
+    margin:auto 0 0 0.5em;
+  }
+  #about img {
+    filter:brightness(70%);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    min-height: 100%;
+  }
+  #about #aRight, #about #aLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:40%;
+    font-size: 300%;
+    z-index: 1;
+    filter: blur(2px);
+    background-color: rgba(25, 38, 71, 0.5);
+  }
+  #about #aLeft {
+    left:0;
+    padding:0.5em 0.5em 0.5em 0.5em;
+  }
+  #about #aRight {
+    right:0;
+    padding:0.5em 0.5em 0.5em 0.5em;
+  }
+  #about #aRight i, #about #aLeft i {
+    color: var(--s-gray);
+  }
+  #about #aRight:hover, #about #aLeft:hover {
+    filter: blur(0px);
+    color:white;
+    background-color: rgba(25, 38, 71, 0.75);
+  }
+  #about #aRight:hover i, #about #aLeft:hover i {
+    color:white;
+  }
+/* End of About */
+
+
+
+
+
+
+/* index */
+section#index {
+  margin:2em auto 0 auto;
+  background-color: var(--s-indigo);
+  display: flex;
+  justify-content: space-between;
+  color:white;
+  text-decoration: none;
+}
+section#index a {
+  color:white;
+  text-decoration: none;
+  padding:2em 3em;
+  font-weight: 600;
+}
+section#index a:hover {
+  background-color: var(--h-indigo);
+}

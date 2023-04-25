@@ -1,6 +1,7 @@
 :root {
-  --primary-blue: #044182;
-  --secondary-blue: #0874e8;
+  --p-blue: #044182;
+  --s-blue: #0874e8;
+  --s-black: hsl(0, 0%, 14%);
 }
 * {
   padding: 0 0 0 0;
@@ -36,29 +37,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8vw 2vw;
+    padding: 0.5em 2em;
     transition: 0.5s ease-in-out;
-    border:2px solid blue;
   }
   #header img {
-    max-width: 15%;
+    max-width: 20%;
   }
-  #header nav {
+  #header ul {
     margin-right: auto;
     display:flex;
-    gap:1em;
-    border:2px solid red;
-  }
-  #header nav ul {
-    display:flex;
+    flex-direction: row;
     gap:1em;
   }
-  #header nav ul li {
+  #header ul li {
+    color: var(--s-black);
     list-style:none;
   }
-  #header nav ul li a {
+  #header ul li a {
     text-decoration:none;
-    color:#000;
+    color: var(--s-black);
+    font-size: 120%;
   }
   #header .search_user {
     display: flex;
@@ -91,12 +89,17 @@ body {
 
 /* Intern section Start */
   section#intern {
-    background-color: var(--primary-blue);
-    padding:1em 2em;
+    background-color: var(--p-blue);
+    padding: 1.5em 2em;
   }
   #intern span a {
     color:#fff;
     text-decoration: none;
+    font-weight: 600;
+  }
+  #intern span a:hover {
+    color:#fff;
+    text-decoration: underline;
   }
 /* End of Intern */
 
@@ -146,15 +149,13 @@ body {
 
 /* About section Start */
   section#about {
-    padding:2em;
     display: flex;
     flex-direction: column;
-    gap:2em;
-    border:3px dotted #0077B5;
+    gap:1em;
   }
   #about .aboutTexts {
     width:60%;
-    border:3px dotted #0077B5;
+    padding:2em;
   }
   #about .aboutTexts p {
     font-size:2.5em;
@@ -169,17 +170,25 @@ body {
   #about button {
     max-width:max-content;
     padding:1em;
-    background-color: var(--secondary-blue);
+    background-color: var(--s-blue);
     color:#fff;
     border:none;
     margin-top: 1em;
     line-height: 1;
     font-size: 1em;
   }
-  #about button i {
+  #about button i:nth-child(2) {
     margin:auto 0 0 4em;
-    
   }
+  #about button i:nth-child(3) {
+    display:none;
+  }
+  #about img {
+    width:100vw;
+    margin-top: 2em;
+    margin-left: -2em;
+  }
+  #about #aRight,#aLeft {display:none;}
 /* End of About */
 
 
@@ -218,8 +227,7 @@ body {
     background-color: hsl(0, 0%, 90%);
   }
   #four .fourCards:active {
-    outline:2px solid var(--secondary-blue);
-    box-shadow: 0px 3px 0.5em var(--secondary-blue) inset;
+    outline:3px solid var(--s-blue);
   }
   #four .fourCards bdo {
     margin-bottom: 1em;
@@ -228,7 +236,7 @@ body {
     margin-bottom: 5em;
   }
   #four .fourCards i {
-    color: var(--secondary-blue);
+    color: var(--s-blue);
     font-size: 1.2em;
   }
 /* End of fourCards */
@@ -292,36 +300,12 @@ body {
 
 
 
-
-
-
-
-
-#rough {
-  margin:auto;
-  display: flex;
-  border-radius: 5px;
-  color:blue;
-  border:3px solid purple;
-}
-#rough div {
-  border:1px solid #fff;
-  border-left:1px solid red;
-  padding:0.4em;
-  background-color: hsl(0, 0%, 100%);
-}
-#rough div:hover {
-  background-color: hsl(0, 0%, 20%);
-}
-
-
 /* exporeTech techCards */
 section#exploreTech {
   padding:3em 2em 1em 2em;
   display: flex;
   flex-direction: column;
   gap:2em;
-  border:2px dotted cadetblue;
 }
 section#exploreTech #techCards {
   display:flex;
@@ -379,7 +363,6 @@ section#exploreTech #techCards {
   display:none;
 }
 
-
 /* focus within */
 .tCards:focus-within {
   height: auto;
@@ -404,7 +387,6 @@ section#exploreTech #techCards {
 .tCards:focus-within .tHead .tTexts span {
   display: none !important;
 }
-
 
 #exploreTech .tCards .tContent .tcHead {
   padding-bottom:2em;
@@ -473,7 +455,7 @@ section#exploreTech #techCards {
     display: flex;
     justify-content: space-between;
     margin-top: 10rem;
-    border:2px solid cornflowerblue;
+    border:3px dashed cornflowerblue;
   }
   footer #icons {
     display: flex;
@@ -548,7 +530,6 @@ section#exploreTech #techCards {
   }
   section#four {
     padding:2em;
-    border:2px solid red;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;

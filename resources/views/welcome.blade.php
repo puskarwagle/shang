@@ -20,15 +20,15 @@
 
   <section id="header">
     <img src="./images/logo-shangrila.png" alt="shangrila logo">
-    <nav id="mainmenu">
+
       <ul>
-        <li><a class="active" href="#landing">Home</a> &#8744;</li>
-        <li><a href="#aboutUs">About</a> &#8744;</li>
-        <li><a href="#boxes">Services</a> &#8744;</li>
-        <li><a href="#silize">Projects</a> &#8744;</li>
-        <li><a href="#contact">Contact</a> &#8744;</li>
+        <li><a class="active" href="#landing">Home</a></li>
+        <li><a href="#aboutUs">About</a></li>
+        <li><a href="#boxes">Services</a></li>
+        <li><a href="#silize">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+
     <div class="search_user">
       <i class="fas fa-search"></i>
       <i class="far fa-user"></i>
@@ -49,9 +49,23 @@
         <p>Working towards the excellence in ensuring the Digital Governance in Nepal.</p>
         <span>See how the local government are automated using software like DOT NET to deliver services more
           efficiently. This is the third line. This is a good line.</span>
-        <button><span>Get to know Shangrila</span><i class="fas fa-arrow-right"></i></button>
+        <button>
+          <span>Get to know Shangrila</span>
+          <i class="fas fa-arrow-right"></i>
+          <i class="fas fa-external-link-alt"></i>
+        </button>
+        <img src="./images/ge1.webp" alt="this is the first img">
       </div>
-      <img src="./images/shang1.webp" alt="this is the first img">
+      <div id="aLeft"><i  class="fas fa-angle-left"></i></div>
+      <div id="aRight"><i  class="fas fa-angle-right"></i></div>
+    </section>
+
+    <section id="index">
+      <a href="#">Product</a>
+      <a href="#">CSS</a>
+      <a href="#">Dot Net</a>
+      <a href="#">WEB</a>
+      <a href="#">Mobile</a>
     </section>
 
     <section id="four">
@@ -246,14 +260,6 @@
       </div> <!-- #techCards --> 
     </section>
 
-    <section id="rough">
-      <div class="nav-btn" id="prev">&lt;&lt;</div>
-      <div class="card">1</div>
-      <div class="card">2</div>
-      <div class="card">3</div>
-      <div class="nav-btn" id="next">&gt;&gt;</div>
-    </section>
-
 
   </main>
 
@@ -279,7 +285,9 @@
   </footer>
 
   <script src="/js/script.js"></script>
-  <script>
+
+
+<script>
 const checkbox = document.getElementById('checkbox');
 
 checkbox.addEventListener('change', (event) => {
@@ -294,5 +302,4 @@ checkbox.addEventListener('change', (event) => {
 </script>
 
 </body>
-
 </html>

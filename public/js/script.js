@@ -1,9 +1,7 @@
-
-
 //console.log("this is script.js from public js");
 
+//IBM cards tHead click tContent display none or flex
 const tCards = document.querySelectorAll('.tCards');
-
 tCards.forEach((tCard) => {
   const tHead = tCard.querySelector('.tHead');
   const tContent = tCard.querySelector('.tContent');
@@ -17,34 +15,70 @@ tCards.forEach((tCard) => {
   });
 });
 
-
-
-
-
-
-// boxes of achievements animate on intersection 
-const boxes = document.querySelectorAll('.box');
-const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.5
+// GE about next and back text and image change
+let imgTexts = {
+  "ge1.webp": {
+    "text": "Working towards the excellence in ensuring the Digital Governance in Nepal.",
+    "altText": "this is the first img"
+  },
+  "ge2.webp": {
+    "text": "Working towards the excellence in ensuring",
+    "altText": "this is the second img"
+  },
+  "ge3.webp": {
+    "text": "Working towards the excellence in ensuring the Digital Governance in Nepal. This is the third image.",
+    "altText": "this is the third img"
+  },
+  "ge4.webp": {
+    "text": "This is the fourth image.",
+    "altText": "this is the fourth img"
+  }
 };
-const observer = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.transform = 'translateX(0%)';
-	  entry.target.style.opacity = '1';
-	  observer.unobserve(entry.target);
-    } 
-	else {
-      entry.target.style.transform = 'translateX(50%)';
-      entry.target.style.opacity = '0';
-	 }
-  });
-}, options);
-boxes.forEach(box => {
-  observer.observe(box, { once: true });
+
+let currentIndex = 0; // current index of the object
+let keys = Object.keys(imgTexts); // array of object keys
+
+let aboutText = document.querySelector('#about .aboutTexts p');
+let aboutImg = document.querySelector('#about .aboutTexts img');
+
+function updateTextAndImg(index) {
+  let key = keys[index]; // get key from the array of object keys
+  let value = imgTexts[key]; // get value from the object using the key
+  
+  aboutText.textContent = value.text; // update paragraph text
+  aboutImg.src = "./images/" + key; // update image source
+  aboutImg.alt = value.altText; // update image alt text
+}
+
+document.querySelector('#aLeft').addEventListener('click', function() {
+  currentIndex = (currentIndex === 0) ? keys.length - 1 : currentIndex - 1;
+  updateTextAndImg(currentIndex);
 });
+
+document.querySelector('#aRight').addEventListener('click', function() {
+  currentIndex = (currentIndex === keys.length - 1) ? 0 : currentIndex + 1;
+  updateTextAndImg(currentIndex);
+});
+// END GE about next and back text and image change END
+
+
+// SectionI dissapears
+const sectionI = document.querySelector('#index');
+const sectionA = document.querySelector('#about');
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
+      sectionI.style.display = 'flex';
+    } else {
+      sectionI.style.display = 'none';
+    }
+  });
+}, {threshold: 0.75});
+
+observer.observe(sectionA);
+
+
+/*
 // happy clients intersection observer
 const boxes2 = document.querySelectorAll('#happy');
 const options2 = {
@@ -166,6 +200,6 @@ happy.addEventListener('scroll', function() {
 
 
 
-
+*/
 
 
