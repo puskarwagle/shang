@@ -13,13 +13,13 @@
   <!-- Font-Awesome 5.15.3 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <!-- Styles -->
-  <link id="css-link" href="/css/ge.css" rel="stylesheet">
+  <link id="css-link" href="/css/ibm.css" rel="stylesheet">
 </head>
 
 <body>
 
   <section id="header">
-    <img src="./images/logo-shangrila.png" alt="shangrila logo">
+    <img src="./images/newSH.png" alt="shangrila logo">
 
       <ul>
         <li><a class="active" href="#landing">Home</a></li>
@@ -32,17 +32,18 @@
     <div class="search_user">
       <i class="fas fa-search"></i>
       <i class="far fa-user"></i>
-      <input type="checkbox" id="checkbox">
+      <!-- <input type="checkbox" id="checkbox"> -->
     </div>
   </section>
 
+  <!--
   <section id="intern">
     <span>
       <a href="">Register now: You're invited to the Shangrila Internship event, 9–11 May, Ghattekulo, Kathmandu
         →</a>
       </span>
       <strong>X</strong>
-  </section>
+  </section> -->
 
   <main>
     <section id="about">
@@ -55,7 +56,7 @@
           <i class="fas fa-arrow-right"></i>
           <i class="fas fa-external-link-alt"></i>
         </button>
-        <img src="./images/ge1.webp" alt="this is the first img">
+        <img src="./images/shangrila-bg.jpg" alt="this is the first img">
       </div>
       <div id="aLeft"><i  class="fas fa-angle-left"></i></div>
       <div id="aRight"><i  class="fas fa-angle-right"></i></div>
@@ -69,38 +70,79 @@
       <a href="#">CONTACT</a>
     </section>
 
-    <section id="four">
-      <div class="fourCards">
-        <bdo>About</bdo>
-        <p>Read about shangria and its influence over IT in nepal.</p>
-        <i class="fas fa-arrow-right"></i>
-      </div>
-      <div class="fourCards">
-        <bdo>Services</bdo>
-        <p>Learn about  the services provided by this beautiful company.</p>
-        <i class="fas fa-arrow-right"></i>
-      </div>
-      <div class="fourCards">
-        <bdo>Projects</bdo>
-        <p>Take a look at the projects we have been working on.</p>
-        <i class="fas fa-arrow-right"></i>
-      </div>
-      <div class="fourCards">
-        <bdo>Contact</bdo>
-        <p>Contact us. Preety self explainatory</p>
-        <i class="fas fa-arrow-right"></i>
-      </div>
-    </section>
+    <section id="recentWorks">
+			<span id="span">Recent Works</span>
+      <div id="honey">
+			
+      <div class="rw">
+					<div class="imgL">
+						<img src="./images/proj-1.png" alt="laptop png images" />
+						<span>Municipal Taxation</span>
+						<span>Web Based Application</span>
+					</div>
+					<div class="tect">
+						Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
+					</div>
+				</div>
 
-    <section id="action">
-      <span>Shangrila in Action</span>
-      <i class="fa fa-list"></i>
-    </section>
+				<div class="rw">
+					<div class="imgL">
+						<img src="./images/proj-2.png" alt="lapto" />
+						<span>LGPIS</span>
+						<span>Web Based Application</span>
+					</div>
+					<div class="tect">
+						Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
+					</div>
+				</div>
+				
+        <div class="rw">
+					<div class="imgL">
+						<img src="./images/proj-3.png" alt="dowpng img" />
+						<span>Municipal ERP</span>
+						<span>Web Based Application</span>
+					</div>
+					<div class="tect">
+						Municipal Taxation System – Municipal Accounting System – Land Registration Management Information System – Building Permit Process Management System – Inventory and Assets Management System – Document Management and Tracking System – Planning Management System
+					</div>
+				</div> <!-- .rw -->
 
-    <section id="moreWays">
-      <h3>More ways to create with IBM</h3>
-      <p>We enable people, ideas and technologies to make the world work better through hybrid cloud and AI</p>
-    </section>
+        <div class="rw">
+					<div class="imgL">
+						<img src="./images/proj-1.png" alt="laptop png images" />
+						<span>Municipal Taxation</span>
+						<span>Web Based Application</span>
+					</div>
+					<div class="tect">
+						Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
+					</div>
+				</div>
+
+				<div class="rw">
+					<div class="imgL">
+						<img src="./images/proj-2.png" alt="lapto" />
+						<span>LGPIS</span>
+						<span>Web Based Application</span>
+					</div>
+					<div class="tect">
+						Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
+					</div>
+				</div>
+				
+        <div class="rw">
+					<div class="imgL">
+						<img src="./images/proj-3.png" alt="dowpng img" />
+						<span>Municipal ERP</span>
+						<span>Web Based Application</span>
+					</div>
+					<div class="tect">
+						Municipal Taxation System – Municipal Accounting System – Land Registration Management Information System – Building Permit Process Management System – Inventory and Assets Management System – Document Management and Tracking System – Planning Management System
+					</div>
+				</div> <!-- .rw -->
+
+			</div> <!-- #honey -->
+		</section>
+
 
     <section id="exploreTech">
       <h2>Explore our technology</h2>
@@ -261,27 +303,63 @@
       </div> <!-- #techCards --> 
     </section>
 
+    <section id="four">
+      <h2>What’s new inside Shangrila</h2>  
+      <div id="allNewCards">
+        <div class="fourCards">
+          <bdo>Developer</bdo>
+          <p>Read about shangria and its influence over IT in nepal.</p>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="fourCards">
+          <bdo>Support</bdo>
+          <p>Learn about  the services provided by this beautiful company.</p>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="fourCards">
+          <bdo>Products</bdo>
+          <p>Take a look at the projects we have been working on.</p>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="fourCards">
+          <bdo>Internship</bdo>
+          <p>Contact us. Preety self explainatory</p>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div> <!-- id="allNewCards" -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact us</h2>
+      <div id="cMapForm">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="form">
+          <h1>Shangrila Microsystem</h1>
+          <span class="spanA">Call Us</span>
+          <span class="spanB">+977 - 01 – 4102850, 4102852</span>
+          <span class="spanA">Address</span>
+          <span class="spanB">Maitidevi, Kathmandu, Nepal</span>
+          <span class="spanA">Email us</span>
+          <span class="spanB">info@shangrilagroup.com.np</span>
+        </div>
+      </div>
+    </section>
+
 
   </main>
 
   <footer>
     <span>© Copyright 2021 - Shangrila Microsystem. <br> All Rights Reserved.</span>
     <div id="icons">
-      <div class="circle fac">
-        <a href="#">
+        <a class="circle fac" href="#">
           <i class="fab fa-facebook-f"></i>
         </a>
-      </div>
-      <div class="circle twi">
-        <a href="#">
+        <a class="circle twi" href="#">
           <i class="fab fa-twitter"></i>
         </a>
-      </div>
-      <div class="circle lin">
-        <a href="#">
+        <a class="circle lin" href="#">
           <i class="fab fa-linkedin-in"></i>
         </a>
-      </div>
     </div>
   </footer>
 
@@ -294,9 +372,9 @@ const checkbox = document.getElementById('checkbox');
 checkbox.addEventListener('change', (event) => {
   const link = document.getElementById('css-link');
   if (event.target.checked) {
-    link.href = '/css/ibm.css';
+    link.href = '/css/ibmD.css';
   } else {
-    link.href = '/css/ge.css';
+    link.href = '/css/ibm.css';
   }
 });
 </script>

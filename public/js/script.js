@@ -2,18 +2,34 @@
 
 //IBM cards tHead click tContent display none or flex
 const tCards = document.querySelectorAll('.tCards');
+
 tCards.forEach((tCard) => {
   const tHead = tCard.querySelector('.tHead');
   const tContent = tCard.querySelector('.tContent');
 
   tHead.addEventListener('click', () => {
-    if (tContent.style.display === 'flex') {
+    if (tCard.classList.contains('focus-within')) {
       tContent.style.display = 'none';
+      tCard.classList.remove('focus-within');
+      document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)').forEach((el) => {
+        el.style.display = 'inine-block';
+      });
+      document.querySelector('#exploreTech .tCards .tHead .tTexts span').forEach((el) => {
+        el.style.display = 'inline-block';
+      });
     } else {
       tContent.style.display = 'flex';
+      tCard.classList.add('focus-within');
+      document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)').forEach((el) => {
+        el.style.display = 'none';
+      });
+      document.querySelector('#exploreTech .tCards .tHead .tTexts span').forEach((el) => {
+        el.style.display = 'none';
+      });
     }
   });
 });
+
 
 // GE about next and back text and image change
 let imgTexts = {

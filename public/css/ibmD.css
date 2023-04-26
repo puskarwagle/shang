@@ -3,7 +3,9 @@
   --s-blue: #0874e8;
   --s-black: hsl(0, 0%, 14%);
   --p-white: hsl(0, 0%, 94%);
-  --s-white: hsl(0, 0%, 96%);
+  --s-white: hsl(0, 0%, 46%);
+  --d-white: hsl(0, 0%, 26%);
+  --g-white: hsl(0, 0%, 36%);
 }
 * {
   padding: 0 0 0 0;
@@ -13,7 +15,7 @@
 }
 body {
   scroll-snap-type: y mandatory;
-  background-color: var(--p-white);
+  background-color: var(--d-white);
 }
 /* Section id index */
 section#index {display:none !important;border:2px solid red;}
@@ -42,8 +44,8 @@ section#index {display:none !important;border:2px solid red;}
     align-items: center;
     padding: 0.5vw 2vw;
     transition: 0.5s ease-in-out;
+    color: var(--p-white);
     font-size: 2vw;
-    position:relative;
   }
   #header img {
     max-width: 15vw;
@@ -57,18 +59,16 @@ section#index {display:none !important;border:2px solid red;}
     gap:1.5vw;
   }
   #header ul li {
-    color: var(--s-white);
     list-style:none;
   }
   #header ul li a {
     text-decoration:none;
-    color: var(--s-white);
+    color: var(--p-white);
   }
   #header .search_user {
     display: flex;
     align-items: center;
     gap:2vw;
-    color: var(--s-white);
   }
   .search_user input[type="checkbox"] {
     width: 1.5vw;
@@ -129,6 +129,21 @@ section#index {display:none !important;border:2px solid red;}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* MAIN */
   main {
     display: flex;
@@ -141,14 +156,28 @@ section#index {display:none !important;border:2px solid red;}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* About section Start */
   section#about {
     height: max-content;
-    min-height:85vh;
+    min-height:80vh;
     display: flex;
     flex-direction: column;
     gap:1vw;
-    
+    position:relative;
   }
   #about .aboutTexts {
     margin-top: auto;
@@ -190,7 +219,7 @@ section#index {display:none !important;border:2px solid red;}
     left:0;
     z-index:-1;
     width:100%;
-    height: 100vh;
+    height: 100%;
   }
   #about #aRight,#aLeft {display:none;}
 /* End of About */
@@ -199,9 +228,69 @@ section#index {display:none !important;border:2px solid red;}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Start of four */
+  section#four {
+    padding:2vw;
+    display:flex;
+    flex-wrap: wrap;
+    gap:0.25vw;
+    font-size: 1.4vw;
+  }
+  #four .fourCards {
+    flex-basis: calc(50% - 0.25vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:1vw;
+    background-color: var(--g-white);
+  }
+  #four .fourCards:hover {
+    background-color: var(--s-white);
+  }
+  #four .fourCards:active {
+    outline:3px solid var(--s-blue);
+  }
+  #four .fourCards bdo {
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    font-size: 120%;
+    font-weight: 600;
+  }
+  #four .fourCards p {
+    margin-bottom: 2vw;
+    font-size: 120%;
+  }
+  #four .fourCards i {
+    color: var(--s-blue);
+  }
+/* End of fourCards */
+
+
+
+
+
+
+
+
+
+
 /* Flip recent laptops */
 #recentWorks {
-  padding:3vw 2vw 1vw 3vw;
+  padding: 5vw 6vw;
 }
 #recentWorks #span {
 	font-size: 3vw;
@@ -211,7 +300,7 @@ section#index {display:none !important;border:2px solid red;}
   flex-wrap: wrap;
   gap:6vw;
 	justify-content: space-between;
-	padding: 4vw 6vw;
+	padding: 4vw 2vw;
   border: 0px solid blue;
 }
 #recentWorks #honey .rw {
@@ -281,7 +370,7 @@ section#index {display:none !important;border:2px solid red;}
 
 /* exporeTech techCards */
 section#exploreTech {
-  padding:3vw 2vw 1vw 3vw;
+  padding:3vw 2vw 1vw 2vw;
   display: flex;
   flex-direction: column;
   gap:2vw;
@@ -290,7 +379,6 @@ section#exploreTech #techCards {
   display:flex;
   flex-wrap: wrap;
   gap:0.50vw;
-  padding:0 6vw;
 }
 #exploreTech h2 {
   margin-bottom: 1vw;
@@ -299,12 +387,12 @@ section#exploreTech #techCards {
 }
 #exploreTech .tCards {
   width: calc(50% - 0.55vw);
-  background-color: hsl(0, 0%, 90%);
+  background-color: var(--g-white);
   font-size: 1.3vw;
   height: 100%;
 }
 #exploreTech .tCards .tContent {
-  background-color: hsl(0, 0%, 90%);
+  background-color: var(--g-white);
   width: calc(200% + 0.25em);
   display:none;
   padding:1vw;
@@ -314,10 +402,10 @@ section#exploreTech #techCards {
   margin-left: calc(-100% - 0.25em);
 }
 #exploreTech .tCards:hover .tContent {
-  background-color: hsl(0, 0%, 87.5%);
+  background-color: var(--s-white);
 }
 #exploreTech .tCards:hover {
-  background-color: hsl(0, 0%, 87.5%);
+  background-color: var(--s-white);
 }
 #exploreTech .tCards .tHead {
   flex-basis: 50%;
@@ -414,80 +502,17 @@ section#exploreTech #techCards {
 
 
 
-/* Start of four */
-section#four {
-  padding:3vw 2vw 1vw 3vw;
-}
-#four #allNewCards {
-  padding: 2vw 6vw;
-  display:flex;
-  flex-wrap: wrap;
-  gap:0.25vw;
-  font-size: 1.4vw;
-}
-#four h2 {
-  margin-bottom: 1vw;
-  font-weight: 100;
-  font-size: 3vw;
-}
-  #four .fourCards {
-  flex-basis: calc(50% - 0.25vw);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding:1vw;
-  background-color: hsl(0, 0%, 87%);
-}
-#four .fourCards:hover {
-  background-color: hsl(0, 0%, 90%);
-}
-#four .fourCards:active {
-  outline:3px solid var(--s-blue);
-}
-#four .fourCards bdo {
-  margin-top: 2vw;
-  margin-bottom: 1vw;
-  font-size: 120%;
-  font-weight: 600;
-}
-#four .fourCards p {
-  margin-bottom: 2vw;
-  font-size: 120%;
-}
-#four .fourCards i {
-  color: var(--s-blue);
-}
-/* End of fourCards */
 
 
-/* Map and contact Us  */
-  #contact {
-    scroll-snap-align: center;
-    padding:3vw 2vw 1vw 3vw;
-  }
-  #contact h2 {
-    margin-bottom: 1vw;
-    font-weight: 100;
-    font-size: 3vw;
-  }
-  #contact #cMapForm {
-    display: flex;
-    justify-content: space-between;
-    padding:2vw 6vw;
-  }
-  #contact #cMapForm #form {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 2rem;
-  }
-  #contact #cMapForm #form .spanA {
-    color: #4682B4;
-  }
-  #contact #cMapForm #form .spanB {
-    margin-bottom: 1rem;
-  }
-  /* Map and contact Us  */
-  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -499,7 +524,7 @@ section#four {
     display: flex;
     justify-content: space-between;
     margin-top: 10vw;
-    background-color: hsl(0, 0%, 96%);
+    background-color: var(--g-white);
     font-size: 2vw;
   }
   footer:hover span {

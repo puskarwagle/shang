@@ -52,12 +52,14 @@ body {
   #header ul li a {
     text-decoration:none;
     color: #fff;
-    font-size: 120%;
   }
   #header .search_user {
     display: flex;
     gap:1em;
     color:#fff;
+  }
+  #header .search_user #checkbox {
+    
   }
 /* End Header and getIn Home page elements */
 
@@ -185,6 +187,7 @@ body {
   }
   #about #aRight i, #about #aLeft i {
     color: var(--s-gray);
+    z-index: 2;
   }
   #about #aRight:hover, #about #aLeft:hover {
     filter: blur(0px);
