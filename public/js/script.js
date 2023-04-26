@@ -81,7 +81,7 @@ document.querySelector('#aRight').addEventListener('click', function() {
 // SectionI dissapears
 const sectionI = document.querySelector('#index');
 const sectionA = document.querySelector('#about');
-const observer = new IntersectionObserver((entries, observer) => {
+const observerA = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
       sectionI.style.display = 'flex';
@@ -106,7 +106,29 @@ const internSTR = document.querySelector('#intern strong');
     }
   });
 
-/*
+// boxes of achievements animate on intersection 
+const boxes = document.querySelectorAll('.box');
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+};
+const observer = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.transform = 'translateX(0%)';
+	  entry.target.style.opacity = '1';
+	  observer.unobserve(entry.target);
+    } 
+	else {
+      entry.target.style.transform = 'translateX(50%)';
+      entry.target.style.opacity = '0';
+	 }
+  });
+}, options);
+boxes.forEach(box => {
+  observer.observe(box, { once: true });
+});
 // happy clients intersection observer
 const boxes2 = document.querySelectorAll('#happy');
 const options2 = {
@@ -228,6 +250,6 @@ happy.addEventListener('scroll', function() {
 
 
 
-*/
+
 
 

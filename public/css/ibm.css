@@ -411,52 +411,101 @@ section#exploreTech #techCards {
 }
 
 
-
-
-
-/* Start of four */
-section#four {
-  padding:3vw 2vw 1vw 3vw;
+/* Boxes of Acheivements */
+#boxes {
+	scroll-snap-align: center;
+  border: 0px solid red;
+  padding:5vw 2vw 1vw 3vw;
 }
-#four #allNewCards {
-  padding: 2vw 6vw;
-  display:flex;
-  flex-wrap: wrap;
-  gap:0.25vw;
-  font-size: 1.4vw;
-}
-#four h2 {
+#boxes h2 {
   margin-bottom: 1vw;
   font-weight: 100;
   font-size: 3vw;
 }
-  #four .fourCards {
-  flex-basis: calc(50% - 0.25vw);
+#boxes #allBoxes {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding:1vw;
-  background-color: hsl(0, 0%, 87%);
+  flex-wrap: wrap;
+  padding: 2vw 6vw;
 }
-#four .fourCards:hover {
-  background-color: hsl(0, 0%, 90%);
+#boxes .box {
+  display: flex;
+  flex-basis: calc(33.33% - 0.6rem);
+  transition: transform 0.5s ease;
+  margin: 0rem 0.5rem 2rem 0rem;
 }
-#four .fourCards:active {
-  outline:3px solid var(--s-blue);
+#boxes .box h3 {
+  font-weight: 200;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
-#four .fourCards bdo {
-  margin-top: 2vw;
-  margin-bottom: 1vw;
-  font-size: 120%;
-  font-weight: 600;
+#boxes .box p {
+  color: gray;
 }
-#four .fourCards p {
-  margin-bottom: 2vw;
-  font-size: 120%;
+#boxes .box i {
+  margin: 0.1rem 1rem 0rem 0rem;
+  font-size: 1.5rem;
+  color: #4682B4;
 }
-#four .fourCards i {
-  color: var(--s-blue);
+#boxes .box:hover i {
+  animation: bounce 1.1s infinite;
 }
+@keyframes bounce {
+  0% {transform: translateY(0);}
+  15% {transform: translateY(-15px);}
+  25% {transform: translateY(0px);}
+  35% {transform: translateY(-5px);}
+  50% {transform: translateY(0);}
+  100% {transform: translateY(0);}
+}
+#boxes .box div h3 {
+  white-space: nowrap;
+}
+/* End of boxes */
+
+
+/* Start of four */
+  section#four {
+    padding:3vw 2vw 1vw 3vw;
+  }
+  #four #allNewCards {
+    padding: 2vw 6vw;
+    display:flex;
+    flex-wrap: wrap;
+    gap:0.25vw;
+    font-size: 1.4vw;
+  }
+  #four h2 {
+    margin-bottom: 1vw;
+    font-weight: 100;
+    font-size: 3vw;
+  }
+    #four .fourCards {
+    flex-basis: calc(50% - 0.25vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:1vw;
+    background-color: hsl(0, 0%, 87%);
+  }
+  #four .fourCards:hover {
+    background-color: hsl(0, 0%, 90%);
+  }
+  #four .fourCards:active {
+    outline:3px solid var(--s-blue);
+  }
+  #four .fourCards bdo {
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    font-size: 120%;
+    font-weight: 600;
+  }
+  #four .fourCards p {
+    margin-bottom: 2vw;
+    font-size: 120%;
+  }
+  #four .fourCards i {
+    color: var(--s-blue);
+  }
 /* End of fourCards */
 
 
@@ -500,7 +549,7 @@ section#four {
     justify-content: space-between;
     margin-top: 10vw;
     background-color: hsl(0, 0%, 96%);
-    font-size: 2vw;
+    font-size: 1.6vw;
   }
   footer:hover span {
     background-color: hsl(0, 0%, 100%);

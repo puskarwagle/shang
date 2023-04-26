@@ -303,6 +303,60 @@
       </div> <!-- #techCards --> 
     </section>
 
+    <section id="boxes">
+      <h2>Our Services</h2>
+      <div id="allBoxes">
+        <div class="box">
+          <i class="fas fa-laptop"></i>
+          <div>
+            <h3>Municipal ERP</h3>
+            <p>In operation in ward offices, municipalities, sub-metropolitans and metropolitans across the country this is a latest, easy to use tool employed in local administrative bodies of the country to manage day to function on land registration, municipal taxation, Building permit process, Inventory management information system, Land Tax (malpot), Vehicle Tax, Accounting System, Planning management and so on.</p>
+          </div>
+        </div>
+        <!-- .box Municipal -->
+        <div class="box">
+          <i class="fas fa-desktop"></i>
+          <div>
+            <h3>PMIS</h3>
+            <p>This is a centralized backbone web based System for Nepal Police to automate the process of Personnel Administration such as digital archiving of documents of about 75000 personnel. It also includes data conversion and migration from old system (d2k as frontend and oracle as backend, user interface: English with Preeti for some major fields) to (asp.net as frontend and oracle as backend, user interface: Multilingual).</p>
+          </div>
+        </div>
+        <!-- .box PMIS -->
+        <div class="box">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <h3>PPIS</h3>
+            <p>This is a centralized Personnel Information System for the 4 security forces (eg. Nepal Police, Armed Police). This system is designed for pulling data from the information system database of the security forces. This system can also calculate Pension, Gratuity & other facilities provided to retired police personnel. It manages more than 135,000 personnel’s records.</p>
+          </div>
+        </div>
+        <!-- .box PPIS -->
+        <div class="box">
+          <i class="fas fa-briefcase"></i>
+          <div>
+            <h3>NHWR</h3>
+            <p>This registry of health workers is created by customization and localization of IHRIS to meet requirement of minimum data set and national needs. This system can import existing data from Human Resource Development Information System (HuRDIS). This system can manage information on over 100,000 national health workers.</p>
+          </div>
+        </div>
+        <!-- .box NHWR -->
+        <div class="box">
+          <i class="fas fa-headset"></i>
+          <div>
+            <h3>Support Program</h3>
+            <p>This service was rendered to then Bharatpur municipality for Institutionalization of GIS, addressing sections of the municipality office, installation of various system component software, provide technical support for establishing metric house number and street signage, provide technical support for data entry and operation of the system, conduct introductory and advanced on-the job GIS training.</p>
+          </div>
+        </div>
+        <!-- .box Support Program -->
+        <div class="box">
+          <i class="fas fa-code"></i>
+          <div>
+            <h3>Development of Website</h3>
+            <p>Development of interactive and dynamic CMS based website for numerous District Development Committees (DDC) of Nepal with Nepali Unicode Interface and a contemporary website for Citizen Investment Trust (CIT) with features such as VeriSign Certificate License.</p>
+          </div>
+        </div>  
+      </div> <!-- allBoxes -->
+    </section>
+    <!-- End of #boxes -->
+
     <section id="four">
       <h2>What’s new inside Shangrila</h2>  
       <div id="allNewCards">
