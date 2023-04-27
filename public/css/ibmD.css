@@ -128,22 +128,6 @@ section#index {display:none !important;border:2px solid red;}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* MAIN */
   main {
     display: flex;
@@ -152,21 +136,6 @@ section#index {display:none !important;border:2px solid red;}
     overflow-x: hidden;
   }
 /* main */ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -497,22 +466,6 @@ section#exploreTech #techCards {
     margin-left: calc(-100% - 0.25em) !important;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

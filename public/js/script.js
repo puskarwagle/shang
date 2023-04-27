@@ -1,7 +1,56 @@
 //console.log("this is script.js from public js");
 
+// sticky header 
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition > 0) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+});
+
+// left side navgation panel
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-panel a');
+
+window.addEventListener('scroll', () => {
+  let currentSection = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').substring(1) === currentSection) {
+      link.classList.add('active');
+    }
+  });
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const section = document.querySelector(link.getAttribute('href'));
+    const sectionTop = section.offsetTop;
+    window.scrollTo({
+      top: sectionTop,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
 //IBM cards tHead click tContent display none or flex
 const tCards = document.querySelectorAll('.tCards');
+const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
+const iSpan = document.querySelector('#exploreTech .tCards .tHead .tTexts span');
 
 tCards.forEach((tCard) => {
   const tHead = tCard.querySelector('.tHead');
@@ -11,26 +60,20 @@ tCards.forEach((tCard) => {
     if (tCard.classList.contains('focus-within')) {
       tContent.style.display = 'none';
       tCard.classList.remove('focus-within');
-      document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)').forEach((el) => {
-        el.style.display = 'inine-block';
-      });
-      document.querySelector('#exploreTech .tCards .tHead .tTexts span').forEach((el) => {
-        el.style.display = 'inline-block';
-      });
+      i2.style.display = 'inine-block';
+      iSpan.style.display = 'inline-block';
     } else {
       tContent.style.display = 'flex';
+      tContent.style.zIndex = '2';
       tCard.classList.add('focus-within');
-      document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)').forEach((el) => {
-        el.style.display = 'none';
-      });
-      document.querySelector('#exploreTech .tCards .tHead .tTexts span').forEach((el) => {
-        el.style.display = 'none';
-      });
+      i2.style.display = 'none';
+      iSpan.style.display = 'none';
     }
   });
 });
 
 
+/*
 // GE about next and back text and image change
 let imgTexts = {
   "ge1.webp": {
@@ -76,7 +119,7 @@ document.querySelector('#aRight').addEventListener('click', function() {
   updateTextAndImg(currentIndex);
 });
 // END GE about next and back text and image change END
-
+*/
 
 // SectionI dissapears
 const sectionI = document.querySelector('#index');
@@ -91,14 +134,15 @@ const observerA = new IntersectionObserver((entries, observer) => {
   });
 }, {threshold: 0.75});
 
-observer.observe(sectionA);
-
+// observer.observe(sectionA);
 
 // Click X to remove intern
 const intern = document.querySelector('#intern');
-const internSTR = document.querySelector('#intern strong');
+const internS = document.querySelector('#intern strong');
+console.log(intern);
+console.log(internS);
 
-  internSTR.addEventListener('click', () => {
+  internS.addEventListener('click', () => {
     if (intern.style.display === 'block') {
       intern.style.display = 'none';
     } else {
