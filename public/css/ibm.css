@@ -267,20 +267,20 @@ article {
 
 /* Flip recent laptops */
 #recentWorks {
-  padding:6vw 2vw 1vw 3vw;
+  padding:1vw 2vw 1vw 3vw;
   scroll-snap-align: center;
+  font-size: 3vw;
   border:2px solid red;
 }
 #recentWorks #span {
-	font-size: 3vw;
+
 }
 #recentWorks #honey {
 	display: flex;
   flex-wrap: wrap;
   gap:4vw;
 	justify-content: space-between;
-	padding: 2vw 4vw;
-  border: 0px solid blue;
+	padding: 3vw 4vw;
 }
 #recentWorks #honey .rw {
   position: relative;
@@ -579,7 +579,29 @@ section#exploreTech #techCards {
   }
 /* Map and contact Us  */
   
-
+/* Consulting */
+  section#consult {
+    border:2px solid red;
+    font-size: 3vw;
+  }
+  #consult h2 {
+    margin-bottom: 1vw;
+    font-weight: 100;
+  }
+  #consult ul {
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 2vw;
+    border-bottom: 1px solid gray;
+  }
+  #consult ul li {
+    font-size: 1.6vw;
+    list-style-type: none;
+  }
+  #consult ul li:focus {
+    border:1px solid blue;
+  }
+/* Consulting */
 
 
 
