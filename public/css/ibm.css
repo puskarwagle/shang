@@ -59,6 +59,9 @@ section#index {display:none !important;border:2px solid red;}
     list-style:none;
     transition: all 0.5s ease;
   }
+  header ul li:focus {
+    border:2px solid var(--s-blue);
+  }
   header ul li a {
     text-decoration:none;
     color: var(--s-black);
@@ -231,18 +234,17 @@ article {
 
 /* Navigation panel on the side */
 .nav-panel {
-  margin-top: 6vw;
   z-index: 999;
-  height:max-content;
   font-size: 1.4vw;
   min-width: 15vw;
   position:relative;
+  min-height:100%;
 }
 .nav-panel ul {
   list-style: none;
-  margin-left: 1vw;
-  position:absolute;
-  top:0;left:0;
+  margin: 6vw 0 0 1vw;
+  position:sticky;
+  top:6vw;left:0;
 }
 .nav-panel li {
   
@@ -582,24 +584,60 @@ section#exploreTech #techCards {
 /* Consulting */
   section#consult {
     border:2px solid red;
-    font-size: 3vw;
+    font-size: 2vw;
+    padding:0 2vw;
   }
   #consult h2 {
-    margin-bottom: 1vw;
+    margin-bottom: 4vw;
     font-weight: 100;
   }
   #consult ul {
     display:flex;
-    justify-content: space-around;
-    padding-bottom: 2vw;
-    border-bottom: 1px solid gray;
+    
   }
   #consult ul li {
     font-size: 1.6vw;
     list-style-type: none;
+    padding:0 4vw 2vw 4vw;
+    box-shadow: inset 0px -1px 0px 0px gray;
+    cursor: pointer;
   }
   #consult ul li:focus {
-    border:1px solid blue;
+    outline:1px solid blue;
+  }
+  #consult ul li:hover {
+    box-shadow: inset 0px -2px 0px 0px gray;
+  }
+
+  .inConsult {
+    display: flex;
+    padding:4vw 0vw;
+  }
+  .inConsult img {
+    width:65%;
+    padding:0vw 0vw 0 0;
+  }
+  .inConsultText {
+    display: flex;
+    flex-direction: column;
+    gap:2vw;
+    padding:4vw 2vw;
+  }
+  .inConsultText span:nth-child(1) {
+    font-size:120%;
+  }
+  .inConsultText span:nth-child(2) {
+    font-size:80%;
+    font-weight: 100;
+  }
+  .inConsultText a {
+    font-size:80%;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--s-blue);
+  }
+  .inConsultText a:hover {
+    text-decoration: underline;
   }
 /* Consulting */
 

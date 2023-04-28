@@ -20,10 +20,10 @@
   <header>
     <img src="./images/newSH.png" alt="shangrila logo">
     <ul>
-      <li><a class="active" href="#landing">Home</a></li>
-      <li><a href="#aboutUs">About</a></li>
+      <li><a class="active" href="#l">Home</a></li>
+      <li><a href="#recentWorks">About</a></li>
       <li><a href="#boxes">Services</a></li>
-      <li><a href="#silize">Projects</a></li>
+      <li><a href="#exploreTech">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="search_user">
@@ -457,12 +457,16 @@
           <li>Accounts</li>
         </ul>
         <div class="inConsult">
-          <img src="" alt="">
-          <span>The power of partnership</span>
-          <span>Collaborate with the world’s leading platform and infrastructure leaders.</span>
-          <a href="#">Unlock new Opportunities</a>
+          <img src="./images/co1.jpg" alt="this is the partnership image">
+          <div class="inConsultText">
+            <span>1 power of partnership</span>
+            <span>1 ollaborate with the world’s leading platform and infrastructure leaders.</span>
+            <a href="#">1 Unlock new Opportunities →</a>
+          </div>
         </div>
       </section>
+
+
     </article>
   </main>
 
@@ -483,7 +487,7 @@
 
   <script src="/js/script.js"></script>
 
-<!--
+  <!--
   <script>
     const checkbox = document.getElementById('checkbox');
 
@@ -499,4 +503,5 @@
   -->
 
 </body>
+
 </html>
