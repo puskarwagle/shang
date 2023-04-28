@@ -20,7 +20,8 @@ body {
 section#index {display:none !important;border:2px solid red;}
 
 
-
+.bookmark {
+}
 /* header */
   header {
     min-height:min-content;
@@ -86,7 +87,8 @@ section#index {display:none !important;border:2px solid red;}
 
 /* End Header and getIn Home page elements */
 
-
+.bookmark {
+}
 /* Intern section Start */
   section#intern {
     background-color: var(--p-blue);
@@ -109,7 +111,8 @@ section#index {display:none !important;border:2px solid red;}
   }
 /* End of Intern */ 
 
-
+.bookmark {
+}
 /* About section Start */
   section#about {
     height: max-content;
@@ -169,7 +172,8 @@ section#index {display:none !important;border:2px solid red;}
   #about #aRight,#aLeft {display:none;}
 /* End of About */
 
-
+.bookmark {
+}
 /* Start of four */
 section#four {
     padding:3vw 2vw 1vw 3vw;
@@ -222,7 +226,6 @@ main {
   border:2px solid blue;
 }
 /* main */
-
 /* article */
 article {
   border:2px solid green;
@@ -232,6 +235,8 @@ article {
 }
 /* article */
 
+.bookmark {
+}
 /* Navigation panel on the side */
 .nav-panel {
   z-index: 999;
@@ -245,9 +250,6 @@ article {
   margin: 6vw 0 0 1vw;
   position:sticky;
   top:6vw;left:0;
-}
-.nav-panel li {
-  
 }
 .nav-panel a {
   display: block;
@@ -266,16 +268,14 @@ article {
 }
 /* Navigation panel on the side */
 
-
+.bookmark {
+}
 /* Flip recent laptops */
 #recentWorks {
   padding:1vw 2vw 1vw 3vw;
   scroll-snap-align: center;
   font-size: 3vw;
   border:2px solid red;
-}
-#recentWorks #span {
-
 }
 #recentWorks #honey {
 	display: flex;
@@ -339,16 +339,8 @@ article {
 }
 /* End of Flip recent laptops */
 
-
-
-
-
-
-
-
-
-
-
+.bookmark {
+}
 /* exporeTech techCards */
 section#exploreTech {
   padding:3vw 2vw 1vw 3vw;
@@ -416,11 +408,6 @@ section#exploreTech #techCards {
 #exploreTech .tCards .tHead .tTexts i:nth-child(3) {
   display:none;
 }
-
-/* focus within */
-.tCards:focus-within {
-  
-}
 .tCards:not(:focus-within) .tContent {
   display: none !important;
 }
@@ -483,7 +470,8 @@ section#exploreTech #techCards {
   }
 }
 
-
+.bookmark {
+}
 /* Boxes of Acheivements */
 #boxes {
 	scroll-snap-align: center;
@@ -540,9 +528,8 @@ section#exploreTech #techCards {
 }
 /* End of boxes */
 
-
-
-
+.bookmark {
+}
 /* Map and contact Us  */
   #contact {
     scroll-snap-align: center;
@@ -581,6 +568,8 @@ section#exploreTech #techCards {
   }
 /* Map and contact Us  */
   
+.bookmark {
+}
 /* Consulting */
   section#consult {
     border:2px solid red;
@@ -641,9 +630,8 @@ section#exploreTech #techCards {
   }
 /* Consulting */
 
-
-
-
+.bookmark {
+}
 /* All Rights Reserverd */
   footer {
     padding: 0.5vw 4vw 0.5vw 4vw;
@@ -704,7 +692,8 @@ section#exploreTech #techCards {
 /* End of all the default styles */
 
 
-
+.bookmark {
+}
 @media (min-width: 1200px) {
   section#about {
     flex-direction: row;
@@ -718,13 +707,16 @@ section#exploreTech #techCards {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
   section#four #allNewCards {
     padding:2vw;
     display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap:0.1vw 0.11vw;
+  }
+  .nav-panel {
+    display:none;
   }
 }
 
