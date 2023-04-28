@@ -694,6 +694,7 @@ section#exploreTech #techCards {
 
 .bookmark {
 }
+/* large devices */
 @media (min-width: 1200px) {
   section#about {
     flex-direction: row;
@@ -707,6 +708,7 @@ section#exploreTech #techCards {
   }
 }
 
+/* small devices */
 @media (max-width: 700px) {
   section#four #allNewCards {
     padding:2vw;
