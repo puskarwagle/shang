@@ -19,17 +19,60 @@
 
   <header>
     <img src="./images/newSH.png" alt="shangrila logo">
-    <ul>
+    <ul class="nav">
       <li><a class="active" href="#l">Home</a></li>
-      <li><a href="#recentWorks">About</a></li>
-      <li><a href="#boxes">Services</a></li>
-      <li><a href="#exploreTech">Projects</a></li>
+      <li><a href="">About <i class="fas fa-chevron-down fa-xs"></i></a></li>
+      <li><a href="">Services <i class="fas fa-chevron-down fa-xs"></i></a></li>
+      <li><a href="">Projects <i class="fas fa-chevron-down fa-xs"></i></a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="search_user">
       <i class="fas fa-search"></i>
       <i class="far fa-user"></i>
       <!-- <input type="checkbox" id="checkbox"> -->
+    </div>
+
+    <div class="headerMain">
+      <ul class="hMA">
+        <li>Automation</li>
+        <li>Data storage</li>
+        <li>Websites</li>
+        <li>Mobile applications</li>
+        <li>Dot Net</li>
+        <li>Features</li>
+      </ul> <!-- .hMA -->
+      <div class="hMB">
+        <div class="hMBFirst">
+          <span>Automation <i class="fas fa-arrow-right"></i></span>
+          <span>Discipline is choosing between what you want now and what you want most.</span>
+        </div>
+        <div class="hMBTexts">
+          <div class="hMBText">
+            <span>Automation</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Automation</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Automation</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Automation</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Automation</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Automation</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+        </div> <!-- .hMBTexts -->
+      </div> <!-- .hMB -->
     </div>
   </header>
 

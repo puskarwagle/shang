@@ -78,6 +78,25 @@ tCards.forEach((tCard) => {
   });
 });
 
+// Click on nav a to flex the .headerMain
+const navL = document.querySelectorAll('.nav li a:has(i)');
+const headerMain = document.querySelector('.headerMain');
+
+navL.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
+  });
+});
+// Hide headerMain when user clicks elsewhere
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.nav') && !event.target.closest('.headerMain')) {
+    headerMain.style.display = 'none';
+  }
+});
+
 
 /*
 // GE about next and back text and image change
