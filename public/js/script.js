@@ -208,7 +208,7 @@ let coSpanText = document.querySelector('.inConsultText span:nth-child(1)');
 let coSpanText1 = document.querySelector('.inConsultText span:nth-child(2)');
 let coAText = document.querySelector('.inConsultText a');
 let coImg = document.querySelector('#consult .inConsult img');
-console.log(coSpanText,coSpanText1,coAText,coImg);
+// console.log(coSpanText,coSpanText1,coAText,coImg);
 
 function updateTeAndIm(index) {
   let key = coKeys[index];

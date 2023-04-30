@@ -180,7 +180,6 @@ section#index {display:none !important;border:2px solid red;}
     flex-direction: column;
     gap:1vw;
     overflow-x: hidden;
-    border: 0px solid floralwhite;
   }
   #about .aboutTexts {
     width:70%;
@@ -193,14 +192,14 @@ section#index {display:none !important;border:2px solid red;}
     justify-content: center;
   }
   #about .aboutTexts p {
-    font-size:4vw;
+    font-size:3.5vw;
     margin: 0 auto 1vw 0;
   }
   #about .aboutTexts span:nth-child(2) {
     display: block;
     line-height: 1.6;
     letter-spacing: 0.1vw;
-    font-size: 2.6vw;
+    font-size: 2.2vw;
   }
   #about button {
     max-width:max-content;
@@ -210,7 +209,7 @@ section#index {display:none !important;border:2px solid red;}
     border:none;
     margin-top: 1vw;
     line-height: 1;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     display: block;
   }
   #about button i:nth-child(2) {
@@ -509,26 +508,6 @@ section#exploreTech #techCards {
 }
 /* End More ways */
 
-@media (min-width: 1200px) {
-  #exploreTech #techCards .tCards {
-    width: calc(33.33% - 1vw);
-  }
-  #exploreTech .tCards .tContent {
-    width: calc(300% + 0.25vw);
-  }
-  #exploreTech .tCards .tContent::before {
-    width: calc(66.66% + 0.15vw);
-  }
-  #exploreTech .tCards:nth-child(3n) .tContent {
-    margin-left: calc(-200% - 0.25vw) !important;
-  }
-  #exploreTech .tCards:nth-child(3n+1):not(:first-child) .tContent {
-    margin-left: calc(0% - 0em) !important;
-  }
-  #exploreTech .tCards:nth-child(3n+2) .tContent {
-    margin-left: calc(-100% - 0.25vw) !important;
-  }
-}
 
 .bookmark {
 }
@@ -768,6 +747,28 @@ section#exploreTech #techCards {
     flex-wrap: wrap;
     gap:0.1vw 0.11vw;
   }
+  section#four #allNewCards .fourCards {
+    flex-basis: calc(25% - 0.25vw);
+    border:2px solid red;
+  }
+  #exploreTech #techCards .tCards {
+    width: calc(33.33% - 1vw);
+  }
+  #exploreTech .tCards .tContent {
+    width: calc(300% + 0.25vw);
+  }
+  #exploreTech .tCards .tContent::before {
+    width: calc(66.66% + 0.15vw);
+  }
+  #exploreTech .tCards:nth-child(3n) .tContent {
+    margin-left: calc(-200% - 0.25vw) !important;
+  }
+  #exploreTech .tCards:nth-child(3n+1):not(:first-child) .tContent {
+    margin-left: calc(0% - 0em) !important;
+  }
+  #exploreTech .tCards:nth-child(3n+2) .tContent {
+    margin-left: calc(-100% - 0.25vw) !important;
+  }
 }
 
 /* small devices */
@@ -783,4 +784,3 @@ section#exploreTech #techCards {
     display:none;
   }
 }
-
