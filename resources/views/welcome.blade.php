@@ -73,7 +73,7 @@
           </div>
         </div> <!-- .hMBTexts -->
       </div> <!-- .hMB -->
-    </div>
+    </div>  <!-- .headerMain -->
   </header>
 
 
@@ -133,18 +133,22 @@
       <ul>
         <li><a href="#recentWorks">Recent Works</a></li>
         <li><a href="#exploreTech">Explore Tech</a></li>
-        <li><a href="#boxes">Boxes</a></li>
+        <li><a href="#boxes">Services</a></li>
+        <li><a href="#happyClients">Our Clients</a></li>
+        <li><a href="#consult">Consulting</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
 
     <article>
       <section id="index">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">SERVICES</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">CONTACT</a>
+        <ul>
+          <li><a href="#recentWorks">Recent Works</a></li>
+          <li><a href="#exploreTech">Explore Tech</a></li>
+          <li><a href="#boxes">Services</a></li>
+          <li><a href="#consult">Consulting</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </section>
 
       <section id="recentWorks">
@@ -472,22 +476,32 @@
           </div>
         </div> <!-- allBoxes -->
       </section>
-      <!-- End of #boxes -->
 
-      <section id="contact">
-        <h2>Contact us</h2>
-        <div id="cMapForm">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div id="cDetails">
-            <h1>Shangrila Microsystem</h1>
-            <span class="spanA">Call Us</span>
-            <span class="spanB">+977 - 01 – 4102850, 4102852</span>
-            <span class="spanA">Address</span>
-            <span class="spanB">Maitidevi, Kathmandu, Nepal</span>
-            <span class="spanA">Email us</span>
-            <span class="spanB">info@shangrilagroup.com.np</span>
+      <section id="happyClients">
+        <h2>Our Clients</h2>
+
+        <div id="allClientCards">
+          <div class="clientCards">
+            <img src="./images/client1.svg" alt="Client ">
+            <span>Nepal Government</span>
           </div>
-        </div>
+          <div class="clientCards">
+            <img src="./images/client2.png" alt="Client ">
+            <span>Nepal Government</span>
+          </div>
+          <div class="clientCards">
+            <img src="./images/client3.png" alt="Client ">
+            <span>Nepal Government</span>
+          </div>
+          <div class="clientCards">
+            <img src="./images/client4.png" alt="Client ">
+            <span>Nepal Government</span>
+          </div>
+          <div class="clientCards">
+            <img src="./images/client5.png" alt="Client ">
+            <span>Nepal Government</span>
+          </div>
+        </div> <!-- id="allClientCards" -->
       </section>
 
       <section id="consult">
@@ -509,22 +523,69 @@
         </div>
       </section>
 
-
+      <section id="contact">
+        <h2>Contact us</h2>
+        <div id="cMapForm">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div id="cDetails">
+            <h1>Shangrila Microsystem</h1>
+            <span class="spanA">Call Us</span>
+            <span class="spanB">+977 - 01 – 4102850, 4102852</span>
+            <span class="spanA">Address</span>
+            <span class="spanB">Maitidevi, Kathmandu, Nepal</span>
+            <span class="spanA">Email us</span>
+            <span class="spanB">info@shangrilagroup.com.np</span>
+          </div>
+        </div>
+      </section>
     </article>
   </main>
 
   <footer>
-    <span>© Copyright 2021 - Shangrila Microsystem. <br> All Rights Reserved.</span>
-    <div id="icons">
-      <a class="circle fac" href="#">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a class="circle twi" href="#">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a class="circle lin" href="#">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
+    <div id="footerF">
+      <img src="./images/newSH.png" alt="shangrila logo">
+      <p>
+        <span>United Kingdom - English</span>
+        <i class="fas fa-globe"></i>
+      </p>
+    </div>
+    
+    <div id="footerULs">
+      <ul> Products & Solutions
+        <li><a href="#">Top products & platforms</a></li>
+        <li><a href="#">Industries</a></li>
+        <li><a href="#">Artificial intelligence</a></li>
+        <li><a href="#">Blockchain</a></li>
+        <li><a href="#">Business operations</a></li>
+        <li><a href="#">Cloud computing</a></li>
+        <li><a href="#">Data & Analytics</a></li>
+        <li><a href="#">Financing</a></li>
+      </ul>
+      <ul> Popular links
+        <li><a href="#">Supply chain</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">IT infrastructure</a></li>
+        <li><a href="#">Hybrid cloud</a></li>
+        <li><a href="#">Developer education</a></li>
+        <li><a href="#">IBM Research</a></li>
+        <li><a href="#">Career opportunities</a></li>
+        <li><a href="#">Upcoming events & webinars</a></li>
+      </ul>
+    </div>
+
+    <div id="iconsRights">
+      <span>© Copyright 2021 - Shangrila Microsystem. <br> All Rights Reserved.</span>
+      <div id="icons">
+        <a class="circle fac" href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="circle twi" href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="circle lin" href="#">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
     </div>
   </footer>
 

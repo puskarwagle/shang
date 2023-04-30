@@ -22,9 +22,9 @@ window.addEventListener('scroll', () => {
   let currentSection = '';
 
   sections.forEach(section => {
-    const headerHeight = headerho.clientHeight;
-    const sectionTop = section.offsetTop + headerHeight;
     const sectionHeight = section.clientHeight;
+    const headerHeight = headerho.clientHeight;
+    const sectionTop = section.offsetTop - headerHeight;
     if (pageYOffset >= sectionTop - sectionHeight) {
       currentSection = section.getAttribute('id');
     }
@@ -37,13 +37,12 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
-
 navLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const section = document.querySelector(link.getAttribute('href'));
-    const sectionTop = section.offsetTop;
+    const headerHeight = headerho.clientHeight;
+    const sectionTop = section.offsetTop - headerHeight;
     window.scrollTo({
       top: sectionTop,
       behavior: 'smooth'
@@ -52,33 +51,24 @@ navLinks.forEach(link => {
 });
 // left side navgation panel
 
-/*
-//IBM cards tHead click tContent display none or flex
-const tCards = document.querySelectorAll('.tCards');
-const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
-const i3 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(3)');
-const iSpan = document.querySelector('#exploreTech .tCards .tHead .tTexts span');
+// small devices index
+const indexSection = document.querySelector('#index');
+    let prevScrollPos = window.pageYOffset;
 
-tCards.forEach((tCard) => {
-  const tHead = tCard.querySelector('.tHead');
-  const tContent = tCard.querySelector('.tContent');
+    window.addEventListener('scroll', () => {
+      const currentScrollPos = window.pageYOffset;
+      const indexSectionTop = indexSection.offsetTop - headerHeight;
 
-  tHead.addEventListener('click', () => {
-    if (tCard.classList.contains('focus-within')) {
-      tContent.style.display = 'none';
-      tCard.classList.remove('focus-within');
-      i3.style.display = 'inine-block !important';
-      iSpan.style.display = 'inline-block !imporatant';
-    } else {
-      tContent.style.display = 'flex';
-      tContent.style.zIndex = '2';
-      tCard.classList.add('focus-within');
-      i2.style.display = 'none';
-      iSpan.style.display = 'none';
-    }
-  });
-});
-*/ 
+      if (prevScrollPos > currentScrollPos && currentScrollPos < indexSectionTop) {
+        indexSection.style.display = 'none';
+      } else {
+        indexSection.style.position = 'static';
+      }
+
+      prevScrollPos = currentScrollPos;
+    });
+// small devices index
+
 //IBM cards tHead click tContent display none or flex
 const tCards = document.querySelectorAll('.tCards');
 const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
@@ -119,54 +109,6 @@ window.addEventListener('click', (event) => {
   }
 });
 
-
-/*
-// GE about next and back text and image change
-let imgTexts = {
-  "ge1.webp": {
-    "text": "Working towards the excellence in ensuring the Digital Governance in Nepal.",
-    "altText": "this is the first img"
-  },
-  "ge2.webp": {
-    "text": "Working towards the excellence in ensuring",
-    "altText": "this is the second img"
-  },
-  "ge3.webp": {
-    "text": "Working towards the excellence in ensuring the Digital Governance in Nepal. This is the third image.",
-    "altText": "this is the third img"
-  },
-  "ge4.webp": {
-    "text": "This is the fourth image.",
-    "altText": "this is the fourth img"
-  }
-};
-
-let currentIndex = 0; // current index of the object
-let keys = Object.keys(imgTexts); // array of object keys
-
-let aboutText = document.querySelector('#about .aboutTexts p');
-let aboutImg = document.querySelector('#about .aboutTexts img');
-
-function updateTextAndImg(index) {
-  let key = keys[index]; // get key from the array of object keys
-  let value = imgTexts[key]; // get value from the object using the key
-  
-  aboutText.textContent = value.text; // update paragraph text
-  aboutImg.src = "./images/" + key; // update image source
-  aboutImg.alt = value.altText; // update image alt text
-}
-
-document.querySelector('#aLeft').addEventListener('click', function() {
-  currentIndex = (currentIndex === 0) ? keys.length - 1 : currentIndex - 1;
-  updateTextAndImg(currentIndex);
-});
-
-document.querySelector('#aRight').addEventListener('click', function() {
-  currentIndex = (currentIndex === keys.length - 1) ? 0 : currentIndex + 1;
-  updateTextAndImg(currentIndex);
-});
-// END GE about next and back text and image change END
-*/
 
 let imgSpanTexts = {
   "co1.jpg": {
