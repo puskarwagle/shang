@@ -52,10 +52,11 @@ navLinks.forEach(link => {
 });
 // left side navgation panel
 
-
+/*
 //IBM cards tHead click tContent display none or flex
 const tCards = document.querySelectorAll('.tCards');
 const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
+const i3 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(3)');
 const iSpan = document.querySelector('#exploreTech .tCards .tHead .tTexts span');
 
 tCards.forEach((tCard) => {
@@ -66,14 +67,35 @@ tCards.forEach((tCard) => {
     if (tCard.classList.contains('focus-within')) {
       tContent.style.display = 'none';
       tCard.classList.remove('focus-within');
-      i2.style.display = 'inine-block';
-      iSpan.style.display = 'inline-block';
+      i3.style.display = 'inine-block !important';
+      iSpan.style.display = 'inline-block !imporatant';
     } else {
       tContent.style.display = 'flex';
       tContent.style.zIndex = '2';
       tCard.classList.add('focus-within');
       i2.style.display = 'none';
       iSpan.style.display = 'none';
+    }
+  });
+});
+*/ 
+//IBM cards tHead click tContent display none or flex
+const tCards = document.querySelectorAll('.tCards');
+const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
+const i3 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(3)');
+const iSpan = document.querySelector('#exploreTech .tCards .tHead .tTexts span');
+
+tCards.forEach((tCard) => {
+  const tHead = tCard.querySelector('.tHead');
+  const tContent = tCard.querySelector('.tContent');
+
+  tHead.addEventListener('click', () => {
+    if (tCard.classList.contains('focus-within')) {
+      tContent.style.display = 'none';
+      tCard.classList.remove('focus-within');
+    } else {
+      tContent.style.display = 'flex';
+      tCard.classList.add('focus-within');
     }
   });
 });

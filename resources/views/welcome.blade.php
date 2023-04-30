@@ -330,17 +330,47 @@
           <div class="tCards" tabindex="0">
             <div class="tHead">
               <div class="tIcons">
-                <i class="far fa-heart"></i>
+              <i class="fas fa-file-invoice-dollar"></i>
               </div><!-- .tIcons -->
               <div class="tTexts">
-                <span>4 Featured</span>
+                <span>Taxation</span>
                 <i class="fas fa-angle-down"></i>
                 <i class="fas fa-angle-up"></i>
               </div><!-- .tTexts -->
             </div><!-- .tHead -->
             <div class="tContent">
               <div class="tcHead">
-                <h3>4 Featured</h3>
+                <h3>Taxation</h3>
+              </div>
+              <div class="tcLinks">
+                <a href="#">API Connect</a>
+                <span>Toolkit to rapidly create, secure and manage APIs</span>
+              </div>
+              <div class="tcLinks">
+                <a herf="#">API Connect</a>
+                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
+              </div>
+              <div class="tcLinks">
+                <a herf="#">API Connect</a>
+                <span>Toolkit to rapidly create, secure and manage APIs</span>
+              </div>
+            </div><!-- .tContent -->
+          </div> <!-- .tCards -->
+
+          <div class="tCards" tabindex="0">
+            <div class="tHead">
+              <div class="tIcons">
+                <i class="fas fa-city"></i>
+              </div><!-- .tIcons -->
+              <div class="tTexts">
+                <span>Municipality</span>
+                <i class="fas fa-angle-down"></i>
+                <i class="fas fa-angle-up"></i>
+              </div><!-- .tTexts -->
+            </div><!-- .tHead -->
+            <div class="tContent">
+              <div class="tcHead">
+                <h3>Municipality</h3>
               </div>
               <div class="tcLinks">
                 <a href="#">API Connect</a>
@@ -363,44 +393,14 @@
                 <i class="far fa-heart"></i>
               </div><!-- .tIcons -->
               <div class="tTexts">
-                <span>5 Featured</span>
+                <span>Sifarish</span>
                 <i class="fas fa-angle-down"></i>
                 <i class="fas fa-angle-up"></i>
               </div><!-- .tTexts -->
             </div><!-- .tHead -->
             <div class="tContent">
               <div class="tcHead">
-                <h3>5 Featured</h3>
-              </div>
-              <div class="tcLinks">
-                <a href="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-            </div><!-- .tContent -->
-          </div> <!-- .tCards -->
-
-          <div class="tCards" tabindex="0">
-            <div class="tHead">
-              <div class="tIcons">
-                <i class="far fa-heart"></i>
-              </div><!-- .tIcons -->
-              <div class="tTexts">
-                <span>6 Featured</span>
-                <i class="fas fa-angle-down"></i>
-                <i class="fas fa-angle-up"></i>
-              </div><!-- .tTexts -->
-            </div><!-- .tHead -->
-            <div class="tContent">
-              <div class="tcHead">
-                <h3>6 Featured</h3>
+                <h3>Sifarish</h3>
               </div>
               <div class="tcLinks">
                 <a href="#">API Connect</a>
