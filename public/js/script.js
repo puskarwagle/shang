@@ -16,19 +16,23 @@ window.addEventListener('scroll', function() {
 const ham = document.querySelector('#ham');
 const hamClose = document.querySelector('#hamClose');
 const navLists = document.querySelector('#navLists');
-
 ham.addEventListener('click', function() {
   ham.style.display = 'none';
   hamClose.style.display = 'flex';
   navLists.style.left = '0';
 });
-
 hamClose.addEventListener('click', function() {
   ham.style.display = 'block';
   hamClose.style.display = 'none';
   navLists.style.left = '-100%';
 });
-
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('#navLists') && !event.target.closest('#ham')) {
+    navLists.style.left = '-100%';
+    hamClose.style.display = 'none';
+    ham.style.display = 'block';
+  }
+});
 
 // left side navgation panel
 const headerho = document.querySelector('header');
@@ -121,10 +125,9 @@ tCards.forEach((tCard) => {
   });
 });
 
-// Click on nav a to flex the .headerMain
+// Click on nav a to flex the .headerMain Large 
 const navL = document.querySelectorAll('.navLarge li a:has(i)');
 const headerMain = document.querySelector('.headerMain');
-
 navL.forEach(link => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
@@ -133,13 +136,32 @@ navL.forEach(link => {
     headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
   });
 });
-// Hide headerMain when user clicks elsewhere
 window.addEventListener('click', (event) => {
-  if (!event.target.closest('.navLarge') && !event.target.closest('.headerMain')) {
+  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
     headerMain.style.display = 'none';
   }
 });
+// Click on nav a to flex the .headerMain Large
 
+// Click on nav a to flex the .headerMain Small 
+const navS = document.querySelectorAll('#navLists li a:has(i)');
+console.log(navS);
+
+navS.forEach(linkSs => {
+  linkSs.addEventListener('click', (event) => {
+    event.preventDefault();
+    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
+  });
+});
+
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
+    headerMain.style.display = 'none';
+  }
+});
+// Click on nav a to flex the .headerMain Small
 
 let imgSpanTexts = {
   "co1.jpg": {
@@ -254,32 +276,5 @@ const observer = new IntersectionObserver(function(entries, observer) {
 boxes.forEach(box => {
   observer.observe(box, { once: true });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
