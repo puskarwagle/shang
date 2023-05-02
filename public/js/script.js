@@ -1,4 +1,4 @@
-//console.log("this is script.js from public js");
+//console.log("this is script.js from public/js/script.js");
 
 // sticky header 
 window.addEventListener('scroll', function() {
@@ -12,30 +12,22 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Small screen ham nav menu
 const ham = document.querySelector('#ham');
 const hamClose = document.querySelector('#hamClose');
 const navLists = document.querySelector('#navLists');
 
-// Add a click event listener to the ham icon
 ham.addEventListener('click', function() {
-  // Hide the ham icon
   ham.style.display = 'none';
-  // Show the close icon
   hamClose.style.display = 'flex';
-  // Slide the navLists element into view
   navLists.style.left = '0';
 });
 
-// Add a click event listener to the hamClose icon
 hamClose.addEventListener('click', function() {
-  // Show the ham icon
   ham.style.display = 'block';
-  // Hide the close icon
   hamClose.style.display = 'none';
-  // Slide the navLists element out of view
   navLists.style.left = '-100%';
 });
-
 
 
 // left side navgation panel
@@ -45,7 +37,6 @@ const navLinks = document.querySelectorAll('.nav-panel a');
 
 window.addEventListener('scroll', () => {
   let currentSection = '';
-
   sections.forEach(section => {
     const sectionHeight = section.clientHeight;
     const headerHeight = headerho.clientHeight;
@@ -54,7 +45,6 @@ window.addEventListener('scroll', () => {
       currentSection = section.getAttribute('id');
     }
   });
-  
   navLinks.forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href').substring(1) === currentSection) {
@@ -77,21 +67,37 @@ navLinks.forEach(link => {
 // left side navgation panel
 
 // small devices index
-const indexSection = document.querySelector('#index');
-    let prevScrollPos = window.pageYOffset;
+  const indexSection = document.querySelector('#index');
+  let prevScrollPos = window.pageYOffset;
+  const indexLinks = document.querySelectorAll('#index a');
 
+  document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
-      const currentScrollPos = window.pageYOffset;
-      const indexSectionTop = indexSection.offsetTop - headerHeight;
-
-      if (prevScrollPos > currentScrollPos && currentScrollPos < indexSectionTop) {
-        indexSection.style.display = 'none';
+      if (window.innerWidth < 900) {
+        const currentScrollPos = window.pageYOffset;
+        if (prevScrollPos > currentScrollPos) {
+          indexSection.style.display = 'none';
+        } else {
+          indexSection.style.display = 'block';
+        }
+        prevScrollPos = currentScrollPos;
       } else {
-        indexSection.style.position = 'static';
+        indexSection.style.display = 'none';
       }
-
-      prevScrollPos = currentScrollPos;
     });
+    indexLinks.forEach(linkIn => {
+      linkIn.addEventListener('click', e => {
+        e.preventDefault();
+        const section = document.querySelector(linkIn.getAttribute('href'));
+        const headerHeight = headerho.clientHeight;
+        const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({
+          top: sectionTop,
+          behavior: 'smooth'
+        });
+      });
+    });    
+  });
 // small devices index
 
 //IBM cards tHead click tContent display none or flex

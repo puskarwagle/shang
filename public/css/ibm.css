@@ -17,6 +17,7 @@
 body {
   scroll-snap-type: y mandatory;
   background-color: var(--a-white);
+  overflow-x: hidden;
 }
 
 
@@ -34,8 +35,9 @@ body {
   }
   header.sticky {
     position: fixed;
-    background-color: #fff;
     width:100%;
+    background-color: #fff;
+    max-width:100%;
     z-index:999;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -239,13 +241,14 @@ body {
   section#four {
     padding:3vw;
     border-bottom: 0.1vw solid var(--c-white);
+    font-size: 2vw;
   }
   #four #allNewCards {
-    padding: 2vw 2vw;
+    padding:2vw;
     display:flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap:0.25vw;
-    font-size: 1.2vw;
+    gap:0.5vw 0.11vw;
   }
   #four h2 {
     margin-bottom: 1vw;
@@ -253,7 +256,7 @@ body {
     font-size: 2vw;
   }
   #four .fourCards {
-    flex-basis: calc(50% - 0.25vw);
+    flex-basis: calc(50% - 0.5vw);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -269,12 +272,12 @@ body {
   #four .fourCards bdo {
     margin-top: 2vw;
     margin-bottom: 1vw;
-    font-size: 100%;
+    font-size: 80%;
     font-weight: 600;
   }
   #four .fourCards p {
     margin-bottom: 2vw;
-    font-size: 100%;
+    font-size: 80%;
   }
   #four .fourCards i {
     color: var(--a-blue);
@@ -328,19 +331,25 @@ body {
 /* Navigation panel on the side */
 
 .bookmark {
-}
-/* Flip recent laptops */
+} /* Recent Works *//* Recent Works *//* Recent Works *//* Recent Works *//* Recent Works */
+/* Recent Works *//* Recent Works *//* Recent Works *//* Recent Works *//* Recent Works */
   #recentWorks {
     scroll-snap-align: center;
     font-size: 2vw;
     padding:3vw;
   }
+  #recentWorks h2 {
+    margin-bottom: 1vw;
+    font-weight: 100;
+    font-size: 2vw;
+  }
   #recentWorks #honey {
     display: flex;
     flex-wrap: wrap;
     gap:4vw;
-    justify-content: space-between;
+    justify-content: center;
     padding: 3vw 2vw;
+    width:100%;
   }
   #recentWorks #honey .rw {
     position: relative;
@@ -377,7 +386,7 @@ body {
     justify-content:center;
     text-align: center;
     padding: 1vw 1vw;
-    transition: transform 0.5s ease;
+    transition: transform 0.2s ease;
     transform: translateY(0%);
     border-radius: 10px;
     border: 1px solid #fff;
@@ -428,6 +437,7 @@ body {
     display:none;
     padding:1vw;
     margin-top: 0.25vw;
+    font-size:1.6vw;
   }
   #exploreTech .tCards:nth-child(even) .tContent {
     margin-left: calc(-100% - 0.25em);
@@ -440,13 +450,12 @@ body {
   }
   #exploreTech .tCards .tHead {
     padding:1vw;
-    font-size:80%;
+    font-size:2vw;
   }
   #exploreTech .tCards .tHead .tIcons {
     border:none;
   }
   #exploreTech .tCards .tHead .tIcons i {
-    font-size:110%;
     margin-bottom: 3vw;
   }
   #exploreTech .tCards .tHead .tTexts {
@@ -506,8 +515,8 @@ body {
 
 
 .bookmark {
-}
-/* Our services  */
+}/* Our services  *//* Our services  *//* Our services  *//* Our services  *//* Our services  */
+/* Our services  *//* Our services  *//* Our services  *//* Our services  *//* Our services  */
   #boxes {
     scroll-snap-align: center;
     padding:3vw;
@@ -520,6 +529,7 @@ body {
   }
   #boxes #allBoxes {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 2vw 2vw;
   }
@@ -680,6 +690,8 @@ body {
   }
   #contact #cMapForm iframe {
     flex-basis: 70%;
+    max-width: 70%;
+    aspect-ratio: 1/0.5;
   }
   #contact #cMapForm #cDetails {
     display: flex;
@@ -787,9 +799,6 @@ body {
   footer #icons .circle:hover {
     outline:0.2vw solid var(--a-blue);
   }
-  footer #icons .circle:hover i {
-    
-  }
   footer #icons .fac {
     background-color: #3B5998;
   }
@@ -825,11 +834,7 @@ section#index{display:none;}
     flex-direction: row;
   }
   section#four #allNewCards {
-    padding:2vw;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap:0.1vw 0.11vw;
+    
   }
   section#four #allNewCards .fourCards {
     flex-basis: calc(25% - 0.25vw);
@@ -882,7 +887,7 @@ section#index{display:none;}
   header ul.navSmall #navLists {
     position:absolute;
     top:100%;
-    left:-100%;
+    left:-200%;
     display: flex;
     flex-direction: column;
     background-color: var(--b-white);
@@ -922,37 +927,42 @@ section#index{display:none;}
     display:none;
   }
   /* Action Section */
+    /* Action Section */
     article {
-      position:relative;overflow-x: auto;
+      position:relative;
+      min-height: 100vh;
+      overflow: visible;
     }
     section#index {
-      width:100%;
-      position:sticky;top:5vw;left:0;
-      z-index: 2;
-      display:none;
+      position:sticky;
+      top:5vw;
+      z-index: 22222;
+      display: block;
       min-height:fit-content;
       background-color: hsl(0, 0%, 94%);
     }
     section#index ul {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       box-shadow: 0px 1px 5px var(--c-white);
+      min-height: 100%;
     }
     section#index ul li {
       list-style-type:none;
-      padding:1vw 2vw;
+      display: flex;
     }
     section#index ul li a {
       text-decoration: none;
       color:#000;
-      font-size: 1.2vw;
+      font-size: 1.4vw;
       padding:1vw 2vw;
+      min-height: 100%;
     }
     section#index ul li a:hover {
       outline:2px solid var(--b-blue);
     }
-/* End of Action Section */
-  section#four #techCards .tCards {
-    width:100% !important;
-  }
+    footer #footerULs {
+      flex-direction: column;
+      gap:4vh;
+    }
 }

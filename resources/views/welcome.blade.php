@@ -104,7 +104,12 @@
       <a href="">Register now: You're invited to the Shangrila Internship event, 9–11 May, Ghattekulo, Kathmandu
         →</a>
     </span>
-    <strong>X</strong>
+    <strong>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2vw">
+        <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </strong>
   </section>
 
   <section id="about">
@@ -174,9 +179,8 @@
       </section>
 
       <section id="recentWorks">
-        <span id="span">Recent Works</span>
+        <h2>Recent Works</h2>
         <div id="honey">
-
           <div class="rw">
             <div class="imgL">
               <img src="./images/proj-1.png" alt="laptop png images" />
@@ -548,7 +552,7 @@
       <section id="contact">
         <h2>Contact us</h2>
         <div id="cMapForm">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp&z=10" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div id="cDetails">
             <h1>Shangrila Microsystem</h1>
             <span class="spanA">Call Us</span>
