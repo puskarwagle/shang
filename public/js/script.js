@@ -12,6 +12,31 @@ window.addEventListener('scroll', function() {
   }
 });
 
+const ham = document.querySelector('#ham');
+const hamClose = document.querySelector('#hamClose');
+const navLists = document.querySelector('#navLists');
+
+// Add a click event listener to the ham icon
+ham.addEventListener('click', function() {
+  // Hide the ham icon
+  ham.style.display = 'none';
+  // Show the close icon
+  hamClose.style.display = 'flex';
+  // Slide the navLists element into view
+  navLists.style.left = '0';
+});
+
+// Add a click event listener to the hamClose icon
+hamClose.addEventListener('click', function() {
+  // Show the ham icon
+  ham.style.display = 'block';
+  // Hide the close icon
+  hamClose.style.display = 'none';
+  // Slide the navLists element out of view
+  navLists.style.left = '-100%';
+});
+
+
 
 // left side navgation panel
 const headerho = document.querySelector('header');
@@ -91,7 +116,7 @@ tCards.forEach((tCard) => {
 });
 
 // Click on nav a to flex the .headerMain
-const navL = document.querySelectorAll('.nav li a:has(i)');
+const navL = document.querySelectorAll('.navLarge li a:has(i)');
 const headerMain = document.querySelector('.headerMain');
 
 navL.forEach(link => {
@@ -104,7 +129,7 @@ navL.forEach(link => {
 });
 // Hide headerMain when user clicks elsewhere
 window.addEventListener('click', (event) => {
-  if (!event.target.closest('.nav') && !event.target.closest('.headerMain')) {
+  if (!event.target.closest('.navLarge') && !event.target.closest('.headerMain')) {
     headerMain.style.display = 'none';
   }
 });

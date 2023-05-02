@@ -19,18 +19,41 @@
 
   <header>
     <img src="./images/newSH.png" alt="shangrila logo">
-    <ul class="nav">
-      <li><a class="active" href="#l">Home</a></li>
-      <li><a href="">About <i class="fas fa-chevron-down fa-xs"></i></a></li>
+    <ul class="navLarge">
+      <li><a class="active" href="#">About</a></li>
+      <li><a href="">Products <i class="fas fa-chevron-down fa-xs"></i></a></li>
       <li><a href="">Services <i class="fas fa-chevron-down fa-xs"></i></a></li>
       <li><a href="">Projects <i class="fas fa-chevron-down fa-xs"></i></a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <ul class="navSmall">
+      <div id="navHam">
+        <svg id="ham" viewBox="0 0 100 100" width="2vw">
+          <rect x="10" y="25" width="80" height="10" />
+          <rect x="10" y="45" width="80" height="10" />
+          <rect x="10" y="65" width="80" height="10" />
+          <rect x="10" y="85" width="80" height="10" />
+        </svg>
+        <svg id="hamClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2vw">
+          <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div id="navLists">
+        <li><a class="active" href="#l"><span>About</span></a></li>
+        <li><a href=""><span>Products</span><i class="fas fa-angle-right"></i></a></li>
+        <li><a href=""><span>Services</span><i class="fas fa-angle-right"></i></a></li>
+        <li><a href=""><span>Projects</span><i class="fas fa-angle-right"></i></a></li>
+        <li><a href="#contact"><span>Contact</span></a></li>
+      </div>
+    </ul>
+    <!-- 
     <div class="search_user">
       <i class="fas fa-search"></i>
       <i class="far fa-user"></i>
-      <!-- <input type="checkbox" id="checkbox"> -->
-    </div>
+      <input type="checkbox" id="checkbox">
+    </div> -->
 
     <div class="headerMain">
       <ul class="hMA">
@@ -75,7 +98,6 @@
       </div> <!-- .hMB -->
     </div>  <!-- .headerMain -->
   </header>
-
 
   <section id="intern">
     <span>
@@ -516,9 +538,9 @@
         <div class="inConsult">
           <img src="./images/co1.jpg" alt="this is the partnership image">
           <div class="inConsultText">
-            <span>1 power of partnership</span>
-            <span>1 ollaborate with the world’s leading platform and infrastructure leaders.</span>
-            <a href="#">1 Unlock new Opportunities →</a>
+            <span>Power of partnership</span>
+            <span>Collaborate with the world’s leading platform and infrastructure leaders.</span>
+            <a href="#">Unlock new Opportunities →</a>
           </div>
         </div>
       </section>
