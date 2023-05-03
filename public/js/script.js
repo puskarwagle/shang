@@ -253,8 +253,8 @@ const internS = document.querySelector('#intern strong');
     }
   });
 
-// boxes of achievements animate on intersection 
-const boxes = document.querySelectorAll('.box');
+// services of achievements animate on intersection 
+const services = document.querySelectorAll('.box');
 const options = {
   root: null,
   rootMargin: '0px',
@@ -273,7 +273,7 @@ const observer = new IntersectionObserver(function(entries, observer) {
 	 }
   });
 }, options);
-boxes.forEach(box => {
+services.forEach(box => {
   observer.observe(box, { once: true });
 });
 

@@ -160,7 +160,7 @@
       <ul>
         <li><a href="#recentWorks">Recent Works</a></li>
         <li><a href="#exploreTech">Explore Tech</a></li>
-        <li><a href="#boxes">Services</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#happyClients">Our Clients</a></li>
         <li><a href="#consult">Consulting</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -172,7 +172,7 @@
         <ul>
           <li><a href="#recentWorks">Recent Works</a></li>
           <li><a href="#exploreTech">Explore Tech</a></li>
-          <li><a href="#boxes">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#consult">Consulting</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -450,9 +450,9 @@
         </div> <!-- #techCards -->
       </section>
 
-      <section id="boxes">
+      <section id="services">
         <h2>Our Services</h2>
-        <div id="allBoxes">
+        <div id="allServices">
           <div class="box">
             <i class="fas fa-laptop"></i>
             <div>
@@ -500,7 +500,7 @@
               <p>Development of interactive and dynamic CMS based website for numerous District Development Committees (DDC) of Nepal with Nepali Unicode Interface and a contemporary website for Citizen Investment Trust (CIT) with features such as VeriSign Certificate License.</p>
             </div>
           </div>
-        </div> <!-- allBoxes -->
+        </div> <!-- allServices -->
       </section>
 
       <section id="happyClients">
