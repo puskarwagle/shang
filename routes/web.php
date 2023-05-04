@@ -15,6 +15,13 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
+Route::get('/', 'ServiceController@welcome');
+
 //these are my service section routes
-Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
-Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
+Route::get('/service/create', [ServiceController::class, 'create'])->name('service.create');
+Route::post('/service', [ServiceController::class, 'store'])->name('service.store');
+Route::get('/service', [ServiceController::class, 'index'])->name('service.index');
+Route::get('/service/display', [ServiceController::class, 'display'])->name('service.display');
+
+Route::delete('/service/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
+Route::put('/service/{id}', [ServiceController::class, 'update'])->name('service.update');

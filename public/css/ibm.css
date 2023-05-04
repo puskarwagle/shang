@@ -966,3 +966,64 @@ section#index{display:none;}
       gap:4vh;
     }
 }
+
+
+
+.cms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 98%);
+}
+.cms .cmsDivs {
+  border: 0px solid red;
+  width: min-content;
+  min-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  margin:2vw auto;
+  background-color: hsl(0, 0%, 92%);
+  border-radius: 1vw;
+}
+.cms .cmsDivs .cmsDivsH2 {
+  white-space: nowrap;
+  background-color: navy;
+  padding:0.4vw 1vw;
+  border-top-left-radius: 0.5vw;
+  border-top-right-radius: 0.5vw;
+  color:gold;
+}
+.cms .cmsDivs .cmsBoxDisplay {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: hsl(0, 0%, 98%);
+  border-radius:0.5vw;
+  padding:1vw;
+  display: flex;
+  gap:1vw;
+}
+.cms .cmsDivs .cmsBoxDelete {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: hsl(0, 0%, 98%);
+  border-radius:0.5vw;
+  padding:1vw;
+  display: flex;
+  flex-direction: column;
+  gap:1vw;
+  margin:1vw;
+}
+.cms .cmsDivs .cmsBoxDelete .cmsActions {
+  display: flex;
+  justify-content: space-around;
+}
+.cms .cmsDivs .cmsBoxDelete .cmsActions button {
+  border:none;
+}
+.cmsSaveButton i {
+  color:#008000 !important;
+  font-size:3vw !important;
+}
+.cmsDeleteButton i {
+  color:red !important;
+  font-size:3vw !important;
+}
