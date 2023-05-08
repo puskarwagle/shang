@@ -16,9 +16,10 @@ class ServiceController extends Controller
 
     public function welcome()
     {
-        $services = Service::all();
-        return view('welcome', compact('services'));
+      $services = Service::all();
+      return view('welcome', compact('services'));
     }
+
 
     // Show the form for creating a new resource.
     public function create()
