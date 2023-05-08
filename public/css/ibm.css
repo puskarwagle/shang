@@ -586,21 +586,21 @@ body {
   }
   #allClientCards {
     display: flex;
-    justify-content: space-between;
-    gap:2vw;
+    gap:0.5vw;
     padding:2vw 2vw;
+    overflow-x: scroll;
   }
   #allClientCards .clientCards {
-    display: flex;flex-direction:column;
+    display: flex;
+    flex-direction:column;
     text-align: center;
   }
   #allClientCards .clientCards:hover span {
     opacity: 1;
   }
   #allClientCards .clientCards img {
-    padding:2vw 0 0vw 0;
+    padding:0vw 0 0vw 0;
     height:calc(15vw - 2vw);
-    aspect-ratio: 1/1.1;
   }
   #allClientCards .clientCards span {
     white-space: nowrap;
@@ -985,6 +985,9 @@ section#index{display:none;}
   display: flex;
   gap:2vw;
   padding-bottom:2vw;
+}
+.cmsForm div input {
+  padding:0.5vw;
 }
 .cmsForm button {
   width:fit-content;

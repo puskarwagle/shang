@@ -415,27 +415,26 @@
 
       <section id="happyClients">
         <h2>Our Clients</h2>
-
         <div id="allClientCards">
           <div class="clientCards">
-            <img src="./images/client1.svg" alt="Client ">
+            <img src="./images/client1.svg" alt="Nepal Government">
             <span>Nepal Government</span>
           </div>
           <div class="clientCards">
-            <img src="./images/client2.png" alt="Client ">
-            <span>Nepal Government</span>
+            <img src="./images/client2.png" alt="Nepal Police">
+            <span>Nepal Police</span>
           </div>
           <div class="clientCards">
-            <img src="./images/client3.png" alt="Client ">
-            <span>Nepal Government</span>
+            <img src="./images/client3.png" alt="Nagrik Lagani Kosh">
+            <span>Nagrik Lagani Kosh</span>
           </div>
           <div class="clientCards">
-            <img src="./images/client4.png" alt="Client ">
-            <span>Nepal Government</span>
+            <img src="./images/client4.png" alt="World Health Organization">
+            <span>World Health Organization</span>
           </div>
           <div class="clientCards">
-            <img src="./images/client5.png" alt="Client ">
-            <span>Nepal Government</span>
+            <img src="./images/client5.png" alt="Home Ministry">
+            <span>Home Ministry</span>
           </div>
         </div> <!-- id="allClientCards" -->
       </section>
