@@ -12,9 +12,12 @@ Route::get('/', [HomeController::class, 'welcome']);
 Route::get('/login', function () {
   return view('auth.login');
 })->name('login');
+
 Route::get('/cms', function () {
   return view('auth.login');
 })->name('login');
+
+Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login');
 
 Route::prefix('cms')->middleware(['auth'])->group(function () {
 //these are my service section routes
