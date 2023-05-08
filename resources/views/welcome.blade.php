@@ -181,71 +181,17 @@
       <section id="recentWorks">
         <h2>Recent Works</h2>
         <div id="honey">
-          <div class="rw">
-            <div class="imgL">
-              <img src="./images/proj-1.png" alt="laptop png images" />
-              <span>Municipal Taxation</span>
-              <span>Web Based Application</span>
-            </div>
-            <div class="tect">
-              Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
-            </div>
+          
+        @foreach($recentWorks as $recentWork)
+        <div class="rw">
+          <div class="imgL">
+            <img src="{{ $recentWork->imgsrc }}" alt="{{ $recentWork->imgalt }}" />
+            <span>{{ $recentWork->titleA }}</span>
+            <span>{{ $recentWork->titleB }}</span>
           </div>
-
-          <div class="rw">
-            <div class="imgL">
-              <img src="./images/proj-2.png" alt="lapto" />
-              <span>LGPIS</span>
-              <span>Web Based Application</span>
-            </div>
-            <div class="tect">
-              Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
-            </div>
-          </div>
-
-          <div class="rw">
-            <div class="imgL">
-              <img src="./images/proj-3.png" alt="dowpng img" />
-              <span>Municipal ERP</span>
-              <span>Web Based Application</span>
-            </div>
-            <div class="tect">
-              Municipal Taxation System – Municipal Accounting System – Land Registration Management Information System – Building Permit Process Management System – Inventory and Assets Management System – Document Management and Tracking System – Planning Management System
-            </div>
-          </div> <!-- .rw -->
-
-          <div class="rw">
-            <div class="imgL">
-              <img src="./images/proj-1.png" alt="laptop png images" />
-              <span>Municipal Taxation</span>
-              <span>Web Based Application</span>
-            </div>
-            <div class="tect">
-              Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
-            </div>
-          </div>
-
-          <div class="rw">
-            <div class="imgL">
-              <img src="./images/proj-2.png" alt="lapto" />
-              <span>LGPIS</span>
-              <span>Web Based Application</span>
-            </div>
-            <div class="tect">
-              Tax Collection by municipal from the individual and organisation within that municipality (eg vehicle tax, land tax, rental tax, house(rental) tax.
-            </div>
-          </div>
-
-          <div class="rw">
-            <div class="imgL">
-              <img src="./images/proj-3.png" alt="dowpng img" />
-              <span>Municipal ERP</span>
-              <span>Web Based Application</span>
-            </div>
-            <div class="tect">
-              Municipal Taxation System – Municipal Accounting System – Land Registration Management Information System – Building Permit Process Management System – Inventory and Assets Management System – Document Management and Tracking System – Planning Management System
-            </div>
-          </div> <!-- .rw -->
+          <div class="tect">{{ $recentWork->description }}</div>
+        </div>
+        @endforeach
 
         </div> <!-- #honey -->
       </section>

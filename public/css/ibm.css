@@ -976,8 +976,28 @@ section#index{display:none;}
   align-items: center;
   background-color: hsl(0, 0%, 98%);
 }
+.cmsForm {
+  display: flex;
+  flex-direction: column;
+  padding:2vw;
+}
+.cmsForm div {
+  display: flex;
+  gap:2vw;
+  padding-bottom:2vw;
+}
+.cmsForm button {
+  width:fit-content;
+  background-color: #008000;
+  color:#fff;
+  padding:0.5vw;
+  border:2px solid gold;
+  border-radius: 0.5vw;
+}
+.cmsForm button:hover {
+  font-weight: bold;
+}
 .cms .cmsDivs {
-  border: 0px solid red;
   width: min-content;
   min-width: 80vw;
   display: flex;

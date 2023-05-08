@@ -1,20 +1,21 @@
 <?php
 
 namespace App\Models;
-use App\Models\Service;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class RecentWork extends Model
 {
     use HasFactory;
 
+    protected $table = 'recent_works';
+
     protected $fillable = [
-        'icon',
-        'title',
-        'description',
-    ];
+      'imgsrc',
+      'imgalt',
+      'titleA',
+      'titleB',
+      'description',
+  ];
 }
-
-

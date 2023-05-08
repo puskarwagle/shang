@@ -1,5 +1,5 @@
 
-<form method="POST" action="{{ route('service.store') }}">
+<form class="cmsForm" method="POST" action="{{ route('service.store') }}">
     @csrf
     <div>
         <label for="icon">Icon:</label>
