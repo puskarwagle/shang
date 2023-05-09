@@ -4,22 +4,26 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\RecentWorksController;
+use App\Http\Controllers\LoginController;
 
 // Welcome with HomeController class
 Route::get('/', [HomeController::class, 'welcome']);
-
+// this is the dashnboard
+Route::get('/dashboard', [HomeController::class, 'dashboard']);
 
 Route::get('/login', function () {
   return view('auth.login');
-})->name('login');
+})->name('login.form');
 
 Route::get('/cms', function () {
   return view('auth.login');
 })->name('login');
 
-Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 
-Route::prefix('cms')->middleware(['auth'])->group(function () {
+
+
+//Route::prefix('cms')->middleware(['auth'])->group(function () {
 //these are my service section routes
   Route::get('/service', [ServicesController::class, 'index'])->name('service.index');
   Route::get('/service/create', [ServicesController::class, 'create'])->name('service.create');
@@ -35,16 +39,6 @@ Route::prefix('cms')->middleware(['auth'])->group(function () {
   Route::get('/recentWorks/display', [RecentWorksController::class, 'display'])->name('recentWorks.display');
   Route::delete('/recentWorks/{id}', [RecentWorksController::class, 'destroy'])->name('recentWorks.destroy');
   Route::put('/recentWorks/{id}', [RecentWorksController::class, 'update'])->name('recentWorks.update');
-});
+//});
 
-/*
-Route::get('/', function () {
-  return view('welcome');
-  return view('welcome', compact('services'));
-});
-Route::get('/', 'ServiceController@welcome');
-Route::get('/test', function () {
-  return view('test');
-});
-*/
 

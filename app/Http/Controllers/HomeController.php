@@ -16,5 +16,13 @@ class HomeController extends Controller
 
         return view('welcome', compact('services', 'recentWorks'));
     }
+
+    public function dashboard()
+    {
+        $services = Service::all();
+        $recentWorks = RecentWork::all();
+
+        return view('dashboard', compact('services', 'recentWorks'));
+    }
 }
 

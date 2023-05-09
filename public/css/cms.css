@@ -1,0 +1,106 @@
+.cms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 98%);
+}
+.cmsForm {
+  display: flex;
+  flex-direction: column;
+  padding:2vw;
+}
+.cmsForm div {
+  display: flex;
+  gap:2vw;
+  padding-bottom:2vw;
+}
+.cmsForm div input {
+  padding:0.5vw;
+}
+.cmsForm button {
+  width:fit-content;
+  background-color: #008000;
+  color:#fff;
+  padding:0.5vw;
+  border:2px solid gold;
+  border-radius: 0.5vw;
+}
+.cmsForm button:hover {
+  font-weight: bold;
+}
+.dashboard {
+  text-align: center;
+  width: min-content;
+  margin:2vw auto;
+}
+.dashboard .dashboardDivs {
+  margin-bottom: 4vw;
+}
+.dashboard .dashboardDivs .dashboardDivsH2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+  padding:0.4vw 1vw;
+}
+.cms .cmsDivs {
+  width: min-content;
+  min-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  margin:0 auto 2vw auto;
+  background-color: hsl(0, 0%, 92%);
+  border-radius: 1vw;
+  text-align: left;
+}
+.cms .cmsDivs .cmsContent {
+  display:none;
+}
+.cms .cmsDivs .cmsDivsH2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  background-color: navy;
+  padding:0.4vw 1vw;
+  border-top-left-radius: 0.5vw;
+  border-top-right-radius: 0.5vw;
+  color:#fff;
+}
+.cms .cmsDivs .cmsDivsH2 i:nth-child(3){
+  display: none;
+}
+.cms .cmsDivs .cmsBoxDisplay {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: hsl(0, 0%, 98%);
+  border-radius:0.5vw;
+  padding:1vw;
+  display: flex;
+  gap:1vw;
+}
+.cms .cmsDivs .cmsBoxDelete {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: hsl(0, 0%, 98%);
+  border-radius:0.5vw;
+  padding:1vw;
+  display: flex;
+  flex-direction: column;
+  gap:1vw;
+  margin:1vw;
+}
+.cms .cmsDivs .cmsBoxDelete .cmsActions {
+  display: flex;
+  justify-content: space-around;
+}
+.cms .cmsDivs .cmsBoxDelete .cmsActions button {
+  border:none;
+}
+.cmsSaveButton i {
+  color:#008000 !important;
+  font-size:3vw !important;
+}
+.cmsDeleteButton i {
+  color:red !important;
+  font-size:3vw !important;
+}
