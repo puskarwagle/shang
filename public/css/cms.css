@@ -44,6 +44,9 @@
   background-color: red;
   padding:0.4vw 1vw;
 }
+.dashboard #pus{
+  display:none;
+}
 .cms .cmsDivs {
   width: min-content;
   min-width: 80vw;

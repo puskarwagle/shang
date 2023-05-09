@@ -1,4 +1,5 @@
 <div class="dashboard">
+  <h1>CONTENT MANAGEMENT SYSTEM</h1>
   <div class="dashboardDivs">
     <h2 class="dashboardDivsH2">
       <span>Services section cms.</span>
