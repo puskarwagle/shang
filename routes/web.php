@@ -2,18 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\RecentWorksController;
 use App\Http\Controllers\LoginController;
 
 // Welcome with HomeController class
-Route::get('/', [HomeController::class, 'welcome']);
-// this is the dashnboard
-Route::get('/dashboard', [HomeController::class, 'dashboard']);
+Route::get('/', [WelcomeController::class, 'welcome']);
 
-Route::get('/login', function () {
-  return view('auth.login');
-})->name('login.form');
+// this is the dashnboard
+Route::get('/dashboard', [WelcomeController::class, 'dashboard']);
 
 Route::get('/cms', function () {
   return view('auth.login');
@@ -42,3 +40,16 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('login.aut
 //});
 
 
+
+//Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+/*
+Route::get('/login', function () {
+  return view('auth.login');
+})->name('login.form');
+
+
+*/

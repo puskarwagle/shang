@@ -1,28 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\RecentWorksController;
 
-use App\Models\Service;
-use App\Models\RecentWork;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function welcome()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $services = Service::all();
-        $recentWorks = RecentWork::all();
-
-        return view('welcome', compact('services', 'recentWorks'));
+        $this->middleware('auth');
     }
 
-    public function dashboard()
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-        $services = Service::all();
-        $recentWorks = RecentWork::all();
-
-        return view('dashboard', compact('services', 'recentWorks'));
+        return view('welcome');
     }
 }
-
