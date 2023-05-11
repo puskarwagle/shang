@@ -11,16 +11,25 @@ class LoginController extends Controller
     {
         $email = $request->input('email');
         $password = $request->input('password');
-
-        // check if the email and password are valid
         $user = User::where('email', $email)->first();
 
         if ($user && $user->password === $password) {
-            // authentication successful, redirect to dashboard
             return redirect()->intended('dashboard');
         } else {
-            // authentication failed, redirect back with error message
             return redirect()->back()->withErrors(['message' => 'Email or Password melena!!']);
         }
-    }  
+    }
+
+    public function store(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $user = User::where('email', $email)->first();
+
+        if ($user && $user->password === $password) {
+            return redirect()->intended('dashboard');
+        } else {
+            return redirect()->back()->withErrors(['message' => 'Email or Password melena!!']);
+        }
+    }
 }

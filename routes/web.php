@@ -21,7 +21,7 @@ Route::get('/cms', function () {
 })->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
-
+Route::post('/register', [LoginController::class, 'register'])->name('register.store');
 
 
 //Route::prefix('cms')->middleware(['auth'])->group(function () {

@@ -61,7 +61,7 @@
         <button type="submit">Login</button>
     </form>
 
-    <form method="POST" action="{{ route('register.authenticate') }}">
+    <form method="POST" action="{{ route('register.store') }}">
         @csrf
         <h2>Register</h2>
         @if ($errors->any())
