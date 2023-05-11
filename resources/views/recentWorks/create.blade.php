@@ -26,5 +26,5 @@
       <textarea id="description" name="description" required></textarea>
     </div>
     
-    <button type="submit">Add recentWorks</button>
+    <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit">Add recentWorks</button>
 </form>

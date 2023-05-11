@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: hsl(0, 0%, 98%);
+  font-size: 60%;
 }
 .cmsForm {
   display: flex;
@@ -13,21 +14,26 @@
 .cmsForm div {
   display: flex;
   gap:2vw;
-  padding-bottom:2vw;
+  padding:1vw;
+}
+.cms div label {
+  font-size: 120%;
+  text-transform: capitalize;
 }
 .cmsForm div input {
   padding:0.5vw;
 }
 .cmsForm button {
   width:fit-content;
-  background-color: #008000;
-  color:#fff;
+  color:#000;
   padding:0.5vw;
-  border:2px solid gold;
+  border:2px solid lightgreen;
   border-radius: 0.5vw;
 }
 .cmsForm button:hover {
   font-weight: bold;
+  background-color: green;
+  color:white;
 }
 .dashboard {
   text-align: center;
@@ -41,8 +47,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: red;
+  background-color: gray;
   padding:0.4vw 1vw;
+  font-size: 90%;
 }
 .dashboard #pus{
   display:none;
@@ -65,12 +72,13 @@
   justify-content: space-between;
   align-items: center;
   white-space: nowrap;
-  background-color: navy;
+  background-color: rgb(171, 170, 170);
   padding:0.4vw 1vw;
   border-top-left-radius: 0.5vw;
   border-top-right-radius: 0.5vw;
   color:#fff;
 }
+
 .cms .cmsDivs .cmsDivsH2 i:nth-child(3){
   display: none;
 }
@@ -100,7 +108,7 @@
   border:none;
 }
 .cmsSaveButton i {
-  color:#008000 !important;
+  
   font-size:3vw !important;
 }
 .cmsDeleteButton i {

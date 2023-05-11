@@ -1,8 +1,9 @@
 <div class="dashboard">
   <h1>CONTENT MANAGEMENT SYSTEM</h1>
+
   <div class="dashboardDivs">
     <h2 class="dashboardDivsH2">
-      <span>Services section cms.</span>
+      <span>Our Services section cms.</span>
       <i class="fas fa-chevron-down fa-xs"></i>
     </h2>
       @include('service.index')
@@ -10,12 +11,21 @@
 
   <div class="dashboardDivs">
     <h2 class="dashboardDivsH2">
-      <span>RecentWorks section cms</span>
+      <span>Recent Works section cms</span>
       <i class="fas fa-chevron-down fa-xs"></i>
     </h2>
       @include('recentWorks.index')
   </div>
-</div>
+
+  <div class="dashboardDivs">
+    <h2 class="dashboardDivsH2">
+      <span>Explore our technology section cms</span>
+      <i class="fas fa-chevron-down fa-xs"></i>
+    </h2>
+      @include('exploreTechs.index')
+  </div>
+
+</div> <!-- class="dashboard" -->
 
 <script>
   // Get all the elements with class 'cmsDivs'

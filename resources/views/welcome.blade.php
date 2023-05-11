@@ -13,10 +13,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset('css/ibm.css') }}">
+  <!-- slider css for happy clients -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  <!-- Slider js for happy clients -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
+  </script>
 </head>
 
 <body>
-
   <header>
     <img src="./images/newSH.png" alt="shangrila logo">
     <ul class="navLarge">
@@ -36,8 +44,8 @@
           <rect x="10" y="85" width="80" height="10" />
         </svg>
         <svg id="hamClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2vw">
-          <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </div>
       <div id="navLists">
@@ -96,7 +104,7 @@
           </div>
         </div> <!-- .hMBTexts -->
       </div> <!-- .hMB -->
-    </div>  <!-- .headerMain -->
+    </div> <!-- .headerMain -->
   </header>
 
   <section id="intern">
@@ -105,9 +113,9 @@
         →</a>
     </span>
     <strong>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2vw">
-        <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1vw">
+        <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
       </svg>
     </strong>
   </section>
@@ -181,17 +189,17 @@
       <section id="recentWorks">
         <h2>Recent Works</h2>
         <div id="honey">
-          
-        @foreach($recentWorks as $recentWork)
-        <div class="rw">
-          <div class="imgL">
-            <img src="{{ $recentWork->imgsrc }}" alt="{{ $recentWork->imgalt }}" />
-            <span>{{ $recentWork->titleA }}</span>
-            <span>{{ $recentWork->titleB }}</span>
+
+          @foreach($recentWorks as $recentWork)
+          <div class="rw">
+            <div class="imgL">
+              <img src="{{ $recentWork->imgsrc }}" alt="{{ $recentWork->imgalt }}" />
+              <span>{{ $recentWork->titleA }}</span>
+              <span>{{ $recentWork->titleB }}</span>
+            </div>
+            <div class="tect">{{ $recentWork->description }}</div>
           </div>
-          <div class="tect">{{ $recentWork->description }}</div>
-        </div>
-        @endforeach
+          @endforeach
 
         </div> <!-- #honey -->
       </section>
@@ -201,198 +209,33 @@
         <h2>Explore our technology</h2>
 
         <div id="techCards">
+          @foreach($exploreTechs as $exploreTech)
           <div class="tCards" tabindex="0">
             <div class="tHead">
               <div class="tIcons">
-                <i class="fas fa-database"></i>
+                <i class="{{ $exploreTech->icon }}"></i>
               </div><!-- .tIcons -->
               <div class="tTexts">
-                <span>Database</span>
+                <span>{{ $exploreTech->title }}</span>
                 <i class="fas fa-angle-down"></i>
                 <i class="fas fa-angle-up"></i>
               </div><!-- .tTexts -->
             </div><!-- .tHead -->
             <div class="tContent">
               <div class="tcHead">
-                <h3>Database</h3>
+                <h3>{{ $exploreTech->title }}</h3>
               </div>
+              @if ($exploreTech->links)
               <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
+                @foreach ($exploreTech->links as $link)
+                <a href="#">{{ $link['title'] }}</a>
+                <span>{{ $link['text'] }}</span>
+                @endforeach
               </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a href="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
+              @endif
             </div><!-- .tContent -->
           </div> <!-- .tCards -->
-
-          <div class="tCards" tabindex="0">
-            <div class="tHead">
-              <div class="tIcons">
-                <i class="fas fa-shield-alt"></i>
-              </div><!-- .tIcons -->
-              <div class="tTexts">
-                <span>Cyber Security</span>
-                <i class="fas fa-angle-down"></i>
-                <i class="fas fa-angle-up"></i>
-              </div><!-- .tTexts -->
-            </div><!-- .tHead -->
-            <div class="tContent">
-              <div class="tcHead">
-                <h3>Cyber Security</h3>
-              </div>
-              <div class="tcLinks">
-                <a href="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-            </div><!-- .tContent -->
-          </div> <!-- .tCards -->
-
-          <div class="tCards" tabindex="0">
-            <div class="tHead">
-              <div class="tIcons">
-                <i class="fas fa-robot"></i>
-              </div><!-- .tIcons -->
-              <div class="tTexts">
-                <span>IT automation</span>
-                <i class="fas fa-angle-down"></i>
-                <i class="fas fa-angle-up"></i>
-              </div><!-- .tTexts -->
-            </div><!-- .tHead -->
-            <div class="tContent">
-              <div class="tcHead">
-                <h3>IT automation</h3>
-              </div>
-              <div class="tcLinks">
-                <a href="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-            </div><!-- .tContent -->
-          </div> <!-- .tCards -->
-
-          <div class="tCards" tabindex="0">
-            <div class="tHead">
-              <div class="tIcons">
-              <i class="fas fa-file-invoice-dollar"></i>
-              </div><!-- .tIcons -->
-              <div class="tTexts">
-                <span>Taxation</span>
-                <i class="fas fa-angle-down"></i>
-                <i class="fas fa-angle-up"></i>
-              </div><!-- .tTexts -->
-            </div><!-- .tHead -->
-            <div class="tContent">
-              <div class="tcHead">
-                <h3>Taxation</h3>
-              </div>
-              <div class="tcLinks">
-                <a href="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-            </div><!-- .tContent -->
-          </div> <!-- .tCards -->
-
-          <div class="tCards" tabindex="0">
-            <div class="tHead">
-              <div class="tIcons">
-                <i class="fas fa-city"></i>
-              </div><!-- .tIcons -->
-              <div class="tTexts">
-                <span>Municipality</span>
-                <i class="fas fa-angle-down"></i>
-                <i class="fas fa-angle-up"></i>
-              </div><!-- .tTexts -->
-            </div><!-- .tHead -->
-            <div class="tContent">
-              <div class="tcHead">
-                <h3>Municipality</h3>
-              </div>
-              <div class="tcLinks">
-                <a href="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-            </div><!-- .tContent -->
-          </div> <!-- .tCards -->
-
-          <div class="tCards" tabindex="0">
-            <div class="tHead">
-              <div class="tIcons">
-                <i class="far fa-heart"></i>
-              </div><!-- .tIcons -->
-              <div class="tTexts">
-                <span>Sifarish</span>
-                <i class="fas fa-angle-down"></i>
-                <i class="fas fa-angle-up"></i>
-              </div><!-- .tTexts -->
-            </div><!-- .tHead -->
-            <div class="tContent">
-              <div class="tcHead">
-                <h3>Sifarish</h3>
-              </div>
-              <div class="tcLinks">
-                <a href="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs sdfafaf asf asf asf safd sfs</span>
-              </div>
-              <div class="tcLinks">
-                <a herf="#">API Connect</a>
-                <span>Toolkit to rapidly create, secure and manage APIs</span>
-              </div>
-            </div><!-- .tContent -->
-          </div> <!-- .tCards -->
-
+          @endforeach
         </div> <!-- #techCards -->
       </section>
 
@@ -417,7 +260,7 @@
         <h2>Our Clients</h2>
         <div id="allClientCards">
           <div class="clientCards">
-            <img src="./images/client1.svg" alt="Nepal Government">
+            <img src="./images/client1.png" alt="Nepal Government">
             <span>Nepal Government</span>
           </div>
           <div class="clientCards">
@@ -425,12 +268,12 @@
             <span>Nepal Police</span>
           </div>
           <div class="clientCards">
-            <img src="./images/client3.png" alt="Nagrik Lagani Kosh">
+            <img src="./images/client3.jpg" alt="Nagrik Lagani Kosh">
             <span>Nagrik Lagani Kosh</span>
           </div>
           <div class="clientCards">
             <img src="./images/client4.png" alt="World Health Organization">
-            <span>World Health Organization</span>
+            <span>WHO</span>
           </div>
           <div class="clientCards">
             <img src="./images/client5.png" alt="Home Ministry">
@@ -440,9 +283,9 @@
       </section>
 
       <section id="consult">
-        <h2>Consulting</h2>
+        <h2>Overview</h2>
         <ul>
-          <li>Overview</li>
+          <li>Innovation</li>
           <li>Support</li>
           <li>Development</li>
           <li>Opportunities</li>
@@ -461,7 +304,10 @@
       <section id="contact">
         <h2>Contact us</h2>
         <div id="cMapForm">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp&z=10" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.104023293115!2d85.33724784851069!3d27.701041176144106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a383b0d657%3A0xc015b104b0451efa!2sShangrila%20Microsystem!5e0!3m2!1sen!2snp!4v1679909937538!5m2!1sen!2snp&z=10"
+            style="border:0;" allowfullscreen="false" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div id="cDetails">
             <h1>Shangrila Microsystem</h1>
             <span class="spanA">Call Us</span>
@@ -484,7 +330,7 @@
         <i class="fas fa-globe"></i>
       </p>
     </div>
-    
+
     <div id="footerULs">
       <ul> Products & Solutions
         <li><a href="#">Top products & platforms</a></li>
@@ -527,6 +373,7 @@
   <script src="/js/script.js"></script>
 
   <!--
+    // This js to toggle light and dark mode 
   <script>
     const checkbox = document.getElementById('checkbox');
 

@@ -15,7 +15,7 @@
             <p>{{ $service->description }}</p>
           </div>
           <div class="cmsActions">
-            <button type="submit" class="cmsButton cmsDeleteButton">
+            <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit" class="cmsButton cmsDeleteButton">
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>

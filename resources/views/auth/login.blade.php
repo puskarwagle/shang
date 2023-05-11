@@ -60,5 +60,25 @@
         </div>
         <button type="submit">Login</button>
     </form>
+
+    <form method="POST" action="{{ route('register.authenticate') }}">
+        @csrf
+        <h2>Register</h2>
+        @if ($errors->any())
+            <div style="color: red;">
+                {{ implode('', $errors->all(':message')) }}
+            </div>
+        @endif
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required autofocus>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+
 </body>
 </html>

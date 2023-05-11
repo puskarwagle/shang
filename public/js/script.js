@@ -12,6 +12,20 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Click X to remove intern
+const intern = document.querySelector('#intern');
+const internS = document.querySelector('#intern strong');
+//console.log(intern);
+//console.log(internS);
+
+  internS.addEventListener('click', () => {
+    if (intern.style.display === 'block') {
+      intern.style.display = 'none';
+    } else {
+      intern.style.display = 'block';
+    }
+  });
+
 // Small screen ham nav menu
 const ham = document.querySelector('#ham');
 const hamClose = document.querySelector('#hamClose');
@@ -163,6 +177,8 @@ window.addEventListener('click', (event) => {
 });
 // Click on nav a to flex the .headerMain Small
 
+
+// Consulting Section
 let imgSpanTexts = {
   "co1.jpg": {
     "text": "Overview Accelerate together",
@@ -198,7 +214,6 @@ let imgSpanTexts = {
 
 let coIndex = 0;
 let coKeys = Object.keys(imgSpanTexts);
-
 let coSpanText = document.querySelector('.inConsultText span:nth-child(1)');
 let coSpanText1 = document.querySelector('.inConsultText span:nth-child(2)');
 let coAText = document.querySelector('.inConsultText a');
@@ -208,23 +223,58 @@ let coImg = document.querySelector('#consult .inConsult img');
 function updateTeAndIm(index) {
   let key = coKeys[index];
   let value = imgSpanTexts[key];
-  
   coSpanText.textContent = value.text;
   coSpanText1.textContent = value.text1;
   coAText.textContent = value.text2;
   coImg.src = "./images/" + key;
   coImg.alt = value.altText;
 }
-
+function setActiveListItem(index) {
+  for (let i = 0; i < listItems.length; i++) {
+    if (i === index) {
+      listItems[i].style.boxShadow = "inset 0px -2px 0px 0px cornflowerblue";
+    } else {
+      listItems[i].style.boxShadow = "inset 0px -2px 0px 0px white";
+    }
+  }
+}
 let listItems = document.querySelectorAll('#consult ul li');
 for (let i = 0; i < listItems.length; i++) {
   listItems[i].addEventListener('click', function() {
-    updateTeAndIm(i);
+    // listItems[i].style.boxShadow = "inset 0px -2px 0px 0px cornflowerblue";
+    updateTeAndIm(i);setActiveListItem(i);
   });
 }
+//consulting
+
+// Happy clients javascript
+  $(document).ready(function(){
+    $('#allClientCards').slick({
+      dots: true, // Show pagination dots
+      infinite: true, // Enable infinite loop
+      speed: 500, // Animation speed in milliseconds
+      autoplay: true,
+      slidesToShow: 4, // Show 3 slides at a time
+      slidesToScroll: 1, // Scroll 1 slide at a time
+      responsive: [
+        {
+          breakpoint: 768, // Breakpoint for devices with screen width less than 768px
+          settings: {
+            slidesToShow: 2 // Show 2 slides at a time
+          }
+        },
+        {
+          breakpoint: 480, // Breakpoint for devices with screen width less than 480px
+          settings: {
+            slidesToShow: 1 // Show 1 slide at a time
+          }
+        }
+      ]
+    });
+  });
 
 
-// SectionI dissapears
+// SectionIndex on scroll dissapears
 const sectionI = document.querySelector('#index');
 const sectionA = document.querySelector('#about');
 const observerA = new IntersectionObserver((entries, observer) => {
@@ -238,20 +288,6 @@ const observerA = new IntersectionObserver((entries, observer) => {
 }, {threshold: 0.75});
 
 // observer.observe(sectionA);
-
-// Click X to remove intern
-const intern = document.querySelector('#intern');
-const internS = document.querySelector('#intern strong');
-//console.log(intern);
-//console.log(internS);
-
-  internS.addEventListener('click', () => {
-    if (intern.style.display === 'block') {
-      intern.style.display = 'none';
-    } else {
-      intern.style.display = 'block';
-    }
-  });
 
 // services of achievements animate on intersection 
 const services = document.querySelectorAll('.box');

@@ -14,7 +14,7 @@
           <input type="text" name="description" value="{{ $service->description }}" class="cmsInput">
 
           <div class="cmsActions">
-            <button type="submit" class="cmsButton cmsSaveButton">
+            <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit" class="cmsButton cmsSaveButton">
               <i class="fas fa-save"></i>
             </button>
           </div>

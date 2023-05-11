@@ -32,6 +32,7 @@ body {
     padding: 0vw 4vw;
     font-size: 1.2vw;
     position:relative;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);
   }
   header.sticky {
     position: fixed;
@@ -153,8 +154,9 @@ body {
 /* Intern section Start */
   section#intern {
     background-color: var(--a-blue);
-    padding: 2.0vw 1.5vw;
-    font-size: 1.0vw;
+    background: linear-gradient(to right, var(--a-blue), var(--b-blue));
+    padding: 1.0vw 1.5vw;
+    font-size: 0.9vw;
     display: block;
   }
   #intern span a {
@@ -193,24 +195,25 @@ body {
     justify-content: center;
   }
   #about .aboutTexts p {
-    font-size:3.0vw;
+    font-size:2.5vw;
     margin: 0 auto 1vw 0;
   }
   #about .aboutTexts span:nth-child(2) {
     display: block;
     line-height: 1.6;
     letter-spacing: 0.1vw;
-    font-size: 2.0vw;
+    font-size: 1.5vw;
   }
   #about button {
     max-width:max-content;
     padding:1vw;
     background-color: var(--a-blue);
+    background: linear-gradient(to right, var(--a-blue), var(--b-blue));
     color:#fff;
     border:none;
     margin-top: 1vw;
     line-height: 1;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     display: flex;
   }
   #about button span {
@@ -272,15 +275,16 @@ body {
   #four .fourCards bdo {
     margin-top: 2vw;
     margin-bottom: 1vw;
-    font-size: 80%;
+    font-size: 60%;
     font-weight: 600;
   }
   #four .fourCards p {
     margin-bottom: 2vw;
-    font-size: 80%;
+    font-size: 60%;
   }
   #four .fourCards i {
     color: var(--a-blue);
+    font-size: 60%;
   }
 /* End of fourCards */
 
@@ -301,7 +305,7 @@ body {
 }
 /* Navigation panel on the side */
   .nav-panel {
-    z-index: 999;
+    z-index: 2;
     font-size: 1.2vw;
     min-width: 15vw;
     position:relative;
@@ -588,26 +592,26 @@ body {
     display: flex;
     gap:0.5vw;
     padding:2vw 2vw;
-    overflow-x: scroll;
   }
   #allClientCards .clientCards {
     display: flex;
     flex-direction:column;
     text-align: center;
-  }
-  #allClientCards .clientCards:hover span {
-    opacity: 1;
+    background-color: #fff;
+    box-shadow:  0px 0px 0px 0px gray;
+    border-radius: 0.5vw;
+    padding:1vw 2vw 1vw 2vw;
+    margin: 0 10px;
   }
   #allClientCards .clientCards img {
-    padding:0vw 0 0vw 0;
     height:calc(15vw - 2vw);
   }
   #allClientCards .clientCards span {
     white-space: nowrap;
     padding:0vw 0 0vw 0;
     color: var(--d-white);
-    font-size: 1.0vw;
-    opacity: 0;
+    font-size: 1.5vw;
+    margin-top: 2vw;
   }
 /* OUR HAPPY CLIENTS */
 
@@ -636,10 +640,10 @@ body {
     cursor: pointer;
   }
   #consult ul li:focus {
-    outline:1px solid blue;
+    border:2px solid cornflowerblue;
   }
   #consult ul li:hover {
-    box-shadow: inset 0px -2px 0px 0px gray;
+    box-shadow: inset 0px -2px 0px 0px cornflowerblue;
   }
   .inConsult {
     display: flex;
