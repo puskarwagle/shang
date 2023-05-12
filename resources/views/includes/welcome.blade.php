@@ -27,7 +27,8 @@
     <!-- <div id="aLeft"><i  class="fas fa-angle-left"></i></div>
       <div id="aRight"><i  class="fas fa-angle-right"></i></div> -->
   </section>
-
+  @yield('about')
+  @yield('products')
   <section id="four">
     <h2>What’s new inside Shangrila</h2>
     <div id="allNewCards">
