@@ -1,4 +1,4 @@
 #!/bin/bash
 
-php artisan serve
+php artisan serve ;
 code .

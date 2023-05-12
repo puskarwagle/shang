@@ -65,9 +65,14 @@
         @csrf
         <h2>Register</h2>
         @if ($errors->any())
-            <div style="color: red;">
-                {{ implode('', $errors->all(':message')) }}
-            </div>
+          <div style="color: red;">
+            {{ implode('', $errors->all(':message')) }}
+          </div>
+        @endif
+        @if(session('success'))
+          <div style="color: green;">
+            {{ session('success') }}
+          </div>
         @endif
         <div>
             <label for="email">Email</label>

@@ -8,7 +8,9 @@ use App\Http\Controllers\ExploreTechsController;
 use App\Http\Controllers\LoginController;
 
 // Welcome with HomeController class
-Route::get('/', [HomeController::class, 'welcome']);
+Route::get('/', [HomeController::class, 'layout']);
+Route::get('/sections', [HomeController::class, 'sections']);
+
 // this is the dashnboard
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
@@ -16,12 +18,13 @@ Route::get('/login', function () {
   return view('auth.login');
 })->name('login.form');
 
-Route::get('/cms', function () {
-  return view('auth.login');
-})->name('login');
+// Route::get('/cms', function () {
+//   return view('auth.login');
+// })->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
-Route::post('/register', [LoginController::class, 'register'])->name('register.store');
+Route::post('/register', [LoginController::class, 'store'])->name('register.store');
+Route::get('/allusers', [LoginController::class, 'showUsers']);
 
 
 //Route::prefix('cms')->middleware(['auth'])->group(function () {

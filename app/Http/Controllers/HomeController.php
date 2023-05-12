@@ -11,12 +11,12 @@ use App\Models\ExploreTech;
 
 class HomeController extends Controller
 {
-    public function welcome()
+    public function layout()
     {
         $services = Service::all();
         $recentWorks = RecentWork::all();
         $exploreTechs = ExploreTech::all();
-        return view('welcome', compact('services', 'recentWorks', 'exploreTechs'));
+        return view('layout', compact('services', 'recentWorks', 'exploreTechs'));
     }
 
     public function dashboard()
@@ -26,5 +26,14 @@ class HomeController extends Controller
         $exploreTechs = ExploreTech::all();
         return view('dashboard', compact('services', 'recentWorks', 'exploreTechs'));
     }
+
+    public function sections()
+    {
+        $services = Service::all();
+        $recentWorks = RecentWork::all();
+        $exploreTechs = ExploreTech::all();
+        return view('sections', compact('services', 'recentWorks', 'exploreTechs'));
+    }
+
 }
 

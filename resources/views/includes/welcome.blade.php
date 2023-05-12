@@ -1,111 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shangrila</title>
-  <meta name="description" content="This here is the html of the landing page of Shangrila Microsystems nepal." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-  <!-- Font-Awesome 5.15.3 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <!-- Styles -->
-  <link rel="stylesheet" href="{{ asset('css/ibm.css') }}">
-  <!-- slider css for happy clients -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-  <!-- Slider js for happy clients -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
-  </script>
-</head>
-
-<body>
-  <header>
-    <img src="./images/newSH.png" alt="shangrila logo">
-    <ul class="navLarge">
-      <li><a class="active" href="#">About</a></li>
-      <li><a href="">Products <i class="fas fa-chevron-down fa-xs"></i></a></li>
-      <li><a href="">Services <i class="fas fa-chevron-down fa-xs"></i></a></li>
-      <li><a href="">Projects <i class="fas fa-chevron-down fa-xs"></i></a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <ul class="navSmall">
-      <div id="navHam">
-        <svg id="ham" viewBox="0 0 100 100" width="2vw">
-          <rect x="10" y="25" width="80" height="10" />
-          <rect x="10" y="45" width="80" height="10" />
-          <rect x="10" y="65" width="80" height="10" />
-          <rect x="10" y="85" width="80" height="10" />
-        </svg>
-        <svg id="hamClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2vw">
-          <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </div>
-      <div id="navLists">
-        <li><a class="active" href="#l"><span>About</span></a></li>
-        <li><a href=""><span>Products</span><i class="fas fa-angle-right"></i></a></li>
-        <li><a href=""><span>Services</span><i class="fas fa-angle-right"></i></a></li>
-        <li><a href=""><span>Projects</span><i class="fas fa-angle-right"></i></a></li>
-        <li><a href="#contact"><span>Contact</span></a></li>
-      </div>
-    </ul>
-    <!-- 
-    <div class="search_user">
-      <i class="fas fa-search"></i>
-      <i class="far fa-user"></i>
-      <input type="checkbox" id="checkbox">
-    </div> -->
-
-    <div class="headerMain">
-      <ul class="hMA">
-        <li>Automation</li>
-        <li>Data storage</li>
-        <li>Websites</li>
-        <li>Mobile applications</li>
-        <li>Dot Net</li>
-        <li>Features</li>
-      </ul> <!-- .hMA -->
-      <div class="hMB">
-        <div class="hMBFirst">
-          <span>Automation <i class="fas fa-arrow-right"></i></span>
-          <span>Discipline is choosing between what you want now and what you want most.</span>
-        </div>
-        <div class="hMBTexts">
-          <div class="hMBText">
-            <span>Automation</span>
-            <span>Discipline is choosing between what you want now and what you want most.</span>
-          </div>
-          <div class="hMBText">
-            <span>Automation</span>
-            <span>Discipline is choosing between what you want now and what you want most.</span>
-          </div>
-          <div class="hMBText">
-            <span>Automation</span>
-            <span>Discipline is choosing between what you want now and what you want most.</span>
-          </div>
-          <div class="hMBText">
-            <span>Automation</span>
-            <span>Discipline is choosing between what you want now and what you want most.</span>
-          </div>
-          <div class="hMBText">
-            <span>Automation</span>
-            <span>Discipline is choosing between what you want now and what you want most.</span>
-          </div>
-          <div class="hMBText">
-            <span>Automation</span>
-            <span>Discipline is choosing between what you want now and what you want most.</span>
-          </div>
-        </div> <!-- .hMBTexts -->
-      </div> <!-- .hMB -->
-    </div> <!-- .headerMain -->
-  </header>
 
   <section id="intern">
     <span>
@@ -135,7 +27,6 @@
     <!-- <div id="aLeft"><i  class="fas fa-angle-left"></i></div>
       <div id="aRight"><i  class="fas fa-angle-right"></i></div> -->
   </section>
-
 
   <section id="four">
     <h2>What’s new inside Shangrila</h2>
@@ -204,7 +95,6 @@
         </div> <!-- #honey -->
       </section>
 
-
       <section id="exploreTech">
         <h2>Explore our technology</h2>
 
@@ -254,7 +144,6 @@
           @endforeach
         </div> <!-- allServices -->
       </section>
-
 
       <section id="happyClients">
         <h2>Our Clients</h2>
@@ -322,55 +211,9 @@
     </article>
   </main>
 
-  <footer>
-    <div id="footerF">
-      <img src="./images/newSH.png" alt="shangrila logo">
-      <p>
-        <span>United Kingdom - English</span>
-        <i class="fas fa-globe"></i>
-      </p>
-    </div>
 
-    <div id="footerULs">
-      <ul> Products & Solutions
-        <li><a href="#">Top products & platforms</a></li>
-        <li><a href="#">Industries</a></li>
-        <li><a href="#">Artificial intelligence</a></li>
-        <li><a href="#">Blockchain</a></li>
-        <li><a href="#">Business operations</a></li>
-        <li><a href="#">Cloud computing</a></li>
-        <li><a href="#">Data & Analytics</a></li>
-        <li><a href="#">Financing</a></li>
-      </ul>
-      <ul> Popular links
-        <li><a href="#">Supply chain</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">IT infrastructure</a></li>
-        <li><a href="#">Hybrid cloud</a></li>
-        <li><a href="#">Developer education</a></li>
-        <li><a href="#">IBM Research</a></li>
-        <li><a href="#">Career opportunities</a></li>
-        <li><a href="#">Upcoming events & webinars</a></li>
-      </ul>
-    </div>
 
-    <div id="iconsRights">
-      <span>© Copyright 2021 - Shangrila Microsystem. <br> All Rights Reserved.</span>
-      <div id="icons">
-        <a class="circle fac" href="#">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a class="circle twi" href="#">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a class="circle lin" href="#">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
 
-  <script src="/js/script.js"></script>
 
   <!--
     // This js to toggle light and dark mode 
@@ -388,6 +231,3 @@
   </script>
   -->
 
-</body>
-
-</html>
