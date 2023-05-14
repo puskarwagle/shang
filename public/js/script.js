@@ -1,30 +1,5 @@
 //console.log("this is script.js from public/js/script.js");
-
-// sticky header 
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  const scrollPosition = window.scrollY;
-
-  if (scrollPosition > 0) {
-    header.classList.add('sticky');
-  } else {
-    header.classList.remove('sticky');
-  }
-});
-
-// Click X to remove intern
-const intern = document.querySelector('#intern');
-const internS = document.querySelector('#intern strong');
-//console.log(intern);
-//console.log(internS);
-
-  internS.addEventListener('click', () => {
-    if (intern.style.display === 'block') {
-      intern.style.display = 'none';
-    } else {
-      intern.style.display = 'block';
-    }
-  });
+// alert('hi');
 
 // Small screen ham nav menu
 const ham = document.querySelector('#ham');
@@ -47,6 +22,69 @@ window.addEventListener('click', (event) => {
     ham.style.display = 'block';
   }
 });
+
+// sticky header 
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition > 0) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+});
+
+// HeaderMain Click on nav a to flex the .headerMain Large 
+const navL = document.querySelectorAll('.navLarge li p:has(i)');
+const headerMain = document.querySelector('.headerMain');
+navL.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
+  });
+});
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
+    headerMain.style.display = 'none';
+  }
+});
+// Click on nav a to flex the .headerMain Large
+
+// Click on nav a to flex the .headerMain Small 
+const navS = document.querySelectorAll('#navLists li a:has(i)');
+console.log(navS);
+
+navS.forEach(linkSs => {
+  linkSs.addEventListener('click', (event) => {
+    event.preventDefault();
+    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
+  });
+});
+
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
+    headerMain.style.display = 'none';
+  }
+});
+// Click on nav a to flex the .headerMain Small
+
+// Click X to remove intern
+const intern = document.querySelector('#intern');
+const internS = document.querySelector('#intern strong');
+
+  internS.addEventListener('click', () => {
+    if (intern.style.display === 'block') {
+      intern.style.display = 'none';
+    } else {
+      intern.style.display = 'block';
+    }
+  });
+
 
 // left side navgation panel
 const headerho = document.querySelector('header');
@@ -118,7 +156,7 @@ navLinks.forEach(link => {
   });
 // small devices index
 
-//IBM cards tHead click tContent display none or flex
+// ExploreTech IBM cards tHead click tContent display none or flex
 const tCards = document.querySelectorAll('.tCards');
 const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
 const i3 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(3)');
@@ -138,44 +176,6 @@ tCards.forEach((tCard) => {
     }
   });
 });
-
-// Click on nav a to flex the .headerMain Large 
-const navL = document.querySelectorAll('.navLarge li a:has(i)');
-const headerMain = document.querySelector('.headerMain');
-navL.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
-  });
-});
-window.addEventListener('click', (event) => {
-  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
-    headerMain.style.display = 'none';
-  }
-});
-// Click on nav a to flex the .headerMain Large
-
-// Click on nav a to flex the .headerMain Small 
-const navS = document.querySelectorAll('#navLists li a:has(i)');
-console.log(navS);
-
-navS.forEach(linkSs => {
-  linkSs.addEventListener('click', (event) => {
-    event.preventDefault();
-    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
-  });
-});
-
-window.addEventListener('click', (event) => {
-  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
-    headerMain.style.display = 'none';
-  }
-});
-// Click on nav a to flex the .headerMain Small
 
 
 // Consulting Section

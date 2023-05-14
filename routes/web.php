@@ -9,8 +9,19 @@ use App\Http\Controllers\LoginController;
 
 // Welcome with HomeController class
 Route::get('/', [HomeController::class, 'layout']);
-Route::get('/sections', [HomeController::class, 'sections']);
+//Route::get('/info', [HomeController::class, 'content']);
 
+Route::get('/info', function () {
+  return view('contents.informatics');
+});
+
+Route::get('/about', function () {
+  return view('pages.about');
+})->name('about');
+
+Route::get('/welcome', function () {
+  return view('includes.welcome');
+});
 // this is the dashnboard
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 

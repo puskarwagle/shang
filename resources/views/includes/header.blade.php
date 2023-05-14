@@ -1,10 +1,12 @@
 <header>
-    <img src="./images/newSH.png" alt="shangrila logo">
-    <ul class="navLarge">
-      <li><a class="active" href="#">About</a></li>
-      <li><a href="">Products <i class="fas fa-chevron-down fa-xs"></i></a></li>
-      <li><a href="">Services <i class="fas fa-chevron-down fa-xs"></i></a></li>
-      <li><a href="">Projects <i class="fas fa-chevron-down fa-xs"></i></a></li>
+    <a href="\">
+      <img src="./images/newSH.png" alt="shangrila logo">
+    </a>
+      <ul class="navLarge">
+      <li><a class="active" href="{{ route('about') }}">About</a></li>
+      <li><p>Products <i class="fas fa-chevron-down fa-xs"></i></p></li>
+      <li><p>Services <i class="fas fa-chevron-down fa-xs"></i></p></li>
+      <li><a href="#recentWorks">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -22,10 +24,10 @@
         </svg>
       </div>
       <div id="navLists">
-        <li><a class="active" href="#l"><span>About</span></a></li>
+        <li><a class="active" href="{{ route('about') }}"><span>About</span></a></li>
         <li><a href=""><span>Products</span><i class="fas fa-angle-right"></i></a></li>
         <li><a href=""><span>Services</span><i class="fas fa-angle-right"></i></a></li>
-        <li><a href=""><span>Projects</span><i class="fas fa-angle-right"></i></a></li>
+        <li><a href="#recentWorks"><span>Projects</span></a></li>
         <li><a href="#contact"><span>Contact</span></a></li>
       </div>
     </ul>

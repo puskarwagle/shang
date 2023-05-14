@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\RecentWorksController;
-use App\Http\Controllers\ExploreTechsController;
+// use App\Http\Controllers\ServicesController;
+// use App\Http\Controllers\RecentWorksController;
+// use App\Http\Controllers\ExploreTechsController;
 
 use App\Models\Service;
 use App\Models\RecentWork;
@@ -24,16 +24,29 @@ class HomeController extends Controller
         $services = Service::all();
         $recentWorks = RecentWork::all();
         $exploreTechs = ExploreTech::all();
-        return view('dashboard', compact('services', 'recentWorks', 'exploreTechs'));
+        return view('auth.dashboard', compact('services', 'recentWorks', 'exploreTechs'));
     }
 
-    public function sections()
+    public function welcome()
     {
         $services = Service::all();
         $recentWorks = RecentWork::all();
         $exploreTechs = ExploreTech::all();
-        return view('sections', compact('services', 'recentWorks', 'exploreTechs'));
+        return view('includes.welcome', compact('services', 'recentWorks', 'exploreTechs'));
+    } 
+
+    public function content()
+    {
+      return view('contents.informatics');
     }
+    
+    // public function content()
+    // {
+    //     $services = Service::all();
+    //     $recentWorks = RecentWork::all();
+    //     $exploreTechs = ExploreTech::all();
+    //     return view('contents.informatics', compact('services', 'recentWorks', 'exploreTechs'));
+    // }
 
 }
 

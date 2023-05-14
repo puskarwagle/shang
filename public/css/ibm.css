@@ -74,6 +74,14 @@ body {
     font-weight: 600;
     align-self: center;
   }
+  header .navLarge li p {
+    text-decoration:none;
+    color: var(--a-black);
+    padding: 0vw 0vw;
+    font-weight: 600;
+    align-self: center;
+    cursor:pointer;
+  }
   header .navLarge li a i {
     font-weight: 700;
     margin-left:0.3vw;
@@ -109,10 +117,10 @@ body {
     z-index: 99999;
   }
   header .headerMain .hMA {
-    border-right:2px solid gray;
+    border-right:1px solid gray;
     display: flex;
     flex-direction: column;
-    padding:2vw 0 1vw 1vw;
+    padding:2vw 0 1vw 2vw;
   }
   header .headerMain .hMA li {
     list-style-type: none;
@@ -126,19 +134,27 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
+  header .headerMain .hMB .hMBFirst {
+    display: inline-flex;
+    flex-direction: column;
+    gap:1vw;
+    width:100%;
+    padding: 3vw 0 0vw 2vw;
+  }
+  header .headerMain .hMB .hMBFirst span:nth-child(1) {
+    font-weight: 600;
+    font-size: 110%;
+  }
   header .headerMain .hMB .hMBTexts {
     display: flex;
     flex-wrap: wrap;
   }
-  header .headerMain .hMB .hMBFirst {
-    display: inline-flex;flex-direction: column;gap:0.5vw;width:100%;padding: 2vw 0 2vw 2vw;
-  }
-  header .headerMain .hMB .hMBFirst span:nth-child(1) {
-    font-weight: 600;
-    font-size: 100%;
-  }
   header .headerMain .hMB .hMBText {
-    display: flex;flex-direction: column;gap:0.5vw;width:calc(50% - 1vw);padding:0.4vw 2vw;
+    display: flex;
+    flex-direction: column;
+    gap:0.5vw;
+    width:calc(50% - 1vw);
+    padding:1vw 2vw;
   }
   header .headerMain .hMB .hMBText:hover {
     background-color: var(--b-black);
@@ -973,3 +989,14 @@ section#index{display:none;}
 
 
 
+
+
+/* Pages */
+.page-container {
+  width:90vw;
+  padding:2vw 10vw;
+  font-size: 90%;
+}
+.page-container h1 {
+  padding-bottom:2vw;
+}
