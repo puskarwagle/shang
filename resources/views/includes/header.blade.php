@@ -34,41 +34,64 @@
 
     <div class="headerMain">
       <ul class="hMA">
-        <li>Automation</li>
-        <li>Data storage</li>
-        <li>Websites</li>
-        <li>Mobile applications</li>
-        <li>Dot Net</li>
-        <li>Features</li>
+        <li>Taxation</li>
+        <li>Accounts</li>
+        <li>Local Government</li>
+        <li>MBDMS</li>
+        <li>PMS</li>
+        <li>IAMS</li>
+        <li>BPBP</li>
+        <li>E-DMS</li>
+        <li>RCMS</li>
       </ul> <!-- .hMA -->
       <div class="hMB">
         <div class="hMBFirst">
-          <span>Automation <i class="fas fa-arrow-right"></i></span>
-          <span>Discipline is choosing between what you want now and what you want most.</span>
+          <span>Taxation <i class="fas fa-arrow-right"></i></span>
+          <span>HLT, IPT, Malpot, Business Tax, Vehicle Tax, Rental Tax, PT</span>
         </div>
         <div class="hMBTexts">
           <div class="hMBText">
-            <span>Automation</span>
+            <span>HLT</span>
             <span>Discipline is choosing between what you want now and what you want most.</span>
           </div>
           <div class="hMBText">
-            <span>Automation</span>
+            <span>IPT</span>
             <span>Discipline is choosing between what you want now and what you want most.</span>
           </div>
           <div class="hMBText">
-            <span>Automation</span>
+            <span>Malpot</span>
             <span>Discipline is choosing between what you want now and what you want most.</span>
           </div>
           <div class="hMBText">
-            <span>Automation</span>
+            <span>Business Tax</span>
             <span>Discipline is choosing between what you want now and what you want most.</span>
           </div>
           <div class="hMBText">
-            <span>Automation</span>
+            <span>Vehicle Tax</span>
             <span>Discipline is choosing between what you want now and what you want most.</span>
           </div>
           <div class="hMBText">
-            <span>Automation</span>
+            <span>Rental Tax</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>PT</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Business Tax</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Vehicle Tax</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>Rental Tax</span>
+            <span>Discipline is choosing between what you want now and what you want most.</span>
+          </div>
+          <div class="hMBText">
+            <span>PT</span>
             <span>Discipline is choosing between what you want now and what you want most.</span>
           </div>
         </div> <!-- .hMBTexts -->

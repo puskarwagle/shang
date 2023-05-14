@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-// use App\Http\Controllers\ServicesController;
-// use App\Http\Controllers\RecentWorksController;
-// use App\Http\Controllers\ExploreTechsController;
 
 use App\Models\Service;
 use App\Models\RecentWork;
 use App\Models\ExploreTech;
+use App\Models\HeaderProduct;
+use App\Models\HeaderService;
 
 class HomeController extends Controller
 {
@@ -16,7 +15,9 @@ class HomeController extends Controller
         $services = Service::all();
         $recentWorks = RecentWork::all();
         $exploreTechs = ExploreTech::all();
-        return view('layout', compact('services', 'recentWorks', 'exploreTechs'));
+        $headerProducts = HeaderProduct::all();
+        $headerServices = HeaderService::all();
+        return view('layout', compact('services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts'));
     }
 
     public function dashboard()
@@ -24,7 +25,9 @@ class HomeController extends Controller
         $services = Service::all();
         $recentWorks = RecentWork::all();
         $exploreTechs = ExploreTech::all();
-        return view('auth.dashboard', compact('services', 'recentWorks', 'exploreTechs'));
+        $headerProducts = HeaderProduct::all();
+        $headerServices = HeaderService::all();
+        return view('auth.dashboard', compact('services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts'));
     }
 
     public function welcome()
@@ -32,21 +35,15 @@ class HomeController extends Controller
         $services = Service::all();
         $recentWorks = RecentWork::all();
         $exploreTechs = ExploreTech::all();
-        return view('includes.welcome', compact('services', 'recentWorks', 'exploreTechs'));
+        $headerProducts = HeaderProduct::all();
+        $headerServices = HeaderService::all();
+        return view('includes.welcome', compact('services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts'));
     } 
 
     public function content()
     {
       return view('contents.informatics');
     }
-    
-    // public function content()
-    // {
-    //     $services = Service::all();
-    //     $recentWorks = RecentWork::all();
-    //     $exploreTechs = ExploreTech::all();
-    //     return view('contents.informatics', compact('services', 'recentWorks', 'exploreTechs'));
-    // }
 
 }
 

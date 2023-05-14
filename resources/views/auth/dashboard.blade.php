@@ -25,6 +25,22 @@
       @include('exploreTechs.index')
   </div>
 
+  <div class="dashboardDivs">
+    <h2 class="dashboardDivsH2">
+      <span>Header Products section cms</span>
+      <i class="fas fa-chevron-down fa-xs"></i>
+    </h2>
+      @include('headerProducts.index')
+  </div>
+
+  <div class="dashboardDivs">
+    <h2 class="dashboardDivsH2">
+      <span>Header Service section cms</span>
+      <i class="fas fa-chevron-down fa-xs"></i>
+    </h2>
+      @include('headerServices.index')
+  </div>
+
 </div> <!-- class="dashboard" -->
 
 <script>

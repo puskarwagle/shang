@@ -108,11 +108,11 @@ body {
     position:absolute;
     top:100%;
     left:0;
-    display: none;
+    display: flex;
     background-color: var(--b-white);
     width:100%;
-    height:auto;
-    min-height:60vh;
+    min-height: 60vh;
+    max-height: 60vh;
     color:var(--d-white);
     z-index: 99999;
   }
@@ -121,6 +121,7 @@ body {
     display: flex;
     flex-direction: column;
     padding:2vw 0 1vw 2vw;
+    width: 100%;
   }
   header .headerMain .hMA li {
     list-style-type: none;
@@ -133,13 +134,15 @@ body {
   header .headerMain .hMB {
     display: flex;
     flex-wrap: wrap;
+    overflow-x:unset;
+    overflow-y: scroll;
   }
   header .headerMain .hMB .hMBFirst {
     display: inline-flex;
     flex-direction: column;
     gap:1vw;
     width:100%;
-    padding: 3vw 0 0vw 2vw;
+    padding: 3vw 0 4vw 2vw;
   }
   header .headerMain .hMB .hMBFirst span:nth-child(1) {
     font-weight: 600;
@@ -157,7 +160,7 @@ body {
     padding:1vw 2vw;
   }
   header .headerMain .hMB .hMBText:hover {
-    background-color: var(--b-black);
+    background-color: var(--c-white);
     color:#000;
   }
   header .headerMain .hMB .hMBText span:nth-child(1) {

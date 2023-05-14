@@ -5,10 +5,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\RecentWorksController;
 use App\Http\Controllers\ExploreTechsController;
+use App\Http\Controllers\HeaderProductsController;
+use App\Http\Controllers\HeaderServicesController;
 use App\Http\Controllers\LoginController;
 
 // Welcome with HomeController class
 Route::get('/', [HomeController::class, 'layout']);
+
 //Route::get('/info', [HomeController::class, 'content']);
 
 Route::get('/info', function () {
@@ -60,6 +63,21 @@ Route::get('/allusers', [LoginController::class, 'showUsers']);
   Route::get('/exploreTechs/display', [exploreTechsController::class, 'display'])->name('exploreTechs.display');
   Route::delete('/exploreTechs/{id}', [exploreTechsController::class, 'destroy'])->name('exploreTechs.destroy');
   Route::put('/exploreTechs/{id}', [exploreTechsController::class, 'update'])->name('exploreTechs.update');
+// these are my headerMain Products links
+  Route::get('/headerProducts', [headerProductsController::class, 'index'])->name('headerProducts.index');
+  Route::get('/headerProducts/create', [headerProductsController::class, 'create'])->name('headerProducts.create');
+  Route::post('/headerProducts', [headerProductsController::class, 'store'])->name('headerProducts.store');
+  Route::get('/headerProducts/display', [headerProductsController::class, 'display'])->name('headerProducts.display');
+  Route::delete('/headerProducts/{id}', [headerProductsController::class, 'destroy'])->name('headerProducts.destroy');
+  Route::put('/headerProducts/{id}', [headerProductsController::class, 'update'])->name('headerProducts.update');
+// these are my headerMain Services links
+  Route::get('/headerServices', [headerServicesController::class, 'index'])->name('headerServices.index');
+  Route::get('/headerServices/create', [headerServicesController::class, 'create'])->name('headerServices.create');
+  Route::post('/headerServices', [headerServicesController::class, 'store'])->name('headerServices.store');
+  Route::get('/headerServices/display', [headerServicesController::class, 'display'])->name('headerServices.display');
+  Route::delete('/headerServices/{id}', [headerServicesController::class, 'destroy'])->name('headerServices.destroy');
+  Route::put('/headerServices/{id}', [headerServicesController::class, 'update'])->name('headerServices.update');
+
 //});
 
 

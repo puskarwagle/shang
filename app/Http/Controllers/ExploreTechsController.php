@@ -22,8 +22,8 @@ class ExploreTechsController extends Controller
     $validatedData = $request->validate([
         'icon' => 'required|string',
         'title' => 'required|string',
-        'linkTitles.*' => 'required|string', // Add validation for dynamic inputs
-        'linkTexts.*' => 'required|string', // Add validation for dynamic inputs
+        'linkTitles.*' => 'required|string',
+        'linkTexts.*' => 'required|string',
     ]);
 
     $links = [];

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-@include('includes.head')
-
+  @include('includes.head')
+  
   <body>
     @include('includes.header')
     <div class="page-container">
@@ -9,5 +9,6 @@
     </div>
     @include('includes.contact')
     @include('includes.footer')
+
   </body>
 </html>

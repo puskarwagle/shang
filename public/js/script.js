@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+
 //console.log("this is script.js from public/js/script.js");
 // alert('hi');
 
@@ -55,16 +58,19 @@ window.addEventListener('click', (event) => {
 
 // Click on nav a to flex the .headerMain Small 
 const navS = document.querySelectorAll('#navLists li a:has(i)');
-console.log(navS);
 
-navS.forEach(linkSs => {
-  linkSs.addEventListener('click', (event) => {
-    event.preventDefault();
-    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
+
+  navS.forEach(linkSs => {
+    linkSs.addEventListener('click', (event) => {
+      if (headerho) {
+        event.preventDefault();
+        headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+        headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+        headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
+      };
+    });
   });
-});
+
 
 window.addEventListener('click', (event) => {
   if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
@@ -77,6 +83,7 @@ window.addEventListener('click', (event) => {
 const intern = document.querySelector('#intern');
 const internS = document.querySelector('#intern strong');
 
+if (internS) {
   internS.addEventListener('click', () => {
     if (intern.style.display === 'block') {
       intern.style.display = 'none';
@@ -84,6 +91,7 @@ const internS = document.querySelector('#intern strong');
       intern.style.display = 'block';
     }
   });
+};
 
 
 // left side navgation panel
@@ -314,3 +322,8 @@ services.forEach(box => {
 });
 
 
+
+
+  // End of document.addEventListener("DOMContentLoaded", function(event) 
+  // ...
+});
