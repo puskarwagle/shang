@@ -5,7 +5,7 @@
   <ul class="navLarge">
     <li><a class="active" href="{{ route('about') }}">About</a></li>
     <li>
-      <p>Products <i class="fas fa-chevron-down fa-xs"></i></p>
+      <p class="headerNavProd">Products <i class="fas fa-chevron-down fa-xs"></i></p>
     </li>
     <li>
       <p>Services <i class="fas fa-chevron-down fa-xs"></i></p>
@@ -36,7 +36,7 @@
     </div>
   </ul>
 
-  <div class="headerMain">
+  <div class="headerMain headerProd">
     <ul class="hMA">
       @foreach($headerProducts as $headerProduct)
       <li class="">{{ $headerProduct->title }}</li>
@@ -60,8 +60,29 @@
       </div> <!-- .hMBTexts -->
     </div> <!-- .hMB -->
     @endforeach
-  </div> <!-- .headerMain -->
+  </div> <!-- .headerMain headerProd -->
 </header>
+
+<script>
+  // headerProd Click on nav a to flex the .headerProd Large
+  const headerho = document.querySelector('header');
+  const navL = document.querySelectorAll('.navLarge li .headerNavProd');
+  const headerProd = document.querySelector('.headerProd');
+  navL.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+      headerProd.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+      headerProd.style.display = (headerProd.style.display === 'flex') ? 'none' : 'flex';
+    });
+  });
+  window.addEventListener('click', (event) => {
+    if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerProd')) {
+      headerProd.style.display = 'none';
+    }
+  });
+  // Click on nav a to flex the .headerProd Large
+</script>
 
 <script>
   const liElements = document.querySelectorAll('.hMA li');

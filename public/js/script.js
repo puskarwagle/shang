@@ -38,28 +38,9 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// HeaderMain Click on nav a to flex the .headerMain Large 
-const navL = document.querySelectorAll('.navLarge li p:has(i)');
-const headerMain = document.querySelector('.headerMain');
-navL.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-    headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
-  });
-});
-window.addEventListener('click', (event) => {
-  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
-    headerMain.style.display = 'none';
-  }
-});
-// Click on nav a to flex the .headerMain Large
 
 // Click on nav a to flex the .headerMain Small 
 const navS = document.querySelectorAll('#navLists li a:has(i)');
-
-
   navS.forEach(linkSs => {
     linkSs.addEventListener('click', (event) => {
       if (headerho) {
@@ -70,8 +51,6 @@ const navS = document.querySelectorAll('#navLists li a:has(i)');
       };
     });
   });
-
-
 window.addEventListener('click', (event) => {
   if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
     headerMain.style.display = 'none';
