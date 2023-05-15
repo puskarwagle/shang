@@ -1,55 +1,48 @@
-<head>
-  <!-- service.display.blade.php -->
-  <link rel="stylesheet" href="{{ asset('css/ibm.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/cms.css') }}">
-  <!-- Font-Awesome 5.15.3 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-</head>
+
 
 <div class="cms">
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Create exploreTech.</span>
+      <span>Create services</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('exploreTechs.create')
+      @include('cms.service.create')
     </div>
   </div>
 
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Display exploreTech</span>
+      <span>Display Services</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('exploreTechs.display') 
+      @include('cms.service.display')
     </div>
   </div>
 
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Modify exploreTech</span>
+      <span>Modify Services</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('exploreTechs.modify')
+      @include('cms.service.modify')
     </div>
   </div>
 
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Delete exploreTech</span>
+      <span>Delete Services</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('exploreTechs.delete')
+      @include('cms.service.delete')
     </div>
   </div>
-  <em id="pus">puskarwagle</em>
 </div>
 

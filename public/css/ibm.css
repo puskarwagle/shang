@@ -108,7 +108,7 @@ body {
     position:absolute;
     top:100%;
     left:0;
-    display: flex;
+    display: none;
     background-color: var(--b-white);
     width:100%;
     min-height: 60vh;
@@ -122,6 +122,7 @@ body {
     flex-direction: column;
     padding:2vw 0 1vw 2vw;
     width: 100%;
+    max-width:25%;
   }
   header .headerMain .hMA li {
     list-style-type: none;
@@ -131,11 +132,19 @@ body {
   header .headerMain .hMA li:hover {
     background-color: var(--c-white);
   }
+  header .headerMain .hMA li.hmaactive {
+    background-color: var(--c-white);
+  }
   header .headerMain .hMB {
-    display: flex;
     flex-wrap: wrap;
     overflow-x:unset;
     overflow-y: scroll;
+  }
+  .hMB.hmbActive {
+    display: flex;
+  }
+  .hmbPassive {
+    display: none;
   }
   header .headerMain .hMB .hMBFirst {
     display: inline-flex;

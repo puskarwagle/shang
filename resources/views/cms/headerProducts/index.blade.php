@@ -9,47 +9,46 @@
 <div class="cms">
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Create recentWorks.</span>
+      <span>Create Header Products</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('recentWorks.create')
+      @include('cms.headerProducts.create')
     </div>
   </div>
 
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Display recentWorks</span>
+      <span>Display Header Products</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('recentWorks.display') 
+      @include('cms.headerProducts.display') 
     </div>
   </div>
 
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Modify recentWorks</span>
+      <span>Modify Header Products</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('recentWorks.modify')
+      @include('cms.headerProducts.modify')
     </div>
   </div>
 
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
-      <span>Delete recentWorks</span>
+      <span>Delete Header Products</span>
       <i class="fas fa-chevron-down fa-xs"></i>
       <i class="fas fa-chevron-up fa-xs"></i>
     </h2>
     <div class="cmsContent">
-      @include('recentWorks.delete')
+      @include('cms.headerProducts.delete')
     </div>
   </div>
-  <em id="pus">puskarwagle</em>
 </div>
 

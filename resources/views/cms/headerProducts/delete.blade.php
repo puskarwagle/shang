@@ -6,16 +6,16 @@
   <h2>Header Products</h2>
   <div id="">
     @foreach($headerProducts as $headerProduct)
-    <form class="cmsBoxDelete" action="{{ route('headerProducts.destroy', $headerProduct->id) }}" method="POST">
+    <form class="cmsBoxDelete" action="{{ route('headerProducts.update', $headerProduct->id) }}" method="POST">
       @csrf
       @method('DELETE')
-      <input type="text" name="icon" value="{{ $headerProduct->icon }}" class="cmsInput">
-      <input type="text" name="title" value="{{ $headerProduct->title }}" class="cmsInput">
+      <input type="text" name="icon" value="{{ $headerProduct->title }}" class="cmsInput">
+      <input type="text" name="title" value="{{ $headerProduct->title_text }}" class="cmsInput">
       <div style="display:flex;flex-direction:column;gap:0.5vw;border:2px solid pink;">
-        @if ($headerProduct->links)
-        @foreach ($headerProduct->links as $link)
-        <input type="text" name="linkTitle" value="{{ $link['title'] }}" class="cmsInput">
-        <input type="text" name="linkText" value="{{ $link['text'] }}" class="cmsInput">
+        @if ($headerProduct->subTT)
+        @foreach ($headerProduct->subTT as $subT)
+        <input type="text" name="linkTitle" value="{{ $subT['title'] }}" class="cmsInput">
+        <input type="text" name="linkText" value="{{ $subT['text'] }}" class="cmsInput">
         @endforeach
         @endif
       </div>

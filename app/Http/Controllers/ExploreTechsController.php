@@ -25,22 +25,18 @@ class ExploreTechsController extends Controller
         'linkTitles.*' => 'required|string',
         'linkTexts.*' => 'required|string',
     ]);
-
     $links = [];
-
     foreach ($validatedData['linkTitles'] as $index => $linkTitle) {
         $links[] = [
             'title' => $linkTitle,
             'text' => $validatedData['linkTexts'][$index],
         ];
     }
-
     ExploreTech::create([
         'icon' => $validatedData['icon'],
         'title' => $validatedData['title'],
         'links' => $links,
     ]);
-
     return redirect()->route('dashboard')->with('success', 'Explore Tech section created successfully!');
     }
 
