@@ -49,11 +49,16 @@ class HeaderServicesController extends Controller
     {
       $headerService = HeaderService::find($id);
       $headerService->title = $request->title;
-      $headerService->title_text = $request->title_text;
-      $headerService->subTitle= $request->subTitle;
-      $headerService->subText = $request->subText;
+      if (!empty($request->title_text)) {
+        $headerService->title_text = $request->title_text;
+      }
+      $subTT = [];
+      for ($i = 0; $i < count($request->subTitles); $i++) {
+        $subTT[] = ['title' => $request->subTitles[$i], 'text' => $request->subTexts[$i]];
+      }
+      $headerService->subTT = $subTT;
       $headerService->save();
-      return redirect()->route('dashboard');
+      return redirect()->route('dashboard')->with('success', 'HeaderMain Products section updated successfully!');
     }
 
     public function destroy(string $id)

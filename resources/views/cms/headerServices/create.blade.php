@@ -1,5 +1,5 @@
 
-<form class="cmsForm" method="POST" action="{{ route('headerProducts.store') }}">
+<form class="cmsForm" method="POST" action="{{ route('headerServices.store') }}">
     @csrf
     <div>
       <label for="title">title:</label>
@@ -20,5 +20,5 @@
       <button id="add-link" type="button">Add more sub titles and texts</button>
     </div>
 
-    <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit">Add headerProducts</button>
+    <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit">Add headerServices</button>
 </form>

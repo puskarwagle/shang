@@ -49,11 +49,16 @@ class HeaderProductsController extends Controller
     {
       $headerProduct = HeaderProduct::find($id);
       $headerProduct->title = $request->title;
-      $headerProduct->title_text = $request->title_text;
-      $headerProduct->subTitle= $request->subTitle;
-      $headerProduct->subText = $request->subText;
+      if (!empty($request->title_text)) {
+        $headerProduct->title_text = $request->title_text;
+      }
+      $subTT = [];
+      for ($i = 0; $i < count($request->subTitles); $i++) {
+        $subTT[] = ['title' => $request->subTitles[$i], 'text' => $request->subTexts[$i]];
+      }
+      $headerProduct->subTT = $subTT;
       $headerProduct->save();
-      return redirect()->route('dashboard');
+      return redirect()->route('dashboard')->with('success', 'HeaderMain Products section updated successfully!');
     }
 
     public function destroy(string $id)

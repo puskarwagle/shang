@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('header_service', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('title_text');
-            $table->json('subTT');
-            $table->timestamps();
+          $table->id();
+          $table->string('title');
+          $table->string('title_text');
+          $table->json('subTT');
+          $table->timestamps();
         });
     }
 

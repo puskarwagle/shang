@@ -46,8 +46,19 @@ class ExploreTechsController extends Controller
       $exploreTech = ExploreTech::find($id);
       $exploreTech->icon = $request->icon;
       $exploreTech->title = $request->title;
-      $exploreTech->linkTitle= $request->linkTitle;
-      $exploreTech->linkText = $request->linkText;
+      
+      $links = array();
+      if ($request->has('linkTitle') && $request->has('linkText')) {
+        for ($i = 0; $i < count($request->linkTitle); $i++) {
+          $title = $request->linkTitle[$i];
+          $text = $request->linkText[$i];
+          if (!empty($title) && !empty($text)) {
+            $links[] = array('title' => $title, 'text' => $text);
+          }
+        }
+      }
+      $exploreTech->links = $links;
+      
       $exploreTech->save();
       return redirect()->route('dashboard');
     }

@@ -39,24 +39,7 @@ window.addEventListener('scroll', function() {
 });
 
 
-// Click on nav a to flex the .headerMain Small 
-const navS = document.querySelectorAll('#navLists li a:has(i)');
-  navS.forEach(linkSs => {
-    linkSs.addEventListener('click', (event) => {
-      if (headerho) {
-        event.preventDefault();
-        headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-        headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-        headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
-      };
-    });
-  });
-window.addEventListener('click', (event) => {
-  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
-    headerMain.style.display = 'none';
-  }
-});
-// Click on nav a to flex the .headerMain Small
+
 
 // Click X to remove intern
 const intern = document.querySelector('#intern');
@@ -165,74 +148,7 @@ tCards.forEach((tCard) => {
 });
 
 
-// Consulting Section
-let imgSpanTexts = {
-  "co1.jpg": {
-    "text": "Overview Accelerate together",
-    "text1": "Overview to shoulder with experts to accelerate business transformation.",
-    "text2": "Overview IBM Consulting services",
-    "altText": "Overview is the first img"
-  },
-  "co2.jpg": {
-    "text": "Strategy what’s possible",
-    "text1": "Strategy the untapped potential inside your business.",
-    "text2": "Strategy IBM Consulting services",
-    "altText": "Strategy is the second img"
-  },
-  "co3.jpg": {
-    "text": "Technology towards the excel This is the third image.",
-    "text1": "Technology shoulder to shoulder with experts to accelerate business transformation.",
-    "text2": "Technology IBM Consulting services",
-    "altText": "Technology is the third img"
-  },
-  "co4.jpg": {
-    "text": "Partners is the fourth image.",
-    "text1": "Partners shoulder to shoulder with experts to accelerate business transformation.",
-    "text2": "Partners IBM Consulting services",
-    "altText": "this is the fourth img"
-  },
-  "co5.jpg": {
-    "text": "Services is the fifth image.",
-    "text1": "Services shoulder to shoulder with experts to accelerate business transformation.",
-    "text2": "Services IBM Consulting services",
-    "altText": "this is the fifth img"
-  }
-};
 
-let coIndex = 0;
-let coKeys = Object.keys(imgSpanTexts);
-let coSpanText = document.querySelector('.inConsultText span:nth-child(1)');
-let coSpanText1 = document.querySelector('.inConsultText span:nth-child(2)');
-let coAText = document.querySelector('.inConsultText a');
-let coImg = document.querySelector('#consult .inConsult img');
-// console.log(coSpanText,coSpanText1,coAText,coImg);
-
-function updateTeAndIm(index) {
-  let key = coKeys[index];
-  let value = imgSpanTexts[key];
-  coSpanText.textContent = value.text;
-  coSpanText1.textContent = value.text1;
-  coAText.textContent = value.text2;
-  coImg.src = "./images/" + key;
-  coImg.alt = value.altText;
-}
-function setActiveListItem(index) {
-  for (let i = 0; i < listItems.length; i++) {
-    if (i === index) {
-      listItems[i].style.boxShadow = "inset 0px -2px 0px 0px cornflowerblue";
-    } else {
-      listItems[i].style.boxShadow = "inset 0px -2px 0px 0px white";
-    }
-  }
-}
-let listItems = document.querySelectorAll('#consult ul li');
-for (let i = 0; i < listItems.length; i++) {
-  listItems[i].addEventListener('click', function() {
-    // listItems[i].style.boxShadow = "inset 0px -2px 0px 0px cornflowerblue";
-    updateTeAndIm(i);setActiveListItem(i);
-  });
-}
-//consulting
 
 // Happy clients javascript
   $(document).ready(function(){

@@ -1,20 +1,20 @@
 <header>
-  <div class="headerMain">
+  <div class="headerMain headerServ" style="display:flex;">
     <ul class="hMA">
-    @foreach($headerProducts as $headerProduct)
-      <li>{{ $headerProduct->title }}</li>
+    @foreach($headerServices as $headerService)
+      <li>{{ $headerService->title }}</li>
     @endforeach
     </ul> <!-- .hMA -->
     <div class="hMB">
       <div class="hMBFirst">
-      @foreach($headerProducts as $headerProduct)
-        <span>{{ $headerProduct->title }} <i class="fas fa-arrow-right"></i></span>
-        <span>{{ $headerProduct->title_text }}</span>
+      @foreach($headerServices as $headerService)
+        <span>{{ $headerService->title }} <i class="fas fa-arrow-right"></i></span>
+        <span>{{ $headerService->title_text }}</span>
       @endforeach
       </div>
       <div class="hMBTexts">
-        @if ($headerProduct->subTT)
-        @foreach ($headerProduct->subTT as $subT)
+        @if ($headerService->subTT)
+        @foreach ($headerService->subTT as $subT)
         <div class="hMBText">
           <span>{{ $subT['title'] }}</span>
           <span>{{ $subT['text'] }}</span>

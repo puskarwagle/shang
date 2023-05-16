@@ -14,8 +14,8 @@
       <div style="display:flex;flex-direction:column;gap:0.5vw;border:2px solid pink;">
         @if ($exploreTech->links)
         @foreach ($exploreTech->links as $link)
-        <input type="text" name="linkTitle" value="{{ $link['title'] }}" class="cmsInput">
-        <input type="text" name="linkText" value="{{ $link['text'] }}" class="cmsInput">
+        <input type="text" name="linkTitle[]" value="{{ $link['title'] }}" class="cmsInput">
+        <input type="text" name="linkText[]" value="{{ $link['text'] }}" class="cmsInput">
         @endforeach
         @endif
       </div>
