@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('imgsrc');
             $table->string('imgalt');
-            $table->string('titleA');
+            $table->string('title');
             $table->string('titleB');
             $table->text('description');
             $table->timestamps();
@@ -30,5 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('recent_works');
     }
 };
-
 

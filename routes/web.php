@@ -7,6 +7,7 @@ use App\Http\Controllers\RecentWorksController;
 use App\Http\Controllers\ExploreTechsController;
 use App\Http\Controllers\HeaderProductsController;
 use App\Http\Controllers\HeaderServicesController;
+use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\LoginController;
 
 // Welcome with HomeController class
@@ -72,7 +73,12 @@ Route::get('/allusers', [LoginController::class, 'showUsers']);
   Route::post('/headerServices', [headerServicesController::class, 'store'])->name('headerServices.store');
   Route::delete('/headerServices/{id}', [headerServicesController::class, 'destroy'])->name('headerServices.destroy');
   Route::put('/headerServices/{id}', [headerServicesController::class, 'update'])->name('headerServices.update');
-
+// these are my overview routes 
+  Route::get('/overviews', [OverviewController::class, 'index'])->name('overviews.index');
+  Route::get('/overviews/create', [OverviewController::class, 'create'])->name('overviews.create');
+  Route::post('/overviews', [OverviewController::class, 'store'])->name('overviews.store');
+  Route::delete('/overviews/{id}', [OverviewController::class, 'destroy'])->name('overviews.destroy');
+  Route::put('/overviews/{id}', [OverviewController::class, 'update'])->name('overviews.update');
 //});
 
 
