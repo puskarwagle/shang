@@ -7,6 +7,7 @@ use App\Models\ExploreTech;
 use App\Models\HeaderProduct;
 use App\Models\HeaderService;
 use App\Models\Overview;
+use App\Models\OurClient;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,8 @@ class HomeController extends Controller
       $headerProducts = HeaderProduct::all();
       $headerServices = HeaderService::all();
       $overviews = Overview::all();
-      return view('layout', compact('services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews'));
+      $ourclients = OurClient::all();
+      return view('layout', compact('ourclients', 'services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews'));
     }
 
     public function dashboard()
@@ -29,7 +31,8 @@ class HomeController extends Controller
       $headerProducts = HeaderProduct::all();
       $headerServices = HeaderService::all();
       $overviews = Overview::all();
-      return view('auth.dashboard', compact('services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews'));
+      $ourclients = OurClient::all();
+      return view('auth.dashboard', compact('ourclients', 'services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews'));
     }
 
     public function welcome()
@@ -40,7 +43,8 @@ class HomeController extends Controller
       $headerProducts = HeaderProduct::all();
       $headerServices = HeaderService::all();
       $overviews = Overview::all();
-      return view('includes.welcome', compact('services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews'));
+      $ourclients = OurClient::all();
+      return view('includes.welcome', compact('ourclients', 'services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews'));
     } 
 
     public function content()

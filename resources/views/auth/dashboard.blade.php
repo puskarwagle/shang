@@ -16,6 +16,14 @@
     </h2>
       @include('cms.overviews.index')
   </div>
+  
+  <div class="dashboardDivs">
+    <h2 class="dashboardDivsH2">
+      <span>Our clients section cms</span>
+      <i class="fas fa-chevron-down fa-xs"></i>
+    </h2>
+      @include('cms.ourClients.index')
+  </div>
 
   <div class="dashboardDivs">
     <h2 class="dashboardDivsH2">

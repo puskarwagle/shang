@@ -27,4 +27,9 @@
     </div>
     
     <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit">Add recentWorks</button>
-</form>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+  </form>

@@ -171,6 +171,7 @@
         </div>
       </div> <!-- id="allClientCards" -->
     </section>
+    
     @include('includes.overview')
     @include('includes.contact')
   </article>

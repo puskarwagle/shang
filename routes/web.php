@@ -8,6 +8,7 @@ use App\Http\Controllers\ExploreTechsController;
 use App\Http\Controllers\HeaderProductsController;
 use App\Http\Controllers\HeaderServicesController;
 use App\Http\Controllers\OverviewController;
+use App\Http\Controllers\OurClientController;
 use App\Http\Controllers\LoginController;
 
 // Welcome with HomeController class
@@ -79,6 +80,11 @@ Route::get('/allusers', [LoginController::class, 'showUsers']);
   Route::post('/overviews', [OverviewController::class, 'store'])->name('overviews.store');
   Route::delete('/overviews/{id}', [OverviewController::class, 'destroy'])->name('overviews.destroy');
   Route::put('/overviews/{id}', [OverviewController::class, 'update'])->name('overviews.update');
-//});
-
+// these are my ourclients routes
+  Route::get('/ourClients', [OurClientController::class, 'index'])->name('ourClients.index');
+  Route::get('/ourClients/create', [OurClientController::class, 'create'])->name('ourClients.create');
+  Route::post('/ourClients', [OurClientController::class, 'store'])->name('ourClients.store');
+  Route::delete('/ourClients/{id}', [OurClientController::class, 'destroy'])->name('ourClients.destroy');
+  Route::put('/ourClients/{id}', [OurClientController::class, 'update'])->name('ourClients.update');
+  //});
 

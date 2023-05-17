@@ -19,6 +19,10 @@
       </div>
       <button id="add-link" type="button">Add more sub titles and texts</button>
     </div>
-
     <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit">Add headerProducts</button>
-</form>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+  </form>
