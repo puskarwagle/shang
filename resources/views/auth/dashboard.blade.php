@@ -7,7 +7,7 @@
 </head>
 
 <div class="dashboard">
-  <h1>CONTENT MANAGEMENT SYSTEM</h1>
+  <h1>CONTENT MANAGEMENT SYSTEM</h1><br>
 
   <div class="dashboardDivs">
     <h2 class="dashboardDivsH2">

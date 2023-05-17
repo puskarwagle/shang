@@ -1,5 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 <section id="intern">
   <span>
@@ -12,7 +10,7 @@
       <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
     </svg>
   </strong>
-</section>
+</section><br>
 
 <section id="about">
   <div class="aboutTexts">
@@ -28,25 +26,6 @@
   </div>
   <img src="./images/shangrila-bg.jpg" alt="this is the first img">
 </section>
-
-<section id="about" class="bg-light">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-md-6">
-        <p class="lead">Working towards excellence in ensuring Digital Governance in Nepal.</p>
-        <p>See how local governments are automated using software like DOT NET to deliver services more efficiently. This is the third line. This is a good line.</p>
-        <a href="{{ route('about') }}" class="btn btn-primary">
-          <span>Get to know Shangrila</span>
-          <i class="fas fa-arrow-right ml-2"></i>
-        </a>
-      </div>
-      <div class="col-md-6">
-        <img src="./images/shangrila-bg.jpg" alt="this is the first img" class="img-fluid">
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <section id="four">
   <h2>What’s new inside Shangrila</h2>
@@ -73,51 +52,6 @@
     </div>
   </div> <!-- id="allNewCards" -->
 </section>
-
-<section id="four" class="bg-light">
-  <div class="container py-5">
-    <h2 class="text-center mb-4">What's new inside Shangrila</h2>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <h5 class="card-title">Developer</h5>
-            <p class="card-text">Read about Shangrila and its influence over IT in Nepal.</p>
-            <a href="#" class="btn btn-primary">Read More <i class="fas fa-arrow-right ml-2"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <h5 class="card-title">Support</h5>
-            <p class="card-text">Learn about the services provided by this beautiful company.</p>
-            <a href="#" class="btn btn-primary">Read More <i class="fas fa-arrow-right ml-2"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <h5 class="card-title">Products</h5>
-            <p class="card-text">Take a look at the projects we have been working on.</p>
-            <a href="#" class="btn btn-primary">Read More <i class="fas fa-arrow-right ml-2"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <h5 class="card-title">Internship</h5>
-            <p class="card-text">Contact us. Pretty self-explanatory.</p>
-            <a href="#" class="btn btn-primary">Read More <i class="fas fa-arrow-right ml-2"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <main>
   <div class="nav-panel">

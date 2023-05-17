@@ -1,7 +1,11 @@
-@if($component === 'comp-about')
+<!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+  @if($component === 'comp-about')
 <div class="comp-about">
   <h1>About</h1>
-  <p>
+  <p class="mb-4">
     <em>Shangrila Infomatics (P.) Ltd.</em> (Shangrila) is a company established with a concrete aim of providing complete IT solutions to the end-users. With years of professional experience in the field of IT, the company has been engaged in developing a variety of products and consultation services to the concerned government organizations, non- government organizations as well as private organizations as per their needs and demands. The company has every reason to have pride on its existence as it is an undertaking of the people who have excelled in the field of Information Technology through practical display of their expertise and efficiency with immense competence. Moreover, they hold immeasurable esteem among the IT experts in and across the border.
     Shangrila is planning for the working on another new business segments to bring in revolution in IT sector of Nepal with a mission “To lead the IT sector of Nepal by creating synergy with Telecom Services” thereby adding value to its customers especially local level governments and schools.<br><br>
     Digital convergence and rapid technological changes has resulted into emergence of a range of new products and services focusing on data and value added services (VAS) in relation to Telecommunication services while good governance & automation requirement in Government bodies and public/private sector companies have evolved into opportunities, which has to be tapped as Software companies typically face difficult challenges when dealing with telecom companies because of the rapidly changing technologies and business models.<br><br>

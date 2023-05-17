@@ -1,10 +1,6 @@
 <section id="consult">
   <h2>Overview</h2>
-  <ul id="consult-list">
-    <!-- @foreach($overviews as $overview)
-      <li>{{ $overview->titleLi }}</li>
-    @endforeach -->
-  </ul>
+  <ul id="consult-list"></ul>
   <div class="inConsult">
     <img src="" alt="">
     <div class="inConsultText">
@@ -14,6 +10,7 @@
     </div>
   </div>
 </section>
+
 
 <script>
 let coSpanText = document.querySelector('.inConsultText span:nth-child(1)');
