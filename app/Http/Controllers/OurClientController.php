@@ -2,76 +2,76 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\OurClient;
+use Illuminate\Http\Request;
 
 class OurClientController extends Controller
 {
-    public function index()
-    {
-        $ourClients = OurClient::all();
-        return view('cms.ourClients.index', compact('ourClients'));
-    }
+  public function index()
+  {
+    $ourClients = OurClient::all();
+    return view('ourClients.index', compact('ourClients'));
+  }
 
-    public function create()
-    {
-        return view('cms.ourClients.create');
-    }
+  public function create()
+  {
+    return view('ourClients.create');
+  }
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'imgsrc' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'imgalt' => 'required',
-            'span' => 'required'
-        ]);
+  public function store(Request $request)
+  {
+    $validatedData = $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'imgalt' => 'required|string',
+        'span' => 'required|string',
+    ]);
 
-        $imageName = time().'.'.$request->imgsrc->extension();
-        $request->imgsrc->move(public_path('images/ourClients'), $imageName);
+    $imageName = time().'.'.$request->image->extension();
+    $request->image->move(public_path('images/ourClients/'), $imageName);
 
-        OurClient::create([
-            'imgsrc' => $imageName,
-            'imgalt' => $validatedData['imgalt'],
-            'span' => $validatedData['span']
-        ]);
+    OurClient::create([
+        'imgsrc' => $imageName,
+        'imgalt' => $validatedData['imgalt'],
+        'span' => $validatedData['span'],
+    ]);
 
-        return redirect()->route('cms.ourClients.index')->with('success','Our client added successfully.');
-    }
+    return redirect()->back()->with('success', 'Our client section created successfully!'); 
+  }
+
 
     public function update(Request $request, $id)
     {
         $ourClient = OurClient::findOrFail($id);
-        $validatedData = $request->validate([
-            'imgsrc' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'imgalt' => 'required',
-            'span' => 'required'
-        ]);
 
-        if ($request->hasFile('imgsrc')) {
+        if ($request->hasFile('image')) {
             $oldImagePath = public_path('images/ourClients/') . $ourClient->imgsrc;
             if (file_exists($oldImagePath)) {
                 unlink($oldImagePath);
             }
-            $imageName = time().'.'.$request->imgsrc->extension();
-            $request->imgsrc->move(public_path('images/ourClients'), $imageName);
-            $ourClient->imgsrc = $imageName;
+
+            if ($request->file('image')->isValid()) {
+                $imageName = time() . '.' . $request->file('image')->extension();
+                $request->file('image')->move(public_path('images/ourClients/'), $imageName);
+                $ourClient->imgsrc = $imageName;
+            } else {
+                return redirect()->back()->withErrors(['image' => 'The image upload failed.']);
+            }
         }
 
-        $ourClient->imgalt = $validatedData['imgalt'];
-        $ourClient->span = $validatedData['span'];
+        $ourClient->imgalt = $request->input('imgalt');
+        $ourClient->span = $request->input('span');
+
         $ourClient->save();
 
-        return redirect()->route('cms.ourClients.index')->with('success','Our client updated successfully.');
+        return redirect()->route('dashboard')->with('success', 'ourClients section updated successfully!');
     }
 
-    public function destroy($id)
-    {
-        $ourClient = OurClient::findOrFail($id);
-        $imagePath = public_path('images/ourClients/') . $ourClient->imgsrc;
-        if (file_exists($imagePath)) {
-            unlink($imagePath);
-        }
-        $ourClient->delete();
-        return redirect()->route('cms.ourClients.index')->with('success','Our client deleted successfully.');
-    }
+
+
+  public function destroy(string $id)
+  {
+    $ourClients = OurClient::find($id);
+    $ourClients->delete();
+    return redirect()->route('dashboard');
+  }
 }

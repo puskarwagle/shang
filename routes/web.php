@@ -20,15 +20,12 @@ Route::get('/info', function () {
   return view('contents.informatics');
 });
 
-Route::get('/about', function () {
-  return view('pages.about');
-})->name('about');
-
-Route::get('/welcome', function () {
-  return view('includes.welcome');
-});
-// this is the dashnboard
+// These are routes through homecontroller
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/welcome', [HomeController::class, 'welcome'])->name('welcome');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
+//pages routes
 
 Route::get('/login', function () {
   return view('auth.login');

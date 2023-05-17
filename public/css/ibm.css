@@ -1005,9 +1005,9 @@ section#index{display:none;}
 
 /* Pages */
 .page-container {
-  width:90vw;
+  width:80vw;
   padding:2vw 10vw;
-  font-size: 90%;
+  font-size: 120%;
 }
 .page-container h1 {
   padding-bottom:2vw;

@@ -1,10 +1,10 @@
 <section id="happyClients">
   <div id="allClientCards">
-  @foreach($ourclients as $ourclient)
+  @foreach($ourClients as $ourClient)
     <div class="clientCards">
-      <img src="./images/ourClients/{{ $ourclient->imgsrc }}" alt="{{ $ourclient->imgalt }}">
-      <span>{{ $ourclient->span}}</span>
+      <img src="./images/ourClients/{{ $ourClient->imgsrc }}" alt="{{ $ourClient->imgalt }}" width="100">
+      <span>{{ $ourClient->span}}</span>
     </div>
   @endforeach
-  </div> <!-- id="allClientCards" -->
+  </div>
 </section>

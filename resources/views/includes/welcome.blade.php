@@ -145,33 +145,19 @@
         @endforeach
       </div> <!-- allServices -->
     </section>
-
+    
     <section id="happyClients">
       <h2>Our Clients</h2>
       <div id="allClientCards">
+      @foreach($ourClients as $ourClient)
         <div class="clientCards">
-          <img src="./images/client1.png" alt="Nepal Government">
-          <span>Nepal Government</span>
+          <img src="./images/ourClients/{{ $ourClient->imgsrc }}" alt="{{ $ourClient->imgalt }}">
+          <span>{{ $ourClient->span}}</span>
         </div>
-        <div class="clientCards">
-          <img src="./images/client2.png" alt="Nepal Police">
-          <span>Nepal Police</span>
-        </div>
-        <div class="clientCards">
-          <img src="./images/client3.jpg" alt="Nagrik Lagani Kosh">
-          <span>Nagrik Lagani Kosh</span>
-        </div>
-        <div class="clientCards">
-          <img src="./images/client4.png" alt="World Health Organization">
-          <span>WHO</span>
-        </div>
-        <div class="clientCards">
-          <img src="./images/client5.png" alt="Home Ministry">
-          <span>Home Ministry</span>
-        </div>
-      </div> <!-- id="allClientCards" -->
+      @endforeach
+      </div>
     </section>
-    
+
     @include('includes.overview')
     @include('includes.contact')
   </article>
