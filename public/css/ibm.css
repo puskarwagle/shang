@@ -296,6 +296,8 @@ body {
     justify-content: center;
     padding:1vw;
     background-color: hsl(0, 0%, 90%);
+    color: var(--d-white);
+    text-decoration: none;
   }
   #four .fourCards:hover {
     background-color: hsl(0, 0%, 87%);

@@ -1,7 +1,7 @@
 
 <section id="intern">
   <span>
-    <a href="">Register now: You're invited to the Shangrila Internship event, 9–11 May, Ghattekulo, Kathmandu
+    <a href="{{ route('internship') }}">Register now: You're invited to the Shangrila Internship event, 9–11 May, Ghattekulo, Kathmandu
       →</a>
   </span>
   <strong>
@@ -30,26 +30,26 @@
 <section id="four">
   <h2>What’s new inside Shangrila</h2>
   <div id="allNewCards">
-    <div class="fourCards">
-      <bdo>Developer</bdo>
+    <a href="{{ route('mission') }}" class="fourCards">
+      <bdo>Mission</bdo>
       <p>Read about shangria and its influence over IT in nepal.</p>
       <i class="fas fa-arrow-right"></i>
-    </div>
-    <div class="fourCards">
+    </a>
+    <a href="{{ route('dataCenterServices') }}" class="fourCards">
       <bdo>Support</bdo>
       <p>Learn about the services provided by this beautiful company.</p>
       <i class="fas fa-arrow-right"></i>
-    </div>
-    <div class="fourCards">
+    </a>
+    <a href="{{ route('products') }}" class="fourCards">
       <bdo>Products</bdo>
       <p>Take a look at the projects we have been working on.</p>
       <i class="fas fa-arrow-right"></i>
-    </div>
-    <div class="fourCards">
+    </a>
+    <a href="{{ route('internship') }}" class="fourCards">
       <bdo>Internship</bdo>
       <p>Contact us. Preety self explainatory</p>
       <i class="fas fa-arrow-right"></i>
-    </div>
+    </a>
   </div> <!-- id="allNewCards" -->
 </section>
 

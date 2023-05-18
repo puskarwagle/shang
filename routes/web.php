@@ -22,6 +22,11 @@ Route::get('/info', function () {
 
 // These are routes through homecontroller
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/dataCenterServices', [HomeController::class, 'dataCenterServices'])->name('dataCenterServices');
+Route::get('/internship', [HomeController::class, 'internship'])->name('internship');
+Route::get('/mission', [HomeController::class, 'mission'])->name('mission');
+Route::get('/products', [HomeController::class, 'products'])->name('products');
+
 Route::get('/welcome', [HomeController::class, 'welcome'])->name('welcome');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 

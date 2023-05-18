@@ -35,7 +35,27 @@ class HomeController extends Controller
     $data = $this->getData();
     return view('pages.about')->with($data);
   }
-  
+  public function dataCenterServices()
+  {
+    $data = $this->getData();
+    return view('pages.dataCenterServices')->with($data);
+  }
+  public function internship()
+  {
+    $data = $this->getData();
+    return view('pages.internship')->with($data);
+  }
+  public function mission()
+  {
+    $data = $this->getData();
+    return view('pages.mission')->with($data);
+  }
+  public function products()
+  {
+    $data = $this->getData();
+    return view('pages.products')->with($data);
+  }
+
   public function content()
   {
     return view('contents.informatics');
