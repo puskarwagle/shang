@@ -128,26 +128,53 @@ navLinks.forEach(link => {
 
 // ExploreTech IBM cards tHead click tContent display none or flex
 const tCards = document.querySelectorAll('.tCards');
-const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
-const i3 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(3)');
-const iSpan = document.querySelector('#exploreTech .tCards .tHead .tTexts span');
+
+document.body.addEventListener('click', (event) => {
+  tCards.forEach((tCard) => {
+    const tHead = tCard.querySelector('.tHead');
+    const tContent = tCard.querySelector('.tContent');
+    const i1 = tHead.querySelector('.tIcons i');
+    const i2 = tHead.querySelector('.tTexts i:nth-child(2)');
+    const i3 = tHead.querySelector('.tTexts i:nth-child(3)');
+    const iSpan = tHead.querySelector('.tTexts span');
+
+    if (!tCard.contains(event.target)) {
+      tContent.style.display = 'none';
+      tCard.classList.remove('focus-within');
+      i1.style.transform = 'scale(1)';
+      iSpan.style.display = 'inline-flex';
+      i2.style.display = 'inline-flex';
+      i3.style.display = 'none';
+    }
+  });
+});
 
 tCards.forEach((tCard) => {
   const tHead = tCard.querySelector('.tHead');
   const tContent = tCard.querySelector('.tContent');
+  const i1 = tHead.querySelector('.tIcons i');
+  const i2 = tHead.querySelector('.tTexts i:nth-child(2)');
+  const i3 = tHead.querySelector('.tTexts i:nth-child(3)');
+  const iSpan = tHead.querySelector('.tTexts span');
 
   tHead.addEventListener('click', () => {
     if (tCard.classList.contains('focus-within')) {
       tContent.style.display = 'none';
       tCard.classList.remove('focus-within');
+      i1.style.transform = 'scale(1)';
+      iSpan.style.display = 'inline-flex';
+      i2.style.display = 'inline-flex';
+      i3.style.display = 'none';
     } else {
       tContent.style.display = 'flex';
       tCard.classList.add('focus-within');
+      i1.style.transform = 'scale(1.5)';
+      iSpan.style.display = 'none';
+      i2.style.display = 'none';
+      i3.style.display = 'inline-flex';
     }
   });
 });
-
-
 
 
 // Happy clients javascript

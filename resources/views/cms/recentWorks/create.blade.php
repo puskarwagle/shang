@@ -23,7 +23,7 @@
 
     <div>
       <label for="description">Description:</label>
-      <textarea id="description" name="description" required></textarea>
+      <textarea id="description" name="description" rows="6" cols="50" required></textarea>
     </div>
     
     <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit">Add recentWorks</button>

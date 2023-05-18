@@ -96,7 +96,6 @@
 
     <section id="exploreTech">
       <h2>Explore our technology</h2>
-
       <div id="techCards">
         @foreach($exploreTechs as $exploreTech)
         <div class="tCards" tabindex="0">
@@ -115,12 +114,12 @@
               <h3>{{ $exploreTech->title }}</h3>
             </div>
             @if ($exploreTech->links)
+            @foreach ($exploreTech->links as $link)
             <div class="tcLinks">
-              @foreach ($exploreTech->links as $link)
               <a href="#">{{ $link['title'] }}</a>
               <span>{{ $link['text'] }}</span>
-              @endforeach
             </div>
+            @endforeach
             @endif
           </div><!-- .tContent -->
         </div> <!-- .tCards -->

@@ -140,6 +140,9 @@ body {
     overflow-x:unset;
     overflow-y: scroll;
   }
+  header .headerMain .hMB::-webkit-scrollbar {
+    display: none;
+  }
   .hMB.hmbActive {
     display: flex;
   }
@@ -513,18 +516,12 @@ body {
     gap:0.25vw;
     font-size: 75%;
   }
-  .tCards:focus-within .tHead .tIcons i {
-    transform: scale(1.5) !important;
-  }
-  #exploreTech .tCards:focus-within .tHead .tTexts i:nth-child(3) {
-    display:inline-block;
-  }
-  #exploreTech .tCards:focus-within .tHead .tTexts i:nth-child(2) {
-    display:none;
+  /* .tCards:focus-within .tHead .tIcons i {
+    transform: scale(1.5);
   }
   .tCards:focus-within .tHead .tTexts span {
     display: none;
-  }
+  } */
 
   #exploreTech .tCards .tContent .tcHead {
     padding-bottom:2vw;

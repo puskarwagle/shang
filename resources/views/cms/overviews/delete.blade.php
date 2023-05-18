@@ -15,7 +15,7 @@
               <li>{{ $overview->titleLi }}</li>
             </ul>
             <div class="inConsult">
-              <img src="./images/{{ $overview->imgsrc }}" alt="{{ $overview->imgalt }}">
+              <img src="./images/overview/{{ $overview->imgsrc }}" alt="{{ $overview->imgalt }}">
               <div class="inConsultText">
                 <span>{{ $overview->text1 }}</span>
                 <span>{{ $overview->text2 }}</span>

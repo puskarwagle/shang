@@ -31,10 +31,6 @@ Route::get('/login', function () {
   return view('auth.login');
 })->name('login.form');
 
-// Route::get('/cms', function () {
-//   return view('auth.login');
-// })->name('login');
-
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 Route::post('/register', [LoginController::class, 'store'])->name('register.store');
 Route::get('/allusers', [LoginController::class, 'showUsers']);

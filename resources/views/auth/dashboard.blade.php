@@ -68,18 +68,14 @@
 </div> <!-- class="dashboard" -->
 
 <script>
-  // Get all the elements with class 'cmsDivs'
   const cmsDivs = document.querySelectorAll('.cmsDivs');
 
-  // Loop through each 'cmsDivs' element
   cmsDivs.forEach(cmsDiv => {
-    // Get the 'cmsContent', 'cmsDivsH2', and chevron icons
     const cmsContent = cmsDiv.querySelector('.cmsContent');
     const cmsDivsH2 = cmsDiv.querySelector('.cmsDivsH2');
     const chevronUp = cmsDiv.querySelector('.fa-chevron-up');
     const chevronDown = cmsDiv.querySelector('.fa-chevron-down');
 
-    // Add a click event listener to the 'cmsDivsH2' element
     cmsDivsH2.addEventListener('click', () => {
       // Toggle the 'cmsContent' element's display property
       if (cmsContent.style.display === 'none') {
@@ -96,39 +92,53 @@
 </script>
 
 <script>
-//IBM cards tHead click tContent display none or flex
-const tCards = document.querySelectorAll('.tCards');
-const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
-const i3 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(3)');
-const iSpan = document.querySelector('#exploreTech .tCards .tHead .tTexts span');
+  //IBM cards tHead click tContent display none or flex
+  const tCards = document.querySelectorAll('.tCards');
+  const i2 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(2)');
+  const i3 = document.querySelector('#exploreTech .tCards .tHead .tTexts i:nth-child(3)');
+  const iSpan = document.querySelector('#exploreTech .tCards .tHead .tTexts span');
 
-tCards.forEach((tCard) => {
-  const tHead = tCard.querySelector('.tHead');
-  const tContent = tCard.querySelector('.tContent');
+  tCards.forEach((tCard) => {
+    const tHead = tCard.querySelector('.tHead');
+    const tContent = tCard.querySelector('.tContent');
 
-  tHead.addEventListener('click', () => {
-    if (tCard.classList.contains('focus-within')) {
-      tContent.style.display = 'none';
-      tCard.classList.remove('focus-within');
-    } else {
-      tContent.style.display = 'flex';
-      tCard.classList.add('focus-within');
-    }
+    tHead.addEventListener('click', () => {
+      if (tCard.classList.contains('focus-within')) {
+        tContent.style.display = 'none';
+        tCard.classList.remove('focus-within');
+      } else {
+        tContent.style.display = 'flex';
+        tCard.classList.add('focus-within');
+      }
+    });
   });
-});
 </script>
 
 <script>
-// add links to explore and subTitles to headerProducts and headerServices 
-  const linksContainers = document.querySelectorAll('.links-container');
-linksContainers.forEach(linksContainer => {
-  const addLinkBtn = linksContainer.querySelector('#add-link');
-  const linkInputs = linksContainer.querySelector('.link-inputs');
+// Create form add more links header
+  const clinksContainers = document.querySelectorAll('.clinks-container');
+  clinksContainers.forEach(clinksContainer => {
+    const caddLinkBtn = clinksContainer.querySelector('.cadd-link');
+    const clinkInputs = clinksContainer.querySelectorAll('.clink-inputs');
 
-  addLinkBtn.addEventListener('click', () => {
-    const newLinkInputs = linkInputs.cloneNode(true);
-    linksContainer.insertBefore(newLinkInputs, addLinkBtn);
+    caddLinkBtn.addEventListener('click', () => {
+      const cnewLinkInputs = clinkInputs[0].cloneNode(true);
+      clinksContainer.insertBefore(cnewLinkInputs, caddLinkBtn);
+    });
   });
-});
-
 </script>
+
+<script>
+// Modify form add more links 
+  const mlinksContainers = document.querySelectorAll('.mlinks-container');
+  mlinksContainers.forEach(mlinksContainer => {
+    const maddLinkBtn = mlinksContainer.querySelector('.madd-link');
+    const mlinkInputs = mlinksContainer.querySelectorAll('.mlink-inputs');
+
+    maddLinkBtn.addEventListener('click', () => {
+      const mnewLinkInputs = mlinkInputs[0].cloneNode(true);
+      mlinksContainer.insertBefore(mnewLinkInputs, maddLinkBtn);
+    });
+  });
+</script>
+

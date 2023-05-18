@@ -5,6 +5,7 @@
   align-items: center;
   background-color: hsl(0, 0%, 98%);
   font-size: 60%;
+  cursor:default;
 }
 .cmsForm {
   display: flex;
@@ -15,6 +16,9 @@
   display: flex;
   gap:2vw;
   padding:1vw;
+}
+.cmsForm div textarea {
+  width:100%;
 }
 .cms div label {
   font-size: 120%;
@@ -35,6 +39,25 @@
   background-color: green;
   color:white;
 }
+.mlinks-container {
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+}
+.mlink-inputs {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border:2px solid white;
+  width:auto;
+  gap:0.2rem;
+  border:2px solid pink;
+}
+
+
+
+
+
 .dashboard {
   text-align: center;
   width: min-content;
@@ -115,3 +138,4 @@
   color:red !important;
   font-size:3vw !important;
 }
+

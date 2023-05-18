@@ -11,14 +11,15 @@
       @method('DELETE')
       <input type="text" name="icon" value="{{ $exploreTech->icon }}" class="cmsInput">
       <input type="text" name="title" value="{{ $exploreTech->title }}" class="cmsInput">
+
+      @if ($exploreTech->links)
+      @foreach ($exploreTech->links as $link)
       <div style="display:flex;flex-direction:column;gap:0.5vw;border:2px solid pink;">
-        @if ($exploreTech->links)
-        @foreach ($exploreTech->links as $link)
         <input type="text" name="linkTitle" value="{{ $link['title'] }}" class="cmsInput">
         <input type="text" name="linkText" value="{{ $link['text'] }}" class="cmsInput">
-        @endforeach
-        @endif
       </div>
+      @endforeach
+      @endif
       <div class="cmsActions">
         <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit" class="cmsButton cmsDeleteButton">
           <i class="fas fa-trash-alt"></i>
