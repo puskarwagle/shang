@@ -18,7 +18,8 @@
 
     As a corporate establishment, the company is guided through the corporate principles, system and corporate governance and the requirements of the customers as business units so as to continue to enhance operations through the use of technology.
   </p>
-</div>
+</div> 
+<!-- sdfgdg -->
 
 @elseif($component === 'comp-products')
 <div class="comp-products">
