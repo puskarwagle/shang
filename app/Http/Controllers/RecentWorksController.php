@@ -28,7 +28,7 @@ class RecentWorksController extends Controller
         'description' => 'required|string',
       ]);
       RecentWork::create($validatedData);
-      return redirect()->route('recentWorks.index')->with('success', 'Recent works section created successfully!');
+      return redirect()->route('dashboard')->with('success', 'Recent works section created successfully!');
     }
 
     public function update(Request $request, string $id)
@@ -40,13 +40,13 @@ class RecentWorksController extends Controller
       $recentWorks->titleB = $request->titleB;
       $recentWorks->description = $request->description;
       $recentWorks->save();
-      return redirect()->route('recentWorks.index');
+      return redirect()->route('dashboard');
     }
 
     public function destroy(string $id)
     {
       $recentWorks = RecentWork::find($id);
       $recentWorks->delete();
-      return redirect()->route('recentWorks.index');
+      return redirect()->route('dashboard');
     }
 }

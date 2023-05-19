@@ -3,26 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\UnapprovedUser;
 
 class LoginController extends Controller
 {
-  public function authenticate(Request $request)
-{
-    $email = $request->input('email');
-    $password = $request->input('password');
+    public function authenticate(Request $request)
+    {
+      $email = $request->input('email');
+      $password = $request->input('password');
+      $user = User::where('email', $email)->first();
 
-    // manually check if the email and password are valid
-    if (($email === 'systemadmin@admin.com' && $password === 'passcode') ||
-        ($email === 'puskarwagle17@gmail.com' && $password === 'Shang5561')) {
-          
-        // authentication successful, redirect to dashboard
-        return redirect()->intended('dashboard');
-        
-    } else {
-        // authentication failed, redirect back with error message
-        return redirect()->back()->withErrors(['message' => 'Invalid login credentials']);
+      if ($user && $user->password === $password) {
+          return redirect()->intended('dashboard');
+      } else {
+          return redirect()->back()->withErrors(['message' => 'Email or Password melena!!']);
+      }
     }
-}  
+
+    public function store(Request $request)
+    {
+      $email = $request->input('email');
+      $password = $request->input('password');
+      $unapprovedUser = new UnapprovedUser;
+      $unapprovedUser->email = $email;
+      $unapprovedUser->password = $password;
+      $unapprovedUser->save();
+
+      return redirect()->intended('login')->with('success', 'Account request submitted successfully! Wait for approval. Thank you.');
+    }
+    
+    public function showUsers()
+    {
+      $unapprovedUsers = UnapprovedUser::all();
+      $approvedUsers = User::all();
+      return view('allusers', [
+          'unapprovedUsers' => $unapprovedUsers,
+          'approvedUsers' => $approvedUsers
+      ]);
+    }
+
 }

@@ -32,7 +32,7 @@ class ServicesController extends Controller
             'description' => 'required|string',
         ]);
         Service::create($validatedData);
-        return redirect()->route('service.index')->with('success', 'Service created successfully!');
+        return redirect()->route('dashboard')->with('success', 'Service created successfully!');
     }
 
    
@@ -44,14 +44,14 @@ class ServicesController extends Controller
         $service->description = $request->description;
         $service->icon = $request->icon;
         $service->save();
-        return redirect()->route('service.index');
+        return redirect()->route('dashboard');
     }
 
     public function destroy(string $id)
     {
         $service = Service::find($id);
         $service->delete();
-        return redirect()->route('service.index');
+        return redirect()->route('dashboard');
     }
 
 }
