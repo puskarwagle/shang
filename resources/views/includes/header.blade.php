@@ -87,113 +87,134 @@
     </div> <!-- .hMB -->
     @endforeach
   </div> <!-- .headerMain headerServ -->
+
+  <div class="search_user">noCss
+    <input type="checkbox" id="checkbox">
+  </div>
 </header>
+
+<!-- Switch css to no css -->
+<script>
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', (event) => {
+  const link = document.getElementById('css-link');
+  if (event.target.checked) {
+    link.href = '/css/no.css';
+  } else {
+    link.href = '/css/ibm.css';
+  }
+});
+</script>
 
 <!-- Header Products -->
 <script>
-  const headerho = document.querySelector('header');
-  const navLP = document.querySelectorAll('.navLarge li .headerNavProd');
-  const headerProd = document.querySelector('.headerProd');
-  navLP.forEach(linkP => {
-    linkP.addEventListener('click', (event) => {
-      event.preventDefault();
-      headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-      headerProd.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-      headerProd.style.display = (headerProd.style.display === 'flex') ? 'none' : 'flex';
-    });
+const headerho = document.querySelector('header');
+const navLP = document.querySelectorAll('.navLarge li .headerNavProd');
+const headerProd = document.querySelector('.headerProd');
+navLP.forEach(linkP => {
+  linkP.addEventListener('click', (event) => {
+    event.preventDefault();
+    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerProd.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerProd.style.display = (headerProd.style.display === 'flex') ? 'none' : 'flex';
   });
-  window.addEventListener('click', (event) => {
-    if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerProd')) {
-      headerProd.style.display = 'none';
-    }
-  });
+});
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest(
+      '.headerProd')) {
+    headerProd.style.display = 'none';
+  }
+});
 </script>
 
- <!-- Header Services -->
+<!-- Header Services -->
 <script>
-  const navLS = document.querySelectorAll('.navLarge li .headerNavServ');
-  const headerServ = document.querySelector('.headerServ');
-  navLS.forEach(linkS => {
-    linkS.addEventListener('click', (event) => {
-      event.preventDefault();
-      headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-      headerServ.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-      headerServ.style.display = (headerServ.style.display === 'flex') ? 'none' : 'flex';
-    });
+const navLS = document.querySelectorAll('.navLarge li .headerNavServ');
+const headerServ = document.querySelector('.headerServ');
+navLS.forEach(linkS => {
+  linkS.addEventListener('click', (event) => {
+    event.preventDefault();
+    headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerServ.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    headerServ.style.display = (headerServ.style.display === 'flex') ? 'none' : 'flex';
   });
-  window.addEventListener('click', (event) => {
-    if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerServ')) {
-      headerServ.style.display = 'none';
-    }
-  });
+});
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest(
+      '.headerServ')) {
+    headerServ.style.display = 'none';
+  }
+});
 </script>
 
 <!-- beautifing headerMain click hma li to show hmb -->
 <script>
-  const headerProds = document.querySelectorAll('.headerProd');
-  const headerServs = document.querySelectorAll('.headerServ');
+const headerProds = document.querySelectorAll('.headerProd');
+const headerServs = document.querySelectorAll('.headerServ');
 
-  headerProds.forEach(headerProd => {
-    const liElements = headerProd.querySelectorAll('.hMA li');
-    const hmbElements = headerProd.querySelectorAll('.hMB');
-    liElements[0].classList.add('hmaactive');
-    hmbElements[0].classList.add('hmbActive');
-    liElements.forEach((li, index) => {
-      li.addEventListener('click', () => {
-        const activeLi = headerProd.querySelector('.hMA li.hmaactive');
-        const activeHmb = headerProd.querySelector('.hMB.hmbActive');
-        if (activeLi && activeHmb) {
-          activeLi.classList.remove('hmaactive');
-          activeHmb.classList.remove('hmbActive');
-          activeHmb.classList.add('hmbPassive');
-        }
-        li.classList.add('hmaactive');
-        hmbElements[index].classList.add('hmbActive');
-        hmbElements[index].classList.remove('hmbPassive');
-      });
+headerProds.forEach(headerProd => {
+  const liElements = headerProd.querySelectorAll('.hMA li');
+  const hmbElements = headerProd.querySelectorAll('.hMB');
+  liElements[0].classList.add('hmaactive');
+  hmbElements[0].classList.add('hmbActive');
+  liElements.forEach((li, index) => {
+    li.addEventListener('click', () => {
+      const activeLi = headerProd.querySelector('.hMA li.hmaactive');
+      const activeHmb = headerProd.querySelector('.hMB.hmbActive');
+      if (activeLi && activeHmb) {
+        activeLi.classList.remove('hmaactive');
+        activeHmb.classList.remove('hmbActive');
+        activeHmb.classList.add('hmbPassive');
+      }
+      li.classList.add('hmaactive');
+      hmbElements[index].classList.add('hmbActive');
+      hmbElements[index].classList.remove('hmbPassive');
     });
   });
+});
 
-  headerServs.forEach(headerServ => {
-    const liElements = headerServ.querySelectorAll('.hMA li');
-    const hmbElements = headerServ.querySelectorAll('.hMB');
-    liElements[0].classList.add('hmaactive');
-    hmbElements[0].classList.add('hmbActive');
-    liElements.forEach((li, index) => {
-      li.addEventListener('click', () => {
-        const activeLi = headerServ.querySelector('.hMA li.hmaactive');
-        const activeHmb = headerServ.querySelector('.hMB.hmbActive');
-        if (activeLi && activeHmb) {
-          activeLi.classList.remove('hmaactive');
-          activeHmb.classList.remove('hmbActive');
-          activeHmb.classList.add('hmbPassive');
-        }
-        li.classList.add('hmaactive');
-        hmbElements[index].classList.add('hmbActive');
-        hmbElements[index].classList.remove('hmbPassive');
-      });
+headerServs.forEach(headerServ => {
+  const liElements = headerServ.querySelectorAll('.hMA li');
+  const hmbElements = headerServ.querySelectorAll('.hMB');
+  liElements[0].classList.add('hmaactive');
+  hmbElements[0].classList.add('hmbActive');
+  liElements.forEach((li, index) => {
+    li.addEventListener('click', () => {
+      const activeLi = headerServ.querySelector('.hMA li.hmaactive');
+      const activeHmb = headerServ.querySelector('.hMB.hmbActive');
+      if (activeLi && activeHmb) {
+        activeLi.classList.remove('hmaactive');
+        activeHmb.classList.remove('hmbActive');
+        activeHmb.classList.add('hmbPassive');
+      }
+      li.classList.add('hmaactive');
+      hmbElements[index].classList.add('hmbActive');
+      hmbElements[index].classList.remove('hmbPassive');
     });
   });
+});
 </script>
 
 <script>
 // Click on nav a to flex the .headerMain Small
-  const headerMain = document.querySelector('.headerMain');
-  const navS = document.querySelectorAll('#navLists li a:has(i)');
-    navS.forEach(linkSs => {
-      linkSs.addEventListener('click', (event) => {
-        if (headerho) {
-          event.preventDefault();
-          headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-          headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
-          headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
-        };
-      });
-    });
-  window.addEventListener('click', (event) => {
-    if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest('.headerMain')) {
-      headerMain.style.display = 'none';
-    }
+const headerMain = document.querySelector('.headerMain');
+const navS = document.querySelectorAll('#navLists li a:has(i)');
+navS.forEach(linkSs => {
+  linkSs.addEventListener('click', (event) => {
+    if (headerho) {
+      event.preventDefault();
+      headerho.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+      headerMain.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+      headerMain.style.display = (headerMain.style.display === 'flex') ? 'none' : 'flex';
+    };
   });
+});
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.navLarge') && !event.target.closest('#navLists') && !event.target.closest(
+      '.headerMain')) {
+    headerMain.style.display = 'none';
+  }
+});
 // Click on nav a to flex the .headerMain Small
 </script>

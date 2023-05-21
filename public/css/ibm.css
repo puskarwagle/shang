@@ -89,8 +89,8 @@ body {
   header .navLarge li:hover a {
     color: var(--g-black);
   }
+  /* search user */
   header .search_user {
-    display: none;
     align-items: center;
     gap:3vw;
     color: var(--a-black);
@@ -272,7 +272,7 @@ body {
 .bookmark {
 }
 /* Start of four */
-  section#four {
+  /* section#four {
     padding:3vw;
     border-bottom: 0.1vw solid var(--c-white);
     font-size: 2vw;
@@ -318,7 +318,7 @@ body {
   #four .fourCards i {
     color: var(--a-blue);
     font-size: 60%;
-  }
+  } */
 /* End of fourCards */
 
 /* MAIN */
@@ -337,7 +337,7 @@ body {
 .bookmark {
 }
 /* Navigation panel on the side */
-  .nav-panel {
+  /* .nav-panel {
     z-index: 2;
     font-size: 1.2vw;
     min-width: 15vw;
@@ -358,13 +358,13 @@ body {
     padding: 1.5vw 3vw 1.5vw 1vw;
     white-space: nowrap;
     border-left: 0.3vw solid gray;
-  }
+  } */
   .nav-panel a:hover {
     color: var(--p-black);
   }
-  .nav-panel a.active {
-    border-left: 0.3vw solid royalblue;
-  }
+  .nav-panel .active {
+    border-left: 0.3vw solid royalblue !important;
+  } 
 /* Navigation panel on the side */
 
 .bookmark {
