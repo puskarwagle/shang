@@ -10,27 +10,6 @@ use App\Http\Controllers\HeaderServicesController;
 use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\OurClientController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\TestLocationController;
-
-Route::get('/testLocation', function () {
-  return view('testLocation');
-});
-
-Route::post('/testLocation', [TestLocationController::class, 'store'])->name('testLocation.store');
-
-//use Stevebauman\Location\Facades\Location;
-// Route::get('/test-location', function () {
-//     $position = location::get();
-//     // $position = Location::get('192.168.1.1');
-//     if ($position = Location::get()) {
-//       // Successfully retrieved position.
-//       echo $position->countryName;
-//   } else {
-//       // Failed retrieving position.
-//   }
-// });
-
-
 
 // Welcome with HomeController class
 Route::get('/', [HomeController::class, 'layout']);
