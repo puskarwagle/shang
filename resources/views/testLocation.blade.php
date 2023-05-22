@@ -60,22 +60,21 @@
     <!-- Maps -->
     <div class="mt-4">
       <h3>Location Map</h3>
-      <!-- <div class="mb-4">
-        <h5>Google Maps</h5>
-        <iframe
-          width="600"
-          height="450"
-          frameborder="0"
-          style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q={{ urlencode(session('locationName')) }}&center={{ session('latitude') }},{{ session('longitude') }}"
-          allowfullscreen
-        ></iframe>
-      </div> -->
+
       <div>
-        <h5>OpenStreetMap</h5>
-        <iframe width="600" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-          src="https://www.openstreetmap.org/export/embed.html?m&bbox={{ session('longitude') - 0.01 }},{{ session('latitude') - 0.01 }},{{ session('longitude') + 0.01 }},{{ session('latitude') + 0.01 }}&layer=mapnik"></iframe>
-      </div>
+  <h5>OpenStreetMap</h5>
+  <iframe
+    width="600"
+    height="450"
+    frameborder="0"
+    scrolling="no"
+    marginheight="0"
+    marginwidth="0"
+    src="https://www.openstreetmap.org/export/embed.html?bbox={{ session('longitude') - 0.01 }},{{ session('latitude') - 0.01 }},{{ session('longitude') + 0.01 }},{{ session('latitude') + 0.01 }}&layer=mapnik&marker={{ session('latitude') }},{{ session('longitude') }}"
+  ></iframe>
+</div>
+
+
     </div> <!-- maps -->
 
   </div> <!-- mainContainer -->
