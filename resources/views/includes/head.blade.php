@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shangrila</title>
+  <title>Shangrila_main</title>
   <meta name="description" content="This here is the html of the landing page of Shangrila Microsystems nepal." />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">

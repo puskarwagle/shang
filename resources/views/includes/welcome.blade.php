@@ -79,7 +79,6 @@
     <section id="recentWorks">
       <h2>Recent Works</h2>
       <div id="honey">
-
         @foreach($recentWorks as $recentWork)
         <div class="rw">
           <div class="imgL">
@@ -90,7 +89,6 @@
           <div class="tect">{{ $recentWork->description }}</div>
         </div>
         @endforeach
-
       </div> <!-- #honey -->
     </section>
 
