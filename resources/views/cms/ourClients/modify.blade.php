@@ -7,10 +7,10 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
-<section id="ourClients">
-  <div>
+<h4 style="text-align:center;">Our Clients</h4>
+<section id="ourClients" style="display:flex;flex-wrap:wrap;padding:2rem;">
     @foreach($ourClients as $ourClient)
-      <div class="ourClient">
+      <div style="border:2px solid orange;border-radius:0.5vw;margin:1rem;" class="ourClient">
         <form class="cmsBoxDelete" action="{{ route('ourClients.update', $ourClient->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
@@ -20,7 +20,7 @@
             <span>{{ $ourClient->span }}</span>
           </div>
 
-          <div style="border:2px solid orange;border-radius:0.5vw;">
+          <div style="display:inline-flex;flex-direction:column;">
             <label for="image{{ $ourClient->id }}">Image:</label>
             <input type="file" id="image{{ $ourClient->id }}" name="image">
             <label for="imgalt{{ $ourClient->id }}">Img alt:</label>
@@ -40,13 +40,9 @@
             </div>
           @endif
 
-          <div class="cmsActions">
-            <button onclick="return confirm('Are you sure you want to submit this form?')" type="submit" class="cmsButton cmsSaveButton">
-              <i class="fas fa-save"></i>
-            </button>
-          </div>
+          <button class="save" type="submit">Save Changes</button>
+          <button class="delete" type="submit">Delete</button>
         </form>
       </div>
     @endforeach
-  </div>
 </section>

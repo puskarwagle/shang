@@ -1,55 +1,45 @@
-<section id="intern" class="bg-dark text-white py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        <h3>Register now: You're invited to the Shangrila Internship event, 9–11 May, Ghattekulo, Kathmandu</h3>
-      </div>
-      <div class="col-md-4 text-md-end">
-        <a href="#" class="btn btn-outline-light">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16">
-            <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section><br>
+<!-- <section id="intern" class="text-white d-flex">
 
-<section id="about" class="bg-light">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-md-6">
-        <p class="lead">Working towards excellence in ensuring Digital Governance in Nepal.</p>
-        <p>See how local governments are automated using software like DOT NET to deliver services more efficiently.
-          This is the third line. This is a good line.</p>
-        <a href="{{ route('about') }}" class="btn btn-primary">
-          <span>Get to know Shangrila</span>
-          <i class="fas fa-arrow-right ml-2"></i>
-        </a>
-      </div>
-      <div class="col-md-6">
-        <img src="./images/shangrila-bg.jpg" alt="this is the first img" class="img-fluid">
-      </div>
-    </div>
+  <div class="col-md-11">
+    <p>Register now: You're invited to the Shangrila Internship event, 9–11 May, Ghattekulo, Kathmandu</p>
+  </div>
+  <div class="col-md-1">
+    <a href="#" class="">
+      X
+    </a>
+  </div>
+</section><br> -->
+
+<section id="about" class="p-5 row">
+  <div class="col-md-6 d-inline-flex flex-column">
+    <h2 class="mb-5">Working towards excellence in ensuring Digital Governance in Nepal.</h2>
+    <p class="mb-5">See how local governments are automated using software like DOT NET to deliver services more efficiently.
+      This is the third line. This is a good line.</p>
+    <a href="{{ route('about') }}" class="btn btn-primary rounded-0 d-inline-flex gap-3 mb-4" style="max-width:fit-content">
+      <span>Get to know Shangrila</span>
+      <i class="align-self-center fas fa-arrow-right ml-2"></i>
+    </a>
+  </div>
+  <div class="col-md-6">
+    <video width="100%" height="100%" poster="/images/overview.jpg" controls>
+      <source src="./videos/PDF-Form_Signing.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </section>
 
-<section id="fou" class="p-5">
-  <h2 class="mb-4">What’s new inside Shangrila</h2>
-  <div id="allNewCards" class="d-flex mx-5">
+<section class="p-2">
+  <div class="d-flex flex-wrap row px-2 mb-2 ms-2">
 
-    <a href="{{ route('mission') }}" 
-       class="bg-light mx-1 px-2 pt-3 w-25 card text-decoration-none hover:bg-dark">
+    <a href="{{ route('mission') }}" class="col-md-3 rounded-0 bg-light px-2 pt-3 mw-20 card text-decoration-none">
       <h5 class="mb-4">Mission</h5>
       <p class="d-flex justify-content-between">
-        <span>Read about shangria and its influence over IT in nepal. This is a filler line.</span>
+        <span class="w-75">Read about shangria and its influence over IT in nepal. This is a filler line.</span>
         <i class="text-primary align-self-end fas fa-arrow-right"></i>
       </p>
     </a>
 
-    <a href="{{ route('dataCenterServices') }}" 
-       class="bg-light mx-1 px-2 pt-3 w-25 card text-decoration-none">
+    <a href="{{ route('dataCenterServices') }}" class="col-md-3 rounded-0 bg-light  px-2 pt-3 card text-decoration-none">
       <h5 class="mb-4">Support</h5>
       <p class="d-flex justify-content-between">
         <span class="w-75">Learn about the services provided by this beautiful company.</span>
@@ -57,15 +47,15 @@
       </p>
     </a>
 
-    <a href="{{ route('products') }}" class="bg-light mx-1 px-2 pt-3 w-25 card text-decoration-none">
+    <a href="{{ route('products') }}" class="col-md-3 bg-light rounded-0 px-2 pt-3 card text-decoration-none">
       <h5 class="mb-4">Products</h5>
       <p class="d-flex justify-content-between">
         <span class="w-75">Take a look at the projects we have been working on.</span>
         <i class="text-primary align-self-end fas fa-arrow-right"></i>
       </p>
-      
+
     </a>
-    <a href="{{ route('internship') }}" class="bg-light mx-1 px-2 pt-3 w-25 card text-decoration-none">
+    <a href="{{ route('internship') }}" class="col-md-3 rounded-0 bg-light px-2 pt-3 card text-decoration-none">
       <h5 class="mb-4">Internship</h5>
       <p class="d-flex justify-content-between">
         <span class="w-75">Contact us. You ca get a internship here and you will get to learn.</span>
@@ -77,19 +67,8 @@
 </section>
 
 <main>
-  <!-- <div class="nav-panel">
-    <ul>
-      <li><a href="#recentWorks">Recent Works</a></li>
-      <li><a href="#exploreTech">Explore Tech</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#happyClients">Our Clients</a></li>
-      <li><a href="#consult">Consulting</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div> -->
-
-  <nav class="navbar nav-panel">
-    <ul class="navbar-nav sticky-top text-nowrap mt-5 ms-3">
+  <nav class=" pe-5" id="nav-panel">
+    <ul class="navbar-nav text-nowrap ms-2 mt-2">
       <li class="nav-item">
         <a class="nav-link border-start border-4 p-3" href="#recentWorks">Recent Works</a>
       </li>
@@ -110,9 +89,9 @@
       </li>
     </ul>
   </nav>
-  
-  <article>
-    <section id="index">
+
+  <article class="border">
+    <!-- <section id="index">
       <ul>
         <li><a href="#recentWorks">Recent Works</a></li>
         <li><a href="#exploreTech">Explore Tech</a></li>
@@ -120,29 +99,27 @@
         <li><a href="#consult">Consulting</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </section>
+    </section> -->
 
     <section id="recentWorks">
-      <h2>Recent Works</h2>
-      <div id="" class="d-flex border" >
-
+      <h4>Recent Works</h4>
+      <div class="honey">
         @foreach($recentWorks as $recentWork)
-        <div class="card mw-auto mx-3">
-          <img class="card-img-top" width="200px" src="{{ $recentWork->imgsrc }}" alt="{{ $recentWork->imgalt }}" />
-          <div class="card-body d-flex flex-column text-nowrap">  
-            <h4 class="card-title">{{ $recentWork->titleA }}</h4>
-            <p class="card-text">{{ $recentWork->titleB }}</p>
+        <div class="rw">
+          <div class="imgL">
+            <img src="{{ $recentWork->imgsrc }}" alt="{{ $recentWork->imgalt }}" />
+            <span>{{ $recentWork->titleA }}</span>
+            <span>{{ $recentWork->titleB }}</span>
           </div>
-          <div class=".tect">{{ $recentWork->description }}</div>
+          <div class="tect">{{ $recentWork->description }}</div>
         </div>
         @endforeach
-
       </div> <!-- #honey -->
     </section>
 
 
     <section id="exploreTech">
-      <h2>Explore our technology</h2>
+      <h4>Explore our technology</h4>
       <div id="techCards">
         @foreach($exploreTechs as $exploreTech)
         <div class="tCards" tabindex="0">
@@ -174,14 +151,14 @@
       </div> <!-- #techCards -->
     </section>
 
-    <section id="services">
-      <h2>Our Services gpt</h2>
+    <section class="ps-5 pe-2 py-2" id="services">
+      <h4 class="mb-3">Our Services</h4>
       <div id="allServices" class="row">
         @foreach($services as $service)
-        <div class="box col-md-4">
+        <div class="box col-md-4 col-sm-6">
           <i class="{{ $service->icon }}"></i>
           <div>
-            <h3>{{ $service->title }}</h3>
+            <h6>{{ $service->title }}</h6>
             <p>{{ $service->description }}</p>
           </div>
         </div>
@@ -191,12 +168,12 @@
     </section>
 
 
-    <section id="happyClients">
-      <h2>Our Clients</h2>
-      <div id="allClientCards" class="d-flex flex-wrap">
+    <section id="happyClients" class="ps-5 pe-2 py-2">
+      <h4>Our Clients</h4>
+      <div id="allClientCards" class="">
         @foreach($ourClients as $ourClient)
         <div class="clientCards">
-          <img src="./images/ourClients/{{ $ourClient->imgsrc }}" alt="{{ $ourClient->imgalt }}" class="img-fluid img-thumbnail">
+          <img src="./images/ourClients/{{ $ourClient->imgsrc }}" alt="{{ $ourClient->imgalt }}">
           <span>{{ $ourClient->span}}</span>
         </div>
         @endforeach

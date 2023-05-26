@@ -1,4 +1,6 @@
-<div class="cms">
+@include('cms.recentWorks.modify')
+
+<!-- <div class="cms">
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
       <span>Create recentWorks.</span>
@@ -42,5 +44,5 @@
       @include('cms.recentWorks.delete')
     </div>
   </div>
-</div>
+</div> -->
 

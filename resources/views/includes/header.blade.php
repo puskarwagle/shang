@@ -1,31 +1,26 @@
-<header>
-  <a href="\">
-    <img src="./images/newSH.png" alt="shangrila logo">
+<header class="d-flex py-1 px-4 border-bottom align-items-center">
+  <a class="pe-4" href="\">
+    <img class="logo" style="max-width: 6rem;aspect-ratio: 1/0.5;" src="./images/newSH.png" alt="shangrila logo">
   </a>
-  <ul class="navLarge">
-    <li><a class="active" href="{{ route('about') }}">About</a></li>
-    <li>
-      <p class="headerNavProd">Products <i class="fas fa-chevron-down fa-xs"></i></p>
+  
+  <!-- nav large -->
+  <ul class="navLarge list-unstyled d-flex gap-5 my-auto mx-2 ps-4 border-start border-muted">
+    <li class="my-auto"><a class="text-decoration-none text-muted" href="{{ route('about') }}">About</a></li>
+    <li class="my-auto">
+      <p class="headerNavProd my-auto text-muted d-flex align-items-center gap-2">Products <i class="fas fa-chevron-down fa-xs"></i></p>
     </li>
-    <li>
-      <p class="headerNavServ">Services <i class="fas fa-chevron-down fa-xs"></i></p>
+    <li class="my-auto">
+      <p class="headerNavServ my-auto text-muted d-flex align-items-center gap-2">Services <i class="fas fa-chevron-down fa-xs"></i></p>
     </li>
-    <li><a href="#recentWorks">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li class="my-auto"><a class="text-decoration-none text-muted" href="#recentWorks">Projects</a></li>
+    <li class="my-auto"><a class="text-decoration-none text-muted" href="#contact">Contact</a></li>
   </ul>
 
+  <!-- nav small -->
   <ul class="navSmall">
     <div id="navHam">
-      <svg id="ham" viewBox="0 0 100 100" width="2vw">
-        <rect x="10" y="25" width="80" height="10" />
-        <rect x="10" y="45" width="80" height="10" />
-        <rect x="10" y="65" width="80" height="10" />
-        <rect x="10" y="85" width="80" height="10" />
-      </svg>
-      <svg id="hamClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2vw">
-        <line x1="18" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        <line x1="6" y1="6" x2="18" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-      </svg>
+      <i id="ham" class="fas fa-bars"></i>
+      <i id="hamClose" class="fas fa-times"></i>
     </div>
     <div id="navLists">
       <li><a class="active" href="{{ route('about') }}"><span>About</span></a></li>
@@ -36,10 +31,11 @@
     </div>
   </ul>
 
+  <!-- .headerMain headerProd -->
   <div class="headerMain headerProd">
-    <ul class="hMA">
+    <ul class="hMA list-unstyled pt-4 pb-4 ps-4">
       @foreach($headerProducts as $headerProduct)
-      <li class="">{{ $headerProduct->title }}</li>
+      <li class="text-nowrap p-1">{{ $headerProduct->title }}</li>
       @endforeach
     </ul> <!-- .hMA -->
     @foreach($headerProducts as $headerProduct)
@@ -60,12 +56,13 @@
       </div> <!-- .hMBTexts -->
     </div> <!-- .hMB -->
     @endforeach
-  </div> <!-- .headerMain headerProd -->
+  </div> 
 
+  <!-- .headerMain headerServ -->
   <div class="headerMain headerServ">
-    <ul class="hMA">
+    <ul class="hMA  list-unstyled pt-4 pb-4 ps-4">
       @foreach($headerServices as $headerService)
-      <li class="">{{ $headerService->title }}</li>
+      <li class="text-nowrap p-1">{{ $headerService->title }}</li>
       @endforeach
     </ul> <!-- .hMA -->
     @foreach($headerServices as $headerService)
@@ -86,11 +83,7 @@
       </div> <!-- .hMBTexts -->
     </div> <!-- .hMB -->
     @endforeach
-  </div> <!-- .headerMain headerServ -->
-
-  <div class="search_user">noCss
-    <input type="checkbox" id="checkbox">
-  </div>
+  </div> 
 </header>
 
 <!-- Switch css to no css -->

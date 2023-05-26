@@ -1,9 +1,13 @@
+
+
+
+
 <footer>
   <div class="row" id="footerF">
-    <div class="col-md-3">
-      <img src="./images/newSH.png" alt="shangrila logo">
+    <div class="col-md-12 d-flex justify-content-between">
+      <img style="max-width: 6rem;aspect-ratio: 1/0.5;" src="./images/newSH.png" alt="shangrila logo">
       <p>
-        <span>United Kingdom - English</span>
+        <span class="text-nowrap">United Kingdom - English</span>
         <i class="fas fa-globe"></i>
       </p>
     </div>
