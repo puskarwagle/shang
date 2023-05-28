@@ -62,9 +62,7 @@ class OurClientController extends Controller
 
         $ourClient->imgalt = $request->input('imgalt');
         $ourClient->span = $request->input('span');
-
         $ourClient->save();
-
         return redirect()->route('dashboard')->with('success', 'ourClients section updated successfully!');
     }
 

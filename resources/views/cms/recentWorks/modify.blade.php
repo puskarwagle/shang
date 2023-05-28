@@ -80,7 +80,7 @@
       const input = label.nextElementSibling;
       const preview = label.querySelector('img');
 
-      label.addEventListener('click', function() {
+      label.addEventListener('click', function(e) {
         e.preventDefault();
         input.click();
       });
@@ -91,11 +91,6 @@
 
         reader.onload = function() {
           preview.src = reader.result;
-          const imgsrcInput = input.parentNode.querySelector('input[name="imgsrc"]');
-          
-          if (imgsrcInput) {
-            imgsrcInput.value = "./images/recentWorks/" + file.name; // Update the value of imgsrc input with the file name
-          }
         };
 
         reader.readAsDataURL(file);

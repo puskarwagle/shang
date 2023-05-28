@@ -21,49 +21,59 @@ class RecentWorksController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'image' => 'required|image|max:2048',
-            'imgalt' => 'required|string',
-            'titleA' => 'required|string',
-            'titleB' => 'required|string',
-            'description' => 'required|string',
-        ]);
+      // dd($request->all());
 
-        $imagePath = $request->file('image')->store('public/images/recentWorks');
-
-        $validatedData['imgsrc'] = Storage::url($imagePath);
-
-        RecentWork::create($validatedData);
-        return redirect()->route('dashboard')->with('success', 'Recent works section created successfully!');
+      $validatedData = $request->validate([
+        'imgsrc' => 'required|string',
+        'imgalt' => 'required|string',
+        'titleA' => 'required|string',
+        'titleB' => 'required|string',
+        'description' => 'required|string',
+      ]);
+      RecentWork::create($validatedData);
+      return redirect()->route('dashboard')->with('success', 'Recent works section created successfully!');
     }
 
 
 
 
-    public function update(Request $request, string $id)
+   
+        
+
+
+    public function update(Request $request, $id)
     {
         $recentWork = RecentWork::findOrFail($id);
 
-        //dd($request->all());
-
-        $validatedData = $request->validate([
-            'image' => 'nullable|image|max:2048',
-            'imgalt' => 'required|string',
-            'titleA' => 'required|string',
-            'titleB' => 'required|string',
-            'description' => 'required|string',
-        ]);
-
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/images/recentWorks');
-            $validatedData['imgsrc'] = Storage::url($imagePath);
-            Storage::delete($recentWork->imgsrc);
+            $oldImagePath = public_path('images/recentWorks/') . $recentWork->imgsrc;
+
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+
+            $image = $request->file('image');
+
+            if ($image->isValid()) {
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('images/recentWorks/'), $imageName);
+                $recentWork->imgsrc = $imageName;
+            } else {
+                return redirect()->back()->withErrors(['image' => 'The image upload failed.']);
+            }
         }
 
-        $recentWork->update($validatedData);
+        $recentWork->imgalt = $request->input('imgalt');
+        $recentWork->titleA = $request->input('titleA');
+        $recentWork->titleB = $request->input('titleB');
+        $recentWork->description = $request->input('description');
+        $recentWork->save();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', 'Recent works section updated successfully!');
     }
+
+
+
 
 
 
@@ -72,9 +82,8 @@ class RecentWorksController extends Controller
 
     public function destroy(string $id)
     {
-        $recentWork = RecentWork::findOrFail($id);
-        Storage::delete($recentWork->imgsrc);
-        $recentWork->delete();
-        return redirect()->route('dashboard');
+      $recentWorks = RecentWork::find($id);
+      $recentWorks->delete();
+      return redirect()->route('dashboard');
     }
 }
