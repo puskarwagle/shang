@@ -12,33 +12,49 @@ class ExploreTechsController extends Controller
       return view('exploreTechs.index', compact('exploreTechs'));
     }
 
+
+
+
     public function create()
     {
       return view('exploreTechs.create');
     }
 
+
+
+
+
     public function store(Request $request)
     {
-    $validatedData = $request->validate([
-        'icon' => 'required|string',
-        'title' => 'required|string',
-        'linkTitles.*' => 'required|string',
-        'linkTexts.*' => 'required|string',
-    ]);
-    $links = [];
-    foreach ($validatedData['linkTitles'] as $index => $linkTitle) {
-        $links[] = [
-            'title' => $linkTitle,
-            'text' => $validatedData['linkTexts'][$index],
-        ];
+      //dd($request->all());
+
+      $validatedData = $request->validate([
+          'icon' => 'required|string',
+          'title' => 'required|string',
+          'linkTitles.*' => 'required|string',
+          'linkTexts.*' => 'required|string',
+      ]);
+      
+      dd($validatedData);
+
+      $links = [];
+      foreach ($validatedData['linkTitles'] as $index => $linkTitle) {
+          $links[] = [
+              'title' => $linkTitle,
+              'text' => $validatedData['linkTexts'][$index],
+          ];
+      }
+      ExploreTech::create([
+          'icon' => $validatedData['icon'],
+          'title' => $validatedData['title'],
+          'links' => $links,
+      ]);
+      return redirect()->route('dashboard')->with('success', 'Explore Tech section created successfully!');
     }
-    ExploreTech::create([
-        'icon' => $validatedData['icon'],
-        'title' => $validatedData['title'],
-        'links' => $links,
-    ]);
-    return redirect()->route('dashboard')->with('success', 'Explore Tech section created successfully!');
-    }
+
+
+
+
 
 
     public function update(Request $request, string $id)
@@ -62,6 +78,10 @@ class ExploreTechsController extends Controller
       $exploreTech->save();
       return redirect()->route('dashboard');
     }
+
+
+
+
 
     public function destroy(string $id)
     {
