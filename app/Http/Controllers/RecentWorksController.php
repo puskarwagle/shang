@@ -4,49 +4,77 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RecentWork;
+use Illuminate\Support\Facades\Storage;
 
 class RecentWorksController extends Controller
 {
     public function index()
     {
-      $recentWorks = RecentWork::all();
-      return view('recentWorks.index', compact('recentWorks'));
+        $recentWorks = RecentWork::all();
+        return view('recentWorks.index', compact('recentWorks'));
     }
 
     public function create()
     {
-      return view('recentWorks.create');
+        return view('recentWorks.create');
     }
 
     public function store(Request $request)
     {
-      $validatedData = $request->validate([
-        'imgsrc' => 'required|string',
-        'imgalt' => 'required|string',
-        'titleA' => 'required|string',
-        'titleB' => 'required|string',
-        'description' => 'required|string',
-      ]);
-      RecentWork::create($validatedData);
-      return redirect()->route('dashboard')->with('success', 'Recent works section created successfully!');
+        $validatedData = $request->validate([
+            'image' => 'required|image|max:2048',
+            'imgalt' => 'required|string',
+            'titleA' => 'required|string',
+            'titleB' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $imagePath = $request->file('image')->store('public/images/recentWorks');
+
+        $validatedData['imgsrc'] = Storage::url($imagePath);
+
+        RecentWork::create($validatedData);
+        return redirect()->route('dashboard')->with('success', 'Recent works section created successfully!');
     }
+
+
+
 
     public function update(Request $request, string $id)
     {
-      $recentWorks = RecentWork::find($id);
-      $recentWorks->imgsrc = $request->imgsrc;
-      $recentWorks->imgalt = $request->imgalt;
-      $recentWorks->titleA = $request->titleA;
-      $recentWorks->titleB = $request->titleB;
-      $recentWorks->description = $request->description;
-      $recentWorks->save();
-      return redirect()->route('dashboard');
+        $recentWork = RecentWork::findOrFail($id);
+
+        //dd($request->all());
+
+        $validatedData = $request->validate([
+            'image' => 'nullable|image|max:2048',
+            'imgalt' => 'required|string',
+            'titleA' => 'required|string',
+            'titleB' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/images/recentWorks');
+            $validatedData['imgsrc'] = Storage::url($imagePath);
+            Storage::delete($recentWork->imgsrc);
+        }
+
+        $recentWork->update($validatedData);
+
+        return redirect()->route('dashboard');
     }
+
+
+
+
+
 
     public function destroy(string $id)
     {
-      $recentWorks = RecentWork::find($id);
-      $recentWorks->delete();
-      return redirect()->route('dashboard');
+        $recentWork = RecentWork::findOrFail($id);
+        Storage::delete($recentWork->imgsrc);
+        $recentWork->delete();
+        return redirect()->route('dashboard');
     }
 }

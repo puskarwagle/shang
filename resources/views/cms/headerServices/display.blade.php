@@ -25,27 +25,57 @@
         titleInput.value = subtitleElement.textContent;
         textInput.value = subTextElement.textContent;
     }
+    function createNewElementServ() {
+  const headerContainer = document.querySelector('.hs');
+  const newServiceElement = document.createElement('div');
+  newServiceElement.classList.add('headerMain', 'headerServ');
+  newServiceElement.style = "overflow:visible ! important; min-height:auto !important; position:static; border:2px solid gold; margin-bottom:4rem;";
+  newServiceElement.innerHTML = `
+    <form style="display:flex;" action="{{ route('headerServices.store') }}" method="POST">
+      @csrf
+      <ul class="hMA">
+        <li contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">service title</li>
+        <input type="hidden" name="title" value="">
+      </ul>
 
-    function displayFormData(event) {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-      for (let pair of formData.entries()) {
-        console.log(pair[0] + ': ' + pair[1]);
-      }
-      // Uncomment the following line to allow form submission after debugging
-      form.submit();
-    }
+      <div class="hMB hmbPassive">
+        <div class="hMBFirst">
+          <p contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">edit service title</p>
+          <p contenteditable="true" oninput="updateHiddenInputValue(this, 'title_text')">edit service title_text</p>
+          <input style="height: 100%;" type="hidden" name="title_text" value="">
+        </div>
+
+        <div class="hMBTexts">
+          <div class="hMBText">
+            <p contenteditable="true" oninput="updateSubTTInputs(this)">edit service sub title</p>
+            <input type="hidden" name="subTitles[]" value="">
+            <p contenteditable="true" oninput="updateSubTTInputs(this)">edit service sub title_text</p>
+            <input type="hidden" name="subTexts[]" value="">
+          </div>
+          <button class="add-link" type="button" onclick="addSubTitleAndTextServ(this)">Add more sub titles and texts</button>
+        </div>
+      </div>
+
+      <button class="Create" type="submit">Save New element</button>
+    </form>
+  `;
+
+  headerContainer.appendChild(newServiceElement);
+}
+
   </script>
 </head>
 
-<header style="display:flex;flex-direction:column; border:2px solid gold;">
+<header style="display:flex;flex-direction:column; border:2px solid gold;" class="hs">
   <h2>header services section</h2>
   @foreach($headerServices as $headerService)
 
   <div class="headerMain headerServ"
-    style="overflow:visible ! important; min-height:auto !important; position:static; border:2px solid gold; margin-bottom:4rem;">
-    <form style="display:flex;" action="{{ route('headerServices.update', $headerService->id) }}" method="POST">
+       style="overflow:visible ! important; min-height:auto !important; position:static; border:2px solid gold; margin-bottom:4rem;" 
+       data-id="{{ $headerService->id }}">
+    
+    <form style="display:flex;" action="{{ route('headerServices.update', $headerService->id) }}" 
+      method="POST" onsubmit="event.preventDefault(); updateHeaderService(event, '{{ $headerService->id }}')">
       @csrf
       @method('PUT')
 
@@ -54,7 +84,7 @@
         <input type="hidden" name="title" value="{{ $headerService->title }}">
       </ul> <!-- .hMA -->
 
-      <div class="hMB hmbPassive">
+      <div class="hMB hmbActive">
         <div class="hMBFirst">
           <p contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">{{ $headerService->title }} <i class="fas fa-arrow-right"></i></p>
           <p contenteditable="true" oninput="updateHiddenInputValue(this, 'title_text')">{{ $headerService->title_text }}</p>
@@ -70,17 +100,37 @@
             <input type="hidden" name="subTexts[]" value="{{ $subT['text'] }}">
           </div>
           @endforeach
-          <button class="add-link" type="button">Add more sub titles and texts</button>
+          <button class="add-link" type="button" onclick="addSubTitleAndTextServ(this)">Add more sub titles and texts</button>
         </div> <!-- .hMBTexts -->
 
       </div> <!-- .hMB -->
       <button class="save" type="submit">Save Changes</button>
+
       <input type="hidden" name="_method" value="DELETE">
       <button class="delete" type="button" onclick="deleteHeaderService('{{ $headerService->id }}')">Delete</button>
+
+      <!-- Display the ID in the element -->
+      <p style="color:red">ID: {{ $headerService->id }}</p>
     </form>
   </div> <!-- .headerMain headerServ -->
   @endforeach
+
+  <button id="createService" onclick="createNewElementServ()">Click to Create a entirely new headerService elememt.</button>
 </header>
+
+<script>
+  function updateHeaderService(event, id) {
+    if (confirm('Are you sure you want to update this header service ?')) {
+      const form = event.target;
+      const methodInput = document.createElement('input');
+      methodInput.type = 'hidden';
+      methodInput.name = '_method';
+      methodInput.value = 'PUT';
+      form.appendChild(methodInput);
+      form.submit();
+    }
+  }
+</script>
 
 <script>
   function deleteHeaderService(id) {
@@ -116,19 +166,16 @@
 </script>
 
 <script>
-  const hMBTextsContainers = document.querySelectorAll('.hMBTexts');
-  hMBTextsContainers.forEach(hMBTextsContainer => {
-    const addSubTBtn = hMBTextsContainer.querySelector('.add-link');
-    addSubTBtn.addEventListener('click', () => {
-      const newSubTSection = document.createElement('div');
-      newSubTSection.classList.add('hMBText');
-      newSubTSection.innerHTML = `
-        <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub title</p>
-        <input type="text" name="subTitles[]" value="">
-        <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub Text</p>
-        <input type="text" name="subTexts[]" value="">
-      `;
-      hMBTextsContainer.insertBefore(newSubTSection, addSubTBtn);
-    });
-  });
+  function addSubTitleAndTextServ(buttonServ) {
+    const hMBTextsContainerServ = buttonServ.closest('.hMB').querySelector('.hMBTexts');
+    const newSubTSectionServ = document.createElement('div');
+    newSubTSectionServ.classList.add('hMBText');
+    newSubTSectionServ.innerHTML = `
+      <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub title p</p>
+      <input type="hidden" name="subTitles[]" value="">
+      <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub Text p</p>
+      <input type="hidden" name="subTexts[]" value="">
+    `;
+    hMBTextsContainerServ.insertBefore(newSubTSectionServ, buttonServ);
+  }
 </script>

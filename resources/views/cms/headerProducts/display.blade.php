@@ -12,7 +12,6 @@
       const subTextElement = subtitleElement.nextElementSibling;
       const titleInput = subtitleElement.nextElementSibling;
       const textInput = subTextElement.nextElementSibling;
-
         titleInput.value = subtitleElement.textContent;
         textInput.value = subTextElement.textContent;
     }
@@ -21,32 +20,61 @@
       const subTextElement = subtitleElement.nextElementSibling;
       const titleInput = subtitleElement.nextElementSibling;
       const textInput = subTextElement.nextElementSibling;
-
         titleInput.value = subtitleElement.textContent;
         textInput.value = subTextElement.textContent;
     }
 
-    function displayFormData(event) {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-      for (let pair of formData.entries()) {
-        //console.log(pair[0] + ': ' + pair[1]);
-      }
-      // Uncomment the following line to allow form submission after debugging
-      form.submit();
+    function createNewElementProd() {
+      const headerContainer = document.querySelector('.hp');
+      const newProdElement = document.createElement('div');
+      newProdElement.classList.add('headerMain', 'headerProd');
+      newProdElement.style = "overflow:visible ! important; min-height:auto !important; position:static; border:2px solid gold; margin-bottom:4rem;";
+      newProdElement.innerHTML = `
+        <form style="display:flex;" action="{{ route('headerProducts.store') }}" method="POST">
+          @csrf
+          <ul class="hMA">
+            <li contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">product title</li>
+            <input type="hidden" name="title" value="">
+          </ul>
+
+          <div class="hMB hmbActive">
+            <div class="hMBFirst">
+              <p contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">edit product title</p>
+              <p contenteditable="true" oninput="updateHiddenInputValue(this, 'title_text')">edit product title_text</p>
+              <input style="height: 100%;" type="hidden" name="title_text" value="">
+            </div>
+
+            <div class="hMBTexts">
+              <div class="hMBText">
+                <p contenteditable="true" oninput="updateSubTTInputs(this)">edit product sub title</p>
+                <input type="hidden" name="subTitles[]" value="">
+                <p contenteditable="true" oninput="updateSubTTInputs(this)">edit product sub title_text</p>
+                <input type="hidden" name="subTexts[]" value="">
+              </div>
+              <button class="add-link" type="button" onclick="addSubTitleAndTextProd(this)">Add more sub titles and texts</button>
+            </div>
+          </div>
+
+          <button class="Create" type="submit">Save New element</button>
+        </form>
+      `;
+
+      headerContainer.appendChild(newProdElement);
     }
+
   </script>
 </head>
 
-<header style="display:flex;flex-direction:column; border:2px solid gold;">
+<header style="display:flex;flex-direction:column; border:2px solid gold;" class="hp">
 <h2>header products section</h2>
   @foreach($headerProducts as $headerProduct)
 
-  <div style="overflow:visible ! important; min-height:auto !important; position:static; border:2px solid gold; margin-bottom:4rem;" 
-       class="headerMain headerProd">
-    <form style="display:flex;" action="{{ route('headerProducts.update', $headerProduct->id) }}" method="POST" 
-          onsubmit="displayFormData(event)">
+  <div class="headerMain headerProd" 
+       style="overflow:visible ! important; min-height:auto !important; position:static; border:2px solid gold; margin-bottom:4rem;" 
+       data-id="{{ $headerProduct->id }}">
+    
+     <form style="display:flex;" action="{{ route('headerProducts.update', $headerProduct->id) }}" 
+      method="POST" onsubmit="event.preventDefault(); updateHeaderProduct(event, '{{ $headerProduct->id }}')">
       @csrf
       @method('PUT')
 
@@ -71,7 +99,7 @@
             <input type="hidden" name="subTexts[]" value="{{ $subT['text'] }}">
           </div>
           @endforeach
-          <button class="add-link" type="button">Add more sub titles and texts</button>
+          <button class="add-link" type="button" onclick="addSubTitleAndTextProd(this)">Add more sub titles and texts</button>
         </div> <!-- .hMBTexts -->
 
 
@@ -81,11 +109,29 @@
       <input type="hidden" name="_method" value="DELETE">
       <button class="delete" type="button" onclick="deleteHeaderProduct('{{ $headerProduct->id }}')">Delete</button>
 
+      <!-- Display the ID in the element -->
+      <p style="color:red">ID: {{ $headerProduct->id }}</p>
+
     </form>
   </div> <!-- .headerMain headerProd -->
   @endforeach
+
+  <button id="createProduct" onclick="createNewElementProd()">Click to Create a entirely new headerProduct element.</button>
 </header>
 
+<script>
+  function updateHeaderProduct(event, id) {
+    if (confirm('Are you sure you want to update this header product ?')) {
+      const form = event.target;
+      const methodInput = document.createElement('input');
+      methodInput.type = 'hidden';
+      methodInput.name = '_method';
+      methodInput.value = 'PUT';
+      form.appendChild(methodInput);
+      form.submit();
+    }
+  }
+</script>
 
 <script>
   function deleteHeaderProduct(id) {
@@ -121,19 +167,17 @@
 </script>
 
 <script>
-  const hMBTextsContainers = document.querySelectorAll('.hMBTexts');
-  hMBTextsContainers.forEach(hMBTextsContainer => {
-    const addSubTBtn = hMBTextsContainer.querySelector('.add-link');
-    addSubTBtn.addEventListener('click', () => {
-      const newSubTSection = document.createElement('div');
-      newSubTSection.classList.add('hMBText');
-      newSubTSection.innerHTML = `
-        <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub title</p>
-        <input type="text" name="subTitles[]" value="">
-        <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub Text</p>
-        <input type="text" name="subTexts[]" value="">
-      `;
-      hMBTextsContainer.insertBefore(newSubTSection, addSubTBtn);
-    });
-  });
+  function addSubTitleAndTextProd(buttonProd) {
+    const hMBTextsContainerProd = buttonProd.closest('.hMB').querySelector('.hMBTexts');
+    const newSubTSectionProd = document.createElement('div');
+    newSubTSectionProd.classList.add('hMBText');
+    newSubTSectionProd.innerHTML = `
+      <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub title p</p>
+      <input type="hidden" name="subTitles[]" value="">
+      <p contenteditable="true" oninput="updateDynamicSubTTInputs(this)">edit this sub Text p</p>
+      <input type="hidden" name="subTexts[]" value="">
+    `;
+    hMBTextsContainerProd.insertBefore(newSubTSectionProd, buttonProd);
+  }
 </script>
+

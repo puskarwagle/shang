@@ -9,13 +9,17 @@
 <div class="dashboard">
   <h1 style="white-space:nowrap;text-align:center;">CONTENT MANAGEMENT SYSTEM</h1><br>
   
+  <div>@include('cms.recentWorks.modify')</div>
+
+  <div>@include('cms.ourClients.modify')</div>
   <div>@include('cms.headerServices.display')</div>
   <div>@include('cms.headerProducts.display')</div>
-  <div>@include('cms.ourClients.modify')</div>
+
   <div>@include('cms.overviews.display')</div>
-  <div>@include('cms.recentWorks.modify')</div>
   <div>@include('cms.exploreTechs.modify')</div>
 </div>
     
 
-    
+    <div style="display:none;">
+      <!--  -->
+    </div>
