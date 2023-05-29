@@ -3,7 +3,7 @@
   --b-blue: #0874e8;
   --a-black: hsl(0, 0%, 14%);
   --b-black: hsl(0, 0%, 54%);
-  --a-white: hsl(0, 0%, 97%);
+  --a-white: hsl(0, 0%, 100%);
   --b-white: hsl(0, 0%, 94%);
   --c-white: hsl(0, 0%, 76%);
   --d-white: hsl(0, 0%, 36%);
@@ -38,7 +38,6 @@
 * {
   padding: 0 0 0 0;
   margin: 0 0 0 0;
-  font-size:92%;
   font-family: 'Segoe UI Bold Regular';
   box-sizing: border-box;
 }

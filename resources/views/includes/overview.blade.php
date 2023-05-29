@@ -19,8 +19,8 @@
   <ul id="consult-list" class="mb-3 pe-5 d-flex list-unstyled"></ul>
   <div class="inConsult d-flex">
     <img class="col-md-6 img-fluid" src="" alt="">
-    <div class="col-md-4 inConsultText d-flex flex-column pt-4 px-5">
-      <h3 class="mb-4 pe-2"></h3>
+    <div class="col-md-6 inConsultText d-flex flex-column pt-4 px-5">
+      <h3 class="mb-4"></h3>
       <span class="mb-4"></span>
       <a class="text-nowrap pe-1 text-decoration-none" href=""></a>
     </div>

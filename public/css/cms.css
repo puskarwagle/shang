@@ -2,4 +2,117 @@
 .dashboard {
   width: 100vw;
   padding:2rem;
+  background-color: hsl(138, 58%, 63%);
 }
+
+
+
+section#index {
+  position:sticky;
+  top:0;
+  width: 100%;
+  z-index: 22222;
+  display: inline-flex;
+  justify-content: center;
+}
+section#index ul {
+  display: flex;
+  background-color: cornflowerblue;
+  border-radius: 0.3vw;
+}
+section#index ul li {
+  list-style-type:none;
+  display: flex;
+}
+section#index ul li a {
+  text-decoration: none;
+  color:#e5e3e3;
+  padding:1vw 2vw;
+  min-height: 100%;
+  font-weight: 800;
+}
+section#index ul li a:hover {
+  color:#ffffff;
+
+  -webkit-box-shadow: 5px -4px 10px -1px rgba(63, 62, 62, 0.34), -5px 4px 10px -1px rgba(60, 59, 59, 0.34);
+-moz-box-shadow: 5px -4px 10px -1px rgba(75, 75, 75, 0.34), -5px 4px 10px -1px rgba(0,0,0,0.34);
+box-shadow: 5px -4px 10px -1px rgba(61, 61, 61, 0.34), -5px 4px 10px -1px rgba(49, 49, 49, 0.34) 0.34);
+}
+
+input {
+  padding:0.5rem;
+  height:100%;
+  border: 1px solid #ca3232;
+  border-radius: 4px;
+  max-width:auto;
+}
+
+input[type="text"] {
+  width: auto;
+}
+h2 {
+  margin-bottom: 1vw;
+  font-weight: 100;
+}
+
+
+button {
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.275rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.add-link {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+.add-link:hover {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.delete {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+.delete:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.save {
+  color: #198754;
+  border-color: #198754;
+}
+.save:hover {
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.create {
+  display:block !important;
+  color: #ffc107;
+  border-color: #ffc107;
+}
+.create:hover {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+    

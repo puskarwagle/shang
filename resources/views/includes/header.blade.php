@@ -1,6 +1,6 @@
-<header class="d-flex py-1 px-4 border-bottom align-items-center">
+<header class="d-flex py-2 px-4 border-bottom align-items-center">
   <a class="pe-4" href="\">
-    <img class="logo" style="max-width: 6rem;aspect-ratio: 1/0.5;" src="./images/newSH.png" alt="shangrila logo">
+    <img class="logo" style="max-width: 4rem;aspect-ratio: 1/0.5;" src="./images/newSH.png" alt="shangrila logo">
   </a>
   
   <!-- nav large -->

@@ -26,9 +26,8 @@
     const techCardsContainer = document.querySelector('#techCards');
     const newExElement = document.createElement('div');
     newExElement.classList.add('tCards');
-    newExElement.style = "border: 1px solid orange;";
+    newExElement.style = "border: 1px solid orange;background-color:white;";
     newExElement.setAttribute('tabindex', '0');
-    newExElement.dataset.id = ''; // Add a unique ID to the newEx element if needed
     newExElement.innerHTML = `
     <form action="{{ route('exploreTechs.store') }}" method="POST">
       @csrf
@@ -45,7 +44,7 @@
         </div>
       </div>
 
-      <div class="tContent">
+      <div class="tContent" style="border: 1px solid orange;background-color:white;">
         <div class="tcHead">
           <h3 contenteditable="true" oninput="updateLinkInputs(this, 'title')">Tech Title</h3>
           <input type="hidden" name="title" value="">
@@ -59,11 +58,10 @@
         <button class="add-link" type="button" onclick="addLinkSectionExpl(this)">Add more links</button>
       </div>
 
-      <button class="save" type="submit">Save Changes</button>
-
-      <!-- Display the ID in the element -->
-      <p style="color: red">ID: </p>
-
+      <div style="display:flex;justify-content:space-around;align-items:center;">
+        <button class="save" type="submit">Save Changes</button>
+        
+      </div>
     </form>
   `;
 
@@ -98,11 +96,11 @@
   <style></style>
 </head>
 
-<section id="exploreTech">
+<section id="exploreTech" style="border: 2px solid cornflowerblue;margin-bottom:2rem;background-color:antiquewhite;">
   <h2>Explore Tech</h2>
   <div id="techCards">
     @foreach($exploreTechs as $exploreTech)
-    <div class="tCards" tabindex="0" style="border:1px solid orange;" data-id="{{ $exploreTech->id }}">
+    <div class="tCards" tabindex="0" style="border:1px solid orange;background:white;" data-id="{{ $exploreTech->id }}">
       <form action="{{ route('exploreTechs.update', $exploreTech->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -119,7 +117,7 @@
           </div><!-- .tTexts -->
         </div><!-- .tHead -->
 
-        <div class="tContent">
+        <div class="tContent" style="border:1px solid orange;background:white;">
           <div class="tcHead">
             <h3 contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">{{ $exploreTech->title }}</h3>
             <input type="hidden" name="title" value="{{ $exploreTech->title }}" class="cmsInput">
@@ -128,28 +126,25 @@
           @foreach ($exploreTech->links as $link)
           <div class="tcLinks">
             <a href="#" contenteditable="true" oninput="updateLinkInputs(this)">{{ $link['title'] }}</a>
-            <input type="text" name="linkTitle[]" value="{{ $link['title'] }}" class="cmsInput">
+            <input type="hidden" name="linkTitle[]" value="{{ $link['title'] }}" class="cmsInput">
 
             <p contenteditable="true" oninput="updateLinkInputs(this)">{{ $link['text'] }}</p>
-            <input type="text" name="linkText[]" value="{{ $link['text'] }}" class="cmsInput">
+            <input type="hidden" name="linkText[]" value="{{ $link['text'] }}" class="cmsInput">
           </div>
           @endforeach
           <button class="add-link" type="button" onclick="addLinkSectionExpl(this)">Add more links</button>
         </div><!-- .tContent -->
 
-        <button class="save" type="submit">Save Changes</button>
-
-        <!-- <input type="hidden" name="_method" value="DELETE"> -->
-        <button class="delete" type="button" onclick="deleteExploreTech('{{ $exploreTech->id }}')">Delete</button>
-
-        <!-- Display the ID in the element -->
-        <p style="color:red">ID: {{ $exploreTech->id }}</p>
+        <div style="display:flex;align-items:flex-end;justify-content:space-around;">
+          <button class="save" type="submit">Save Changes</button>
+          <button class="delete" type="button" onclick="deleteExploreTech('{{ $exploreTech->id }}')">Delete</button>
+          <p style="color:red">ID: {{ $exploreTech->id }}</p>
+        </div>
       </form>
     </div> <!-- .tCards -->
     @endforeach
   </div> <!-- #techCards -->
-  <button id="createExplore" onclick="createNewElementExplo()">Click to Create a entirely new headerProduct
-    element.</button>
+  <button class="create" onclick="createNewElementExplo()">Click to Create a entirely new headerProduct element.</button>
 </section>
 
 

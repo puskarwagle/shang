@@ -7,21 +7,18 @@
     gap: 4vw;
     justify-content: center;
     padding: 3vw 2vw;
-    border: 1px solid orange;
+    border: 1px solid cornflowerblue;
   }
-
   #recentWorks #honey form {
     text-align: center;
     width: 25%;
   }
-
   #recentWorks #honey .rw {
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 0.5vw #000;
     border-radius: 1vw;
   }
-
   #recentWorks #honey .rw .tec {
     font-size: 1.2vw;
     text-align: center;
@@ -37,39 +34,37 @@
   <h2>Recent Works</h2>
   <div id="honey">
     @foreach($recentWorks as $recentWork)
-      <form action="{{ route('recentWorks.update', $recentWork->id) }}" method="POST" data-id="{{ $recentWork->id }}" style="border:2px solid gold;">
+      <form action="{{ route('recentWorks.update', $recentWork->id) }}" method="POST" data-id="{{ $recentWork->id }}" 
+          style="border:2px solid gold;background-color:antiquewhite;border-radius:1vw;">
         @csrf
         @method('PUT')
 
         <div class="rw">
           <div class="imgL">
-
-            
             <label for="imageInput{{ $recentWork->id }}">
               <img id="preview{{ $recentWork->id }}" src="{{ $recentWork->imgsrc }}" alt="{{ $recentWork->imgalt }}" width="100">
             </label>
             <input type="file" id="imageInput{{ $recentWork->id }}" name="image" accept="image/*" style="display:none;">
             <input type="text" name="imgsrc" value="{{ $recentWork->imgsrc }}">
-        
-            <span contenteditable="true" oninput="updateHiddenInputValue(this, 'titleB')">{{ $recentWork->titleB }}</span>
             <span contenteditable="true" oninput="updateHiddenInputValue(this, 'titleA')">{{ $recentWork->titleA }}</span>
+            <span style="font-weight:100;font-size:1rem;" contenteditable="true" oninput="updateHiddenInputValue(this, 'titleB')">{{ $recentWork->titleB }}</span>
           </div>
           <div class="tec" contenteditable="true" oninput="updateHiddenInputValue(this, 'description')">{{ $recentWork->description }}</div>
         </div>
 
-        
         <input type="hidden" name="imgalt" value="{{ $recentWork->imgalt }}">
         <input type="hidden" name="titleA" value="{{ $recentWork->titleA }}">
         <input type="hidden" name="titleB" value="{{ $recentWork->titleB }}">
         <input type="hidden" name="description" value="{{ $recentWork->description }}">
-        <button class="save" type="submit">Save Changes</button>
-        <button class="delete" type="button" onclick="deleteRecentWork('{{ $recentWork->id }}')">Delete</button>
 
-        <!-- Display the ID in the element -->
-        <p style="color:red">ID: {{ $recentWork->id }}</p>
+        <div style="display:flex;margin-top:1rem;">
+          <button class="save" type="submit">Save Changes</button>
+          <button class="delete" type="button" onclick="deleteRecentWork('{{ $recentWork->id }}')">Delete</button>
+          <p style="color:red">ID: {{ $recentWork->id }}</p>
+        </div>
       </form>
     @endforeach
-    <button id="createRecentWork" onclick="createNewElementRecentWork()">Click to Create a New Recent Work</button>
+    <button class="create" onclick="createNewElementRecentWork()">Click to Create a New Recent Work</button>
   </div>
 </section>
 
@@ -110,14 +105,13 @@
     newRecentWorkElement.action = "{{ route('recentWorks.store') }}";
     newRecentWorkElement.method = "POST";
     newRecentWorkElement.enctype = "multipart/form-data";
+    newRecentWorkElement.style = "border:2px solid gold;background-color:antiquewhite;border-radius:1vw;";
 
     const csrfTokenInput = document.createElement('input');
     csrfTokenInput.type = 'hidden';
     csrfTokenInput.name = '_token';
     csrfTokenInput.value = '{{ csrf_token() }}';
-
     newRecentWorkElement.appendChild(csrfTokenInput);
-
     newRecentWorkElement.innerHTML = `
       <div class="rw">
         <div class="imgL">
@@ -125,8 +119,8 @@
             <img id="preview{{ $recentWork->id }}" src="{{ $recentWork->imgsrc }}" alt="{{ $recentWork->imgalt }}" width="100">
           </label>
           <input type="file" id="imageInput{{ $recentWork->id }}" name="image" accept="image/*" style="display:none;">
-          <span contenteditable="true" oninput="updateHiddenInputValue(this, 'titleA')">Default Title A</span>
-          <span contenteditable="true" oninput="updateHiddenInputValue(this, 'titleB')">Default Title B</span>
+          <span style="font-size:1.5rem;font-weight:600;" contenteditable="true" oninput="updateHiddenInputValue(this, 'titleA')">Default Title A</span>
+          <span style="font-size:1rem;" contenteditable="true" oninput="updateHiddenInputValue(this, 'titleB')">Default Title B</span>
         </div>
         <div class="tec" contenteditable="true" oninput="updateHiddenInputValue(this, 'description')">Default Description</div>
       </div>
@@ -136,8 +130,11 @@
       <input type="hidden" name="titleA" value="">
       <input type="hidden" name="titleB" value="">
       <input type="hidden" name="description" value="">
-      <button class="save" type="submit">Save New Element</button>
-    `;
+
+      <div style="display:inline-block;">
+        <button style="margin-top:1rem;" class="save" type="submit">Save New Element</button>
+      </div>
+      `;
 
     honeyContainer.appendChild(newRecentWorkElement);
   }

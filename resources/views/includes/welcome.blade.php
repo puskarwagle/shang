@@ -10,17 +10,17 @@
   </div>
 </section><br> -->
 
-<section id="about" class="p-5 row" style="font-size: 1rem;">
-  <div class="col-md-6 d-inline-flex flex-column">
-    <h2 class="mb-5">Working towards excellence in ensuring Digital Governance in Nepal.</h2>
+<section id="about" class="p-4 row d-flex flex-column" style="font-size: 1rem;">
+  <div class="col-md-9 d-inline-flex flex-column">
+    <h2 class="mb-2">Working towards excellence in ensuring Digital Governance in Nepal.</h2>
     <p class="mb-5">See how local governments are automated using software like DOT NET to deliver services more efficiently.
       This is the third line. This is a good line.</p>
-    <a href="{{ route('about') }}" class="btn btn-primary rounded-0 d-inline-flex gap-3 mb-4" style="max-width:fit-content">
+    <a href="{{ route('about') }}" class="btn btn-primary rounded-0 d-inline-flex gap-3" style="max-width:fit-content">
       <span>Get to know Shangrila</span>
       <i class="align-self-center fas fa-arrow-right ml-2"></i>
     </a>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-12" style="height:100vh;">
     <video width="100%" height="100%" poster="/images/overview.jpg" controls>
       <source src="./videos/PDF-Form_Signing.webm" type="video/webm">
       Your browser does not support the video tag.
@@ -28,43 +28,56 @@
   </div>
 </section>
 
-<section class="p-2">
-  <div class="d-flex flex-wrap row px-2 mb-2 ms-2" style="font-size: 1rem;">
+<section class="p-4">
+  <div class="mx-2 d-flex flex-wrap row" style="font-size: 1rem;">
 
-    <a href="{{ route('mission') }}" class="col-md-3 rounded-0 bg-light px-2 pt-3 mw-20 card text-decoration-none">
-      <h5 class="mb-4">Mission</h5>
-      <p class="d-flex justify-content-between">
+    <a href="{{ route('mission') }}" class="col-md-6 rounded-0 p-3 card text-decoration-none" 
+       style="background-color:hsl(0,0%,95.69%);">
+      <span class="mb-4 text-muted">Mission</span>
+      <p class="mb-5">
         <span class="w-75">Read about shangria and its influence over IT in nepal. This is a filler line.</span>
-        <i class="text-primary align-self-end fas fa-arrow-right"></i>
       </p>
+      <i class="text-primary fas fa-arrow-right"></i>
     </a>
 
-    <a href="{{ route('dataCenterServices') }}" class="col-md-3 rounded-0 bg-light  px-2 pt-3 card text-decoration-none">
-      <h5 class="mb-4">Support</h5>
-      <p class="d-flex justify-content-between">
+    <a href="{{ route('mission') }}" class="col-md-6 rounded-0 p-3 card text-decoration-none" 
+       style="background-color:hsl(0,0%,95.69%);justify-content:space-between;">
+      <span class="mb-4 text-muted">Support</span>
+      <p class="mb-5">
         <span class="w-75">Learn about the services provided by this beautiful company.</span>
-        <i class="text-primary align-self-end fas fa-arrow-right"></i>
       </p>
+      <i class="text-primary fas fa-arrow-right"></i>
     </a>
 
-    <a href="{{ route('products') }}" class="col-md-3 bg-light rounded-0 px-2 pt-3 card text-decoration-none">
-      <h5 class="mb-4">Products</h5>
-      <p class="d-flex justify-content-between">
-        <span class="w-75">Take a look at the projects we have been working on.</span>
-        <i class="text-primary align-self-end fas fa-arrow-right"></i>
+    <a href="{{ route('mission') }}" class="col-md-6 rounded-0 p-3 card text-decoration-none" 
+       style="background-color:hsl(0,0%,95.69%);">
+      <span class="mb-4 text-muted">Products</span>
+      <p class="mb-5">
+        <span class="w-75">Take a look at the projects we have been working on. This is a filler line.</span>
       </p>
-
+      <i class="text-primary fas fa-arrow-right"></i>
     </a>
-    <a href="{{ route('internship') }}" class="col-md-3 rounded-0 bg-light px-2 pt-3 card text-decoration-none">
-      <h5 class="mb-4">Internship</h5>
-      <p class="d-flex justify-content-between">
-        <span class="w-75">Contact us. You ca get a internship here and you will get to learn.</span>
-        <i class="text-primary align-self-end fas fa-arrow-right"></i>
+
+    <a href="{{ route('mission') }}" class="col-md-6 rounded-0 p-3 card text-decoration-none" 
+       style="background-color:hsl(0,0%,95.69%);">
+      <span class="mb-4 text-muted">Internship</span>
+      <p class="mb-5">
+        <span class="w-75">Contact us. You ca get a internship here and you will get to learn. This is a filler line.</span>
       </p>
+      <i class="text-primary fas fa-arrow-right"></i>
     </a>
 
   </div> <!-- id="allNewCards" -->
 </section>
+
+
+
+
+
+
+
+
+
 
 <main>
   <nav class=" pe-5" id="nav-panel" style="font-size: 1rem;">
