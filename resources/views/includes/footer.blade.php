@@ -2,7 +2,7 @@
 
 
 
-<footer>
+<footer style="font-size: 1rem;">
   <div class="row" id="footerF">
     <div class="col-md-12 d-flex justify-content-between">
       <img style="max-width: 6rem;aspect-ratio: 1/0.5;" src="./images/newSH.png" alt="shangrila logo">
@@ -26,7 +26,7 @@
         <li><a href="#">Financing</a></li>
       </ul>
     </div>
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
       <ul class="list-unstyled"> Popular links
         <li><a href="#">Supply chain</a></li>
         <li><a href="#">Security</a></li>
@@ -37,7 +37,7 @@
         <li><a href="#">Career opportunities</a></li>
         <li><a href="#">Upcoming events & webinars</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 
   <div class="row" id="iconsRights">

@@ -4,7 +4,7 @@
   </a>
   
   <!-- nav large -->
-  <ul class="navLarge list-unstyled d-flex gap-5 my-auto mx-2 ps-4 border-start border-muted">
+  <ul class="navLarge list-unstyled d-flex gap-5 my-auto mx-2 ps-4 border-start border-muted" style="font-size: 1rem;">
     <li class="my-auto"><a class="text-decoration-none text-muted" href="{{ route('about') }}">About</a></li>
     <li class="my-auto">
       <p class="headerNavProd my-auto text-muted d-flex align-items-center gap-2">Products <i class="fas fa-chevron-down fa-xs"></i></p>
@@ -32,7 +32,7 @@
   </ul>
 
   <!-- .headerMain headerProd -->
-  <div class="headerMain headerProd">
+  <div class="headerMain headerProd" style="font-size: 1rem;">
     <ul class="hMA list-unstyled pt-4 pb-4 ps-4">
       @foreach($headerProducts as $headerProduct)
       <li class="text-nowrap p-1">{{ $headerProduct->title }}</li>
@@ -59,7 +59,7 @@
   </div> 
 
   <!-- .headerMain headerServ -->
-  <div class="headerMain headerServ">
+  <div class="headerMain headerServ" style="font-size: 1rem;">
     <ul class="hMA  list-unstyled pt-4 pb-4 ps-4">
       @foreach($headerServices as $headerService)
       <li class="text-nowrap p-1">{{ $headerService->title }}</li>

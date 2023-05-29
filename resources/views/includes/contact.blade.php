@@ -10,7 +10,7 @@
   }
 </style>
 
-<section id="contact" class="p-5">
+<section id="contact" class="p-5" style="font-size: 1rem;">
   <h4 class="mb-3">Contact us</h4>
   <div id="cMapForm" class="d-flex">
 

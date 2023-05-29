@@ -25,40 +25,38 @@ class ExploreTechsController extends Controller
 
 
     public function store(Request $request)
-    {
-      //dd($request->all());
+{
+    $validatedData = $request->validate([
+        'icon' => 'required|string',
+        'title' => 'required|string',
+        'linkTitle.*' => 'required|string',
+        'linkText.*' => 'required|string',
+    ]);
 
-      $validatedData = $request->validate([
-          'icon' => 'required|string',
-          'title' => 'required|string',
-          'linkTitles.*' => 'required|string',
-          'linkTexts.*' => 'required|string',
-      ]);
-      
-      dd($validatedData);
-
-      $links = [];
-      foreach ($validatedData['linkTitles'] as $index => $linkTitle) {
-          $links[] = [
-              'title' => $linkTitle,
-              'text' => $validatedData['linkTexts'][$index],
-          ];
-      }
-      ExploreTech::create([
-          'icon' => $validatedData['icon'],
-          'title' => $validatedData['title'],
-          'links' => $links,
-      ]);
-      return redirect()->route('dashboard')->with('success', 'Explore Tech section created successfully!');
+    $links = [];
+    foreach ($validatedData['linkTitle'] as $index => $linkTitle) {
+        $links[] = [
+            'title' => $linkTitle,
+            'text' => $validatedData['linkText'][$index],
+        ];
     }
 
+    ExploreTech::create([
+        'icon' => $validatedData['icon'],
+        'title' => $validatedData['title'],
+        'links' => $links,
+    ]);
 
+    return redirect()->route('dashboard')->with('success', 'Explore Tech section created successfully!');
+}
 
 
 
 
     public function update(Request $request, string $id)
     {
+      //dd($request->all());
+
       $exploreTech = ExploreTech::find($id);
       $exploreTech->icon = $request->icon;
       $exploreTech->title = $request->title;

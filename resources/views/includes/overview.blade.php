@@ -14,7 +14,7 @@
   }
 </style>
 
-<section id="consult" class="ps-5 pe-2 py-2">
+<section id="consult" class="ps-5 pe-2 py-2" style="font-size: 1rem;">
   <h4 class="conH mb-3">Overview</h4>
   <ul id="consult-list" class="mb-3 pe-5 d-flex list-unstyled"></ul>
   <div class="inConsult d-flex">

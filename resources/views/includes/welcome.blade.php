@@ -10,7 +10,7 @@
   </div>
 </section><br> -->
 
-<section id="about" class="p-5 row">
+<section id="about" class="p-5 row" style="font-size: 1rem;">
   <div class="col-md-6 d-inline-flex flex-column">
     <h2 class="mb-5">Working towards excellence in ensuring Digital Governance in Nepal.</h2>
     <p class="mb-5">See how local governments are automated using software like DOT NET to deliver services more efficiently.
@@ -29,7 +29,7 @@
 </section>
 
 <section class="p-2">
-  <div class="d-flex flex-wrap row px-2 mb-2 ms-2">
+  <div class="d-flex flex-wrap row px-2 mb-2 ms-2" style="font-size: 1rem;">
 
     <a href="{{ route('mission') }}" class="col-md-3 rounded-0 bg-light px-2 pt-3 mw-20 card text-decoration-none">
       <h5 class="mb-4">Mission</h5>
@@ -67,7 +67,7 @@
 </section>
 
 <main>
-  <nav class=" pe-5" id="nav-panel">
+  <nav class=" pe-5" id="nav-panel" style="font-size: 1rem;">
     <ul class="navbar-nav text-nowrap ms-2 mt-2">
       <li class="nav-item">
         <a class="nav-link border-start border-4 p-3" href="#recentWorks">Recent Works</a>
@@ -101,7 +101,7 @@
       </ul>
     </section> -->
 
-    <section id="recentWorks">
+    <section id="recentWorks" style="font-size: 1rem;">
       <h4>Recent Works</h4>
       <div class="honey">
         @foreach($recentWorks as $recentWork)
@@ -118,7 +118,7 @@
     </section>
 
 
-    <section id="exploreTech">
+    <section id="exploreTech" style="font-size: 1rem;">
       <h4>Explore our technology</h4>
       <div id="techCards">
         @foreach($exploreTechs as $exploreTech)
@@ -151,7 +151,7 @@
       </div> <!-- #techCards -->
     </section>
 
-    <section class="ps-5 pe-2 py-2" id="services">
+    <section class="ps-5 pe-2 py-2" id="services" style="font-size: 1rem;">
       <h4 class="mb-3">Our Services</h4>
       <div id="allServices" class="row">
         @foreach($services as $service)
@@ -168,7 +168,7 @@
     </section>
 
 
-    <section id="happyClients" class="ps-5 pe-2 py-2">
+    <section id="happyClients" class="ps-5 pe-2 py-2" style="font-size: 1rem;">
       <h4>Our Clients</h4>
       <div id="allClientCards" class="">
         @foreach($ourClients as $ourClient)

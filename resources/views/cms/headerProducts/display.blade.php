@@ -20,7 +20,6 @@
       const subTextElement = subtitleElement.nextElementSibling;
       const titleInput = subtitleElement.nextElementSibling;
       const textInput = subTextElement.nextElementSibling;
-
         titleInput.value = subtitleElement.textContent;
         textInput.value = subTextElement.textContent;
     }

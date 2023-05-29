@@ -1,30 +1,26 @@
 <head>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script>
-    function updateHiddenInputValue(element, inputName) {
-      const inputValue = element.textContent;
-      const tcLinks = element.closest('.tcLinks');
-      const hiddenInputs = tcLinks.querySelectorAll(`input[name="${inputName}[]"], span[name="${inputName}[]"]`);
-      hiddenInputs.forEach((hiddenInput) => {
-        if (hiddenInput.tagName === 'SPAN') {
-          hiddenInput.textContent = inputValue;
-        } else {
-          hiddenInput.value = inputValue;
-        }
-      });
-    }
+  function updateHiddenInputValue(element, inputName) {
+    const inputValue = element.textContent;
+    const tcLinks = element.closest('.tcLinks');
+    const hiddenInputs = tcLinks.querySelectorAll(`input[name="${inputName}[]"], span[name="${inputName}[]"]`);
+    hiddenInputs.forEach((hiddenInput) => {
+      if (hiddenInput.tagName === 'SPAN') {
+        hiddenInput.textContent = inputValue;
+      } else {
+        hiddenInput.value = inputValue;
+      }
+    });
+  }
 
-    function updateLinkInputs(linkElement) {
-      const linkTitleElement = linkElement;
-      const linkTextElement = linkElement.nextElementSibling.nextElementSibling;
-      
-      const linkTitleInput = linkTitleElement.nextElementSibling;
-      const linkTextInput = linkTextElement.nextElementSibling;
-
-      linkTitleInput.value = linkTitleElement.textContent;
-      linkTextInput.value = linkTextElement.textContent;
-    }
-
+  function updateLinkInputs(linktitleElement) {
+    const linkTextElement = linktitleElement.nextElementSibling;
+    const linktitleInput = linktitleElement.nextElementSibling;
+    const linktextInput = linkTextElement.nextElementSibling;
+    linktitleInput.value = linktitleElement.textContent;
+    linktextInput.value = linkTextElement.textContent;
+  }
 
   function createNewElementExplo() {
     const techCardsContainer = document.querySelector('#techCards');
@@ -40,7 +36,7 @@
       <div class="tHead">
         <div class="tIcons">
           <i class="fas fa-cogs"></i>
-          <input type="text" name="icon" value="" class="cmsInput">
+          <input type="text" name="icon" value="fas fa-cogs">
         </div>
         <div class="tTexts">
           <span contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">Tech Title</span>
@@ -49,23 +45,21 @@
         </div>
       </div>
 
-      <input type="hidden" name="title" value="" class="cmsInput">
-
       <div class="tContent">
         <div class="tcHead">
-          <h3 contenteditable="true" oninput="updateHiddenInputValue(this, 'title')">Tech Title</h3>
+          <h3 contenteditable="true" oninput="updateLinkInputs(this, 'title')">Tech Title</h3>
+          <input type="hidden" name="title" value="">
         </div>
         <div class="tcLinks">
-          <a href="#" contenteditable="true" oninput="updateHiddenInputValue(this, 'linkTitle[]')">Link Title</a>
-          <span contenteditable="true" oninput="updateHiddenInputValue(this, 'linkText[]')">Link Text</span>
+          <a href="#" contenteditable="true" oninput="updateLinkInputs(this, 'linkTitle[]')">Link Title</a>
           <input type="hidden" name="linkTitle[]" value="" class="cmsInput">
+          <p contenteditable="true" oninput="updateLinkInputs(this, 'linkText[]')">Link Text</p>
           <input type="hidden" name="linkText[]" value="" class="cmsInput">
         </div>
+        <button class="add-link" type="button" onclick="addLinkSectionExpl(this)">Add more links</button>
       </div>
 
       <button class="save" type="submit">Save Changes</button>
-      
-      <!-- Remove the delete button from the newEx element -->
 
       <!-- Display the ID in the element -->
       <p style="color: red">ID: </p>
@@ -135,6 +129,7 @@
           <div class="tcLinks">
             <a href="#" contenteditable="true" oninput="updateLinkInputs(this)">{{ $link['title'] }}</a>
             <input type="text" name="linkTitle[]" value="{{ $link['title'] }}" class="cmsInput">
+
             <p contenteditable="true" oninput="updateLinkInputs(this)">{{ $link['text'] }}</p>
             <input type="text" name="linkText[]" value="{{ $link['text'] }}" class="cmsInput">
           </div>
@@ -164,45 +159,45 @@
     const newLinkSectionExpl = document.createElement('div');
     newLinkSectionExpl.classList.add('tcLinks');
     newLinkSectionExpl.innerHTML = `
-      <a href="#" contenteditable="true" oninput="updateDynamicLinkInputs(this, 'linkTitle[]')">edit this link</a>
-      <span contenteditable="true" oninput="updateDynamicLinkInputs(this, 'linkText[]')">edit this link text</span>
-      <input type="text" name="linkTitle[]" value="" class="cmsInput">
-      <input type="text" name="linkText[]" value="" class="cmsInput">
+      <a href="#" contenteditable="true" oninput="this.nextElementSibling.value = this.textContent;">Link Title</a>
+      <input type="hidden" name="linkTitle[]" value="">
+      <p contenteditable="true" oninput="this.nextElementSibling.value = this.textContent;">Link Text</p>
+      <input type="hidden" name="linkText[]" value="">
     `;
+
     linksContainerExpl.insertBefore(newLinkSectionExpl, buttonExpl);
   }
 
+  function deleteExploreTech(id) {
+    if (confirm('Are you sure you want to delete this explore tech?')) {
+      const form = document.createElement('form');
+      form.action = `{{ route('exploreTechs.destroy', ':id') }}`.replace(':id', id);
+      form.method = 'POST';
+      form.style.display = 'none';
 
-function deleteExploreTech(id) {
-  if (confirm('Are you sure you want to delete this explore tech?')) {
-    const form = document.createElement('form');
-    form.action = `{{ route('exploreTechs.destroy', ':id') }}`.replace(':id', id);
-    form.method = 'POST';
-    form.style.display = 'none';
+      // Add CSRF token input
+      const csrfTokenInput = document.createElement('input');
+      csrfTokenInput.type = 'hidden';
+      csrfTokenInput.name = '_token';
+      csrfTokenInput.value = '{{ csrf_token() }}';
 
-    // Add CSRF token input
-    const csrfTokenInput = document.createElement('input');
-    csrfTokenInput.type = 'hidden';
-    csrfTokenInput.name = '_token';
-    csrfTokenInput.value = '{{ csrf_token() }}';
+      // Add method spoofing input
+      const methodInput = document.createElement('input');
+      methodInput.type = 'hidden';
+      methodInput.name = '_method';
+      methodInput.value = 'DELETE';
 
-    // Add method spoofing input
-    const methodInput = document.createElement('input');
-    methodInput.type = 'hidden';
-    methodInput.name = '_method';
-    methodInput.value = 'DELETE';
+      // Append inputs to the form
+      form.appendChild(csrfTokenInput);
+      form.appendChild(methodInput);
 
-    // Append inputs to the form
-    form.appendChild(csrfTokenInput);
-    form.appendChild(methodInput);
+      // Append form to the document body
+      document.body.appendChild(form);
 
-    // Append form to the document body
-    document.body.appendChild(form);
-
-    // Submit the form
-    form.submit();
+      // Submit the form
+      form.submit();
+    }
   }
-}
 </script>
 
 
