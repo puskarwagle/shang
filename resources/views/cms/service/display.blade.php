@@ -7,7 +7,7 @@
     const newServiElement = document.createElement('div');
     newServiElement.classList.add('ser');
     newServiElement.style =
-      "border: 1px solid orange; background: antiquewhite; margin-bottom: 2rem;width:100%;";
+      "border: 1px solid orange; background: antiquewhite; margin-bottom: 2rem;width:100%;padding:1rem;";
 
     newServiElement.innerHTML = `
         <form action="{{ route('service.store') }}" method="POST">
@@ -23,6 +23,7 @@
             </div>
           </div>
           <div style="display:flex;align-items:flex-end;justify-content:flex-end;">
+            <button class="cancel delete" type="button" onclick="cancelNewElementService(this)">Cancel</button>
             <button class="save" type="submit">Save</button>
           </div>
         </form>
@@ -33,6 +34,11 @@
       servicesContainer.insertBefore(newServiElement, nextSibling);
     // servicesContainer.appendChild(newServiElement);
   }
+  function cancelNewElementService(cancelButton) {
+    const newServiElement = cancelButton.closest('.ser');
+    newServiElement.remove();
+  }
+
   </script>
 </head>
 
@@ -41,7 +47,7 @@
   <div id="allServices">
   <button class="create" onclick="createNewElementService()">Create <i class="fas fa-plus"></i> </button>
     @foreach($services as $service)
-    <div class="ser" style="border:1px solid orange;background:antiquewhite;margin-bottom:2rem;">
+    <div class="ser" style="border:1px solid orange;background:antiquewhite;margin-bottom:2rem;padding:1rem;">
       <form action="{{ route('service.update', $service->id) }}" method="POST" data-id="{{ $service->id }}">
         @csrf
         @method('PUT')
