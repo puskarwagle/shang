@@ -19,9 +19,18 @@ class RecentWorksController extends Controller
         return view('recentWorks.create');
     }
 
+
+
+
+
+
+
+
+
+
     public function store(Request $request)
     {
-      // dd($request->all());
+       //dd($request->all());
 
       $validatedData = $request->validate([
         'imgsrc' => 'required|string',
@@ -44,6 +53,8 @@ class RecentWorksController extends Controller
     public function update(Request $request, $id)
     {
         $recentWork = RecentWork::findOrFail($id);
+
+        //dd($request->all());
 
         if ($request->hasFile('image')) {
             $oldImagePath = public_path('images/recentWorks/') . $recentWork->imgsrc;

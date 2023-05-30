@@ -28,6 +28,7 @@ Route::get('/mission', [HomeController::class, 'mission'])->name('mission');
 Route::get('/products', [HomeController::class, 'products'])->name('products');
 
 Route::get('/welcome', [HomeController::class, 'welcome'])->name('welcome');
+
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 //pages routes
