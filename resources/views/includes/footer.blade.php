@@ -1,14 +1,21 @@
-  <footer>
-    <div id="footerF">
-      <img src="./images/newSH.png" alt="shangrila logo">
+
+
+
+
+<footer style="font-size: 1rem;">
+  <div class="row" id="footerF">
+    <div class="col-md-12 d-flex justify-content-between">
+      <img style="max-width: 6rem;aspect-ratio: 1/0.5;" src="./images/newSH.png" alt="shangrila logo">
       <p>
-        <span>United Kingdom - English</span>
+        <span class="text-nowrap">United Kingdom - English</span>
         <i class="fas fa-globe"></i>
       </p>
     </div>
+  </div>
 
-    <div id="footerULs">
-      <ul> Products & Solutions
+  <div class="row" id="footerULs">
+    <div class="col-md-6">
+      <ul class="list-unstyled"> Products & Solutions
         <li><a href="#">Top products & platforms</a></li>
         <li><a href="#">Industries</a></li>
         <li><a href="#">Artificial intelligence</a></li>
@@ -18,7 +25,9 @@
         <li><a href="#">Data & Analytics</a></li>
         <li><a href="#">Financing</a></li>
       </ul>
-      <ul> Popular links
+    </div>
+    <!-- <div class="col-md-6">
+      <ul class="list-unstyled"> Popular links
         <li><a href="#">Supply chain</a></li>
         <li><a href="#">Security</a></li>
         <li><a href="#">IT infrastructure</a></li>
@@ -28,10 +37,15 @@
         <li><a href="#">Career opportunities</a></li>
         <li><a href="#">Upcoming events & webinars</a></li>
       </ul>
-    </div>
+    </div> -->
+  </div>
 
-    <div id="iconsRights">
-      <span>© Copyright 2021 - Shangrila Microsystem. <br> All Rights Reserved.</span>
+  <div class="row" id="iconsRights">
+    <div class="col-md-6">
+      <span>© Copyright 2021 -
+        Shangrila Microsystem. <br> All Rights Reserved.</span>
+    </div>
+    <div class="col-md-6">
       <div id="icons">
         <a class="circle fac" href="#">
           <i class="fab fa-facebook-f"></i>
@@ -44,4 +58,5 @@
         </a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>

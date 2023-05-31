@@ -26,7 +26,7 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// sticky header 
+// add class sticky to header 
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
   const scrollPosition = window.scrollY;
@@ -42,24 +42,24 @@ window.addEventListener('scroll', function() {
 
 
 // Click X to remove intern
-const intern = document.querySelector('#intern');
-const internS = document.querySelector('#intern strong');
+// const intern = document.querySelector('#intern');
+// const internS = document.querySelector('#intern strong');
 
-if (internS) {
-  internS.addEventListener('click', () => {
-    if (intern.style.display === 'block') {
-      intern.style.display = 'none';
-    } else {
-      intern.style.display = 'block';
-    }
-  });
-};
+// if (internS) {
+//   internS.addEventListener('click', () => {
+//     if (intern.style.display === 'block') {
+//       intern.style.display = 'none';
+//     } else {
+//       intern.style.display = 'block';
+//     }
+//   });
+// };
 
 
 // left side navgation panel
 const headerho = document.querySelector('header');
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-panel a');
+const navLinks = document.querySelectorAll('#nav-panel a');
 
 window.addEventListener('scroll', () => {
   let currentSection = '';
@@ -205,17 +205,17 @@ tCards.forEach((tCard) => {
 
 
 // SectionIndex on scroll dissapears
-const sectionI = document.querySelector('#index');
-const sectionA = document.querySelector('#about');
-const observerA = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
-      sectionI.style.display = 'flex';
-    } else {
-      sectionI.style.display = 'none';
-    }
-  });
-}, {threshold: 0.75});
+// const sectionI = document.querySelector('#index');
+// const sectionA = document.querySelector('#about');
+// const observerA = new IntersectionObserver((entries, observer) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
+//       sectionI.style.display = 'flex';
+//     } else {
+//       sectionI.style.display = 'none';
+//     }
+//   });
+// }, {threshold: 0.75});
 
 // observer.observe(sectionA);
 

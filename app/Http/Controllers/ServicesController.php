@@ -40,6 +40,7 @@ class ServicesController extends Controller
     public function update(Request $request, string $id)
     {
         $service = Service::find($id);
+        // dd($request->all());
         $service->title = $request->title;
         $service->description = $request->description;
         $service->icon = $request->icon;

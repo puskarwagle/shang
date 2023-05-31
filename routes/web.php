@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+// My MyHomeController
+use App\Http\Controllers\MyHomeController;
+// CMS
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\RecentWorksController;
 use App\Http\Controllers\ExploreTechsController;
@@ -9,36 +12,44 @@ use App\Http\Controllers\HeaderProductsController;
 use App\Http\Controllers\HeaderServicesController;
 use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\OurClientController;
-use App\Http\Controllers\LoginController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
 // Welcome with HomeController class
-Route::get('/', [HomeController::class, 'layout']);
+Route::get('/', [MyHomeController::class, 'welcome']);
 
-//Route::get('/info', [HomeController::class, 'content']);
+// Came default with the app
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/info', function () {
-  return view('contents.informatics');
+Route::get('/dashboard', [MyHomeController::class, 'dashboard'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+require __DIR__.'/auth.php';
+
 // These are routes through homecontroller
-Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::get('/dataCenterServices', [HomeController::class, 'dataCenterServices'])->name('dataCenterServices');
-Route::get('/internship', [HomeController::class, 'internship'])->name('internship');
-Route::get('/mission', [HomeController::class, 'mission'])->name('mission');
-Route::get('/products', [HomeController::class, 'products'])->name('products');
-
-Route::get('/welcome', [HomeController::class, 'welcome'])->name('welcome');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-
-//pages routes
-
-Route::get('/login', function () {
-  return view('auth.login');
-})->name('login.form');
-
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
-Route::post('/register', [LoginController::class, 'store'])->name('register.store');
-Route::get('/allusers', [LoginController::class, 'showUsers']);
+Route::get('/about', [MyHomeController::class, 'about'])->name('about');
+Route::get('/dataCenterServices', [MyHomeController::class, 'dataCenterServices'])->name('dataCenterServices');
+Route::get('/internship', [MyHomeController::class, 'internship'])->name('internship');
+Route::get('/mission', [MyHomeController::class, 'mission'])->name('mission');
+Route::get('/products', [MyHomeController::class, 'products'])->name('products');
 
 
 //Route::prefix('cms')->middleware(['auth'])->group(function () {
@@ -85,4 +96,5 @@ Route::get('/allusers', [LoginController::class, 'showUsers']);
   Route::delete('/ourClients/{id}', [OurClientController::class, 'destroy'])->name('ourClients.destroy');
   Route::put('/ourClients/{id}', [OurClientController::class, 'update'])->name('ourClients.update');
   //});
+
 

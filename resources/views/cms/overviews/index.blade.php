@@ -1,4 +1,4 @@
-<div class="cms">
+<!-- <div class="cms">
   <div class="cmsDivs">
     <h2 class="cmsDivsH2">
       <span>Create overviews</span>
@@ -42,5 +42,7 @@
       @include('cms.overviews.delete')
     </div>
   </div>
-</div>
+</div> -->
+
+@include('cms.overviews.modify')
 

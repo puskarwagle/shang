@@ -27,3 +27,16 @@
     </div>
     @endif
   </form>
+
+  <script>
+  // add links to explore and subTitles to headerProducts and headerServices 
+  const clinksContainers = document.querySelectorAll('.clinks-container');
+  clinksContainers.forEach(clinksContainer => {
+    const caddLinkBtn = clinksContainer.querySelector('.cadd-link');
+    const clinkInputs = clinksContainer.querySelector('.clink-inputs');
+    caddLinkBtn.addEventListener('click', () => {
+      const cnewLinkInputs = clinkInputs.cloneNode(true);
+      clinksContainer.insertBefore(cnewLinkInputs, caddLinkBtn);
+    });
+  });
+</script>

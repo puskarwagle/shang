@@ -3,6 +3,7 @@
   <div id="techCards">
     @foreach($exploreTechs as $exploreTech)
     <div class="tCards" tabindex="0">
+
       <div class="tHead">
         <div class="tIcons">
           <i class="{{ $exploreTech->icon }}"></i>
@@ -13,6 +14,7 @@
           <i class="fas fa-angle-up"></i>
         </div><!-- .tTexts -->
       </div><!-- .tHead -->
+
       <div class="tContent">
         <div class="tcHead">
           <h3>{{ $exploreTech->title }}</h3>
@@ -26,7 +28,9 @@
         @endforeach
         @endif
       </div><!-- .tContent -->
+
     </div> <!-- .tCards -->
     @endforeach
   </div> <!-- #techCards -->
 </section>
+

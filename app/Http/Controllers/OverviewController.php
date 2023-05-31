@@ -20,6 +20,7 @@ class OverviewController extends Controller
 
   public function store(Request $request)
   {
+
     $validatedData = $request->validate([
       'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
       'imgalt' => 'required|string',
@@ -34,7 +35,8 @@ class OverviewController extends Controller
     $request->image->move(public_path('images/overview/'), $imageName);
     
     $validatedData['imgsrc'] = $imageName;
-    
+    //dd($validatedData);
+
     Overview::create($validatedData);
     return redirect()->route('dashboard')->with('success', 'Overviews section created successfully!');    
   }
