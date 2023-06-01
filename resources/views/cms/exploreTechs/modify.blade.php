@@ -1,18 +1,18 @@
 <head>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script>
-  function updateHiddenInputValue(element, inputName) {
-    const inputValue = element.textContent;
-    const tcLinks = element.closest('.tcLinks');
-    const hiddenInputs = tcLinks.querySelectorAll(`input[name="${inputName}[]"], span[name="${inputName}[]"]`);
-    hiddenInputs.forEach((hiddenInput) => {
-      if (hiddenInput.tagName === 'SPAN') {
-        hiddenInput.textContent = inputValue;
-      } else {
-        hiddenInput.value = inputValue;
-      }
-    });
-  }
+    function updateHiddenInputValue(element, inputName) {
+      const inputValue = element.textContent;
+      const tcLinks = element.closest('.tcLinks');
+      const hiddenInputs = tcLinks.querySelectorAll(`input[name="${inputName}[]"], span[name="${inputName}[]"]`);
+      hiddenInputs.forEach((hiddenInput) => {
+        if (hiddenInput.tagName === 'SPAN') {
+          hiddenInput.textContent = inputValue;
+        } else {
+          hiddenInput.value = inputValue;
+        }
+      });
+    }
 
   function updateLinkInputs(linktitleElement) {
     const linkTextElement = linktitleElement.nextElementSibling;

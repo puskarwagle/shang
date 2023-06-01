@@ -12,6 +12,7 @@ use App\Http\Controllers\HeaderProductsController;
 use App\Http\Controllers\HeaderServicesController;
 use App\Http\Controllers\OverviewController;
 use App\Http\Controllers\OurClientController;
+use App\Http\Controllers\CardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,12 @@ Route::get('/products', [MyHomeController::class, 'products'])->name('products')
   Route::post('/ourClients', [OurClientController::class, 'store'])->name('ourClients.store');
   Route::delete('/ourClients/{id}', [OurClientController::class, 'destroy'])->name('ourClients.destroy');
   Route::put('/ourClients/{id}', [OurClientController::class, 'update'])->name('ourClients.update');
+  // these are my cards routes
+    Route::get('/cards', [CardController::class, 'index'])->name('cards.index');
+    Route::get('/cards/create', [CardController::class, 'create'])->name('cards.create');
+    Route::post('/cards', [CardController::class, 'store'])->name('cards.store');
+    Route::delete('/cards/{id}', [CardController::class, 'destroy'])->name('cards.destroy');
+    Route::put('/cards/{id}', [CardController::class, 'update'])->name('cards.update');
   //});
 
 

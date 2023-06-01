@@ -8,6 +8,7 @@ use App\Models\HeaderProduct;
 use App\Models\HeaderService;
 use App\Models\Overview;
 use App\Models\OurClient;
+use App\Models\Card;
 
 class MyHomeController extends Controller
 {
@@ -20,7 +21,8 @@ class MyHomeController extends Controller
     $headerServices = HeaderService::all();
     $overviews = Overview::all();
     $ourClients = OurClient::all();
-    $data = compact('ourClients', 'services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews');
+    $cards = Card::all();
+    $data = compact('ourClients', 'services', 'cards', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews');
     return view('welcome')->with($data);
   }
   
@@ -70,7 +72,8 @@ class MyHomeController extends Controller
     $headerServices = HeaderService::all();
     $overviews = Overview::all();
     $ourClients = OurClient::all();
-    return compact('ourClients', 'services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews');
+    $cards = Card::all();
+    return compact('ourClients', 'cards', 'services', 'recentWorks', 'exploreTechs', 'headerServices', 'headerProducts', 'overviews');
   }  
 
 }

@@ -87,7 +87,7 @@
 </header>
 
 <!-- Switch css to no css -->
-<script>
+<!-- <script>
 const checkbox = document.getElementById('checkbox');
 
 checkbox.addEventListener('change', (event) => {
@@ -98,7 +98,7 @@ checkbox.addEventListener('change', (event) => {
     link.href = '/css/ibm.css';
   }
 });
-</script>
+</script> -->
 
 <!-- Header Products -->
 <script>

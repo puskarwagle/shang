@@ -17,6 +17,7 @@
     <div class="dashboard">
       <section id="index" style="z-index:99999999999999;">
         <ul>
+          <li><a href="#Cards">4 Cards</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#exploreTech">Explore Tech</a></li>
           <li><a href="#consult">Overview</a></li>
@@ -28,7 +29,7 @@
       </section>
 
       <br>
-
+      <div>@include('cms.cards.modify')</div>
       <div>@include('cms.service.display')</div>
       <div>@include('cms.exploreTechs.modify')</div>
       <div>@include('cms.overviews.display')</div>

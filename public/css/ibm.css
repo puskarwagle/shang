@@ -172,6 +172,23 @@ body {
   }
 /* article */
 
+  .csCard:hover span {
+    color:#000 !important;
+  }
+  .csCard:hover .rtyu {
+    color:#000 !important;
+  }
+  .csCard:hover i {
+    animation: csCardBounce 1.1s infinite;
+  }
+  @keyframes csCardBounce {
+    0% {transform: translateX(0);}
+    15% {transform: translateX(-15px);}
+    25% {transform: translateX(0px);}
+    35% {transform: translateX(-5px);}
+    50% {transform: translateX(0);}
+    100% {transform: translateX(0);}
+  }
   #nav-panel {
     position:relative !important;
   }
