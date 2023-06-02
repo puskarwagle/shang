@@ -53,7 +53,7 @@ Route::get('/mission', [MyHomeController::class, 'mission'])->name('mission');
 Route::get('/products', [MyHomeController::class, 'products'])->name('products');
 
 
-//Route::prefix('cms')->middleware(['auth'])->group(function () {
+Route::prefix('dashboard')->middleware(['auth'])->group(function () {
 // these are my service section routes
   Route::get('/service', [ServicesController::class, 'index'])->name('service.index');
   Route::get('/service/create', [ServicesController::class, 'create'])->name('service.create');
@@ -102,6 +102,10 @@ Route::get('/products', [MyHomeController::class, 'products'])->name('products')
     Route::post('/cards', [CardController::class, 'store'])->name('cards.store');
     Route::delete('/cards/{id}', [CardController::class, 'destroy'])->name('cards.destroy');
     Route::put('/cards/{id}', [CardController::class, 'update'])->name('cards.update');
-  //});
+  });
 
 
+
+Route::get('/register', function () {
+    return view('auth.login');
+})->name('login');
