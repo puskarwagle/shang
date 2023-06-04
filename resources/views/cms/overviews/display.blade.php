@@ -34,11 +34,11 @@
 
         <div class="col-md-4 inConsultText d-flex flex-column pt-4 px-5">
           <span class="mb-4 pe-2" contenteditable="true"
-            oninput="updateHiddenInputValue(this, 'link')">{{ $overview->link }}</span>
+            oninput="updateHiddenInputValue(this, 'text3')">{{ $overview->text3 }}</span>
           <span class="mb-4" contenteditable="true"
             oninput="updateHiddenInputValue(this, 'text1')">{{ $overview->text1 }}</span>
           <a class="text-nowrap pe-1 text-decoration-none" contenteditable="true" href="{{ $overview->text2 }}"
-            oninput="updateHiddenInputValue(this, 'text3')">{{ $overview->text3 }}</a>
+            oninput="updateHiddenInputValue(this, 'link')">{{ $overview->link }}</a>
         </div>
       </div>
 

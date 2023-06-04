@@ -24,15 +24,6 @@ class RecentWorksController extends Controller
         return view('recentWorks.create');
     }
 
-
-
-
-
-
-
-
-
-
     public function store(Request $request)
     {
        //dd($request->all());
@@ -47,13 +38,6 @@ class RecentWorksController extends Controller
       RecentWork::create($validatedData);
       return redirect()->route('dashboard')->with('success', 'Recent works section created successfully!');
     }
-
-
-
-
-   
-        
-
 
     public function update(Request $request, $id)
     {

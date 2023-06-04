@@ -35,10 +35,10 @@ let coAText = document.querySelector('.inConsultText a');
 let coImg = document.querySelector('#consult .inConsult img');
 
 function updateTeAndIm(value) {
-  coSpanText.textContent = value.link;
-  coSpanText2.textContent = value.text1;
+  coSpanText.textContent = value.text1;
+  coSpanText2.textContent = value.text2;
   coAText.textContent = value.text3;
-  coAText.href = value.text2;
+  coAText.href = value.link;
   coImg.src = "./images/overview/" + value.imgsrc;
   coImg.alt = value.imgalt;
 }
