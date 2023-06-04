@@ -12,6 +12,10 @@ class OverviewController extends Controller
     $overviews = Overview::all();
     return view('overviews.index', compact('overviews'));
   }
+  public function apiindex()
+    {
+      return Overview::all();
+    }
 
   public function create()
   {

@@ -12,6 +12,11 @@ class HeaderProductsController extends Controller
       return view('headerProducts.index', compact('headerProducts'));
     }
 
+    public function apiindex()
+    {
+      return HeaderProduct::all();
+    }
+
     public function create()
     {
       return view('headerProducts.create');

@@ -15,6 +15,11 @@ class CardController extends Controller
       return view('cms.cards.display', compact('cards'));
     }
 
+    public function apiindex()
+    {
+      return Card::all();
+    }
+
     /**
      * Show the form for creating a new resource.
      */

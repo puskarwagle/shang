@@ -12,8 +12,10 @@ class ExploreTechsController extends Controller
       return view('exploreTechs.index', compact('exploreTechs'));
     }
 
-
-
+    public function apiindex()
+    {
+      return ExploreTech::all();
+    }
 
     public function create()
     {

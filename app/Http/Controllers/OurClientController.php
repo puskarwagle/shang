@@ -13,6 +13,11 @@ class OurClientController extends Controller
     return view('ourClients.index', compact('ourClients'));
   }
 
+  public function apiindex()
+    {
+      return OurClient::all();
+    }
+
   public function create()
   {
     return view('ourClients.create');

@@ -12,6 +12,11 @@ class HeaderServicesController extends Controller
       return view('headerServices.index', compact('headerServices'));
     }
 
+    public function apiindex()
+    {
+      return HeaderService::all();
+    }
+
     public function create()
     {
       return view('headerServices.create');

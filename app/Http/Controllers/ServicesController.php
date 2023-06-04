@@ -10,7 +10,12 @@ class ServicesController extends Controller
     public function index()
     {
       $services = Service::all();
-      return view('service.index', compact('services'));
+      return view('cms.service.index', compact('services'));
+    }
+
+    public function apiindex()
+    {
+      return Service::all();
     }
 
     public function welcome()

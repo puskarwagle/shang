@@ -14,6 +14,11 @@ class RecentWorksController extends Controller
         return view('recentWorks.index', compact('recentWorks'));
     }
 
+    public function apiindex()
+    {
+      return RecentWork::all();
+    }
+
     public function create()
     {
         return view('recentWorks.create');
