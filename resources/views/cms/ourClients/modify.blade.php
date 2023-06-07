@@ -12,7 +12,7 @@
           @csrf
 
           <div class="ClientCards">
-            <img src="./images/ourClients/who.png" alt="Default Image who logo" width="100">
+            <img src="images/ourClients/1684315030.png" alt="Default Image who logo" width="100">
             <span>Default Span</span>
           </div>
 
@@ -53,7 +53,7 @@
         @method('PUT')
 
         <div class="ClientCards">
-          <img src="./images/ourClients/{{ $ourClient->imgsrc }}" alt="{{ $ourClient->imgalt }}" width="100">
+          <img src="images/ourClients/{{$ourClient->imgsrc }}" alt="{{ $ourClient->imgalt }}" width="100">
           <span>{{ $ourClient->span }}</span>
         </div>
 

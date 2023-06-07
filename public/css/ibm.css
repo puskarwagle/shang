@@ -189,6 +189,7 @@ body {
     50% {transform: translateX(0);}
     100% {transform: translateX(0);}
   }
+  
   #nav-panel {
     position:relative !important;
   }

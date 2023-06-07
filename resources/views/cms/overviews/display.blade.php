@@ -34,26 +34,28 @@
 
         <div class="col-md-4 inConsultText d-flex flex-column pt-4 px-5">
           <span class="mb-4 pe-2" contenteditable="true"
-            oninput="updateHiddenInputValue(this, 'text3')">{{ $overview->text3 }}</span>
-          <span class="mb-4" contenteditable="true"
             oninput="updateHiddenInputValue(this, 'text1')">{{ $overview->text1 }}</span>
-          <a class="text-nowrap pe-1 text-decoration-none" contenteditable="true" href="{{ $overview->text2 }}"
-            oninput="updateHiddenInputValue(this, 'link')">{{ $overview->link }}</a>
+          <span class="mb-4" contenteditable="true"
+            oninput="updateHiddenInputValue(this, 'text2')">{{ $overview->text2 }}</span>
+          <a class="text-nowrap pe-1 text-decoration-none" contenteditable="true" href="{{ $overview->link }}"
+            oninput="updateHiddenInputValue(this, 'text3')">{{ $overview->text3 }}</a>
         </div>
       </div>
 
-      <input type="hidden" name="link" id="link" value="{{ $overview->link }}" />
-      <input type="hidden" name="titleLi" value="{{ $overview->titleLi }}">
-      <input type="hidden" name="text1" value="{{ $overview->text1 }}">
-      <input type="hidden" name="text3" value="{{ $overview->text3 }}">
+      
+      <input type="text" name="titleLi" value="{{ $overview->titleLi }}">
+      <input type="text" name="text1" value="{{ $overview->text1 }}">
+      <input type="text" name="text2" value="{{ $overview->text2 }}" />
+      <input type="text" name="text3" value="{{ $overview->text3 }}">
 
       <div style="display:flex;justify-content:space-between;">
         <div style="display:flex;flex-direction:column;">
-          <label for="imgalt">Image Alt:</label>
+          <label for="imgalt">imgalt:</label>
           <input type="text" name="imgalt" id="imgalt" value="{{ $overview->imgalt }}"
             style="border: 1px solid #ccc; padding: 5px; border-radius: 4px;" />
-          <label for="text2">Link for the blue text:</label>
-          <input type="text" name="text2" id="text2" value="{{ $overview->text2 }}"
+
+          <label for="link">Link for the blue text:</label>
+          <input type="text" name="link" id="link" value="{{ $overview->link }}"
             style="border: 1px solid #ccc; padding: 5px; border-radius: 4px;width:100%;" />
         </div>
 
