@@ -26,12 +26,14 @@
       </ul>
 
       <div class="inConsult">
+        <!-- image upload -->
         <label for="imageInput{{ $overview->id }}" class="imgL">
           <img id="preview{{ $overview->id }}" src="./images/overview/{{ $overview->imgsrc }}"
             alt="{{ $overview->imgalt }}" width="100">
         </label>
         <input type="file" id="imageInput{{ $overview->id }}" name="image" accept="image/*" style="display:none;">
 
+        <!-- other inputs -->
         <div class="col-md-4 inConsultText d-flex flex-column pt-4 px-5">
           <span class="mb-4 pe-2" contenteditable="true"
             oninput="updateHiddenInputValue(this, 'text1')">{{ $overview->text1 }}</span>

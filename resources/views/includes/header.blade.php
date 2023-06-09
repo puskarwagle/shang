@@ -100,6 +100,7 @@ checkbox.addEventListener('change', (event) => {
 });
 </script> -->
 
+<!-- Render on click  -->
 <!-- Header Products -->
 <script>
 const headerho = document.querySelector('header');
@@ -120,7 +121,6 @@ window.addEventListener('click', (event) => {
   }
 });
 </script>
-
 <!-- Header Services -->
 <script>
 const navLS = document.querySelectorAll('.navLarge li .headerNavServ');
@@ -143,29 +143,29 @@ window.addEventListener('click', (event) => {
 
 <!-- beautifing headerMain click hma li to show hmb -->
 <script>
-const headerProds = document.querySelectorAll('.headerProd');
-const headerServs = document.querySelectorAll('.headerServ');
+  const headerProds = document.querySelectorAll('.headerProd');
+  const headerServs = document.querySelectorAll('.headerServ');
 
-headerProds.forEach(headerProd => {
-  const liElements = headerProd.querySelectorAll('.hMA li');
-  const hmbElements = headerProd.querySelectorAll('.hMB');
-  liElements[0].classList.add('hmaactive');
-  hmbElements[0].classList.add('hmbActive');
-  liElements.forEach((li, index) => {
-    li.addEventListener('click', () => {
-      const activeLi = headerProd.querySelector('.hMA li.hmaactive');
-      const activeHmb = headerProd.querySelector('.hMB.hmbActive');
-      if (activeLi && activeHmb) {
-        activeLi.classList.remove('hmaactive');
-        activeHmb.classList.remove('hmbActive');
-        activeHmb.classList.add('hmbPassive');
-      }
-      li.classList.add('hmaactive');
-      hmbElements[index].classList.add('hmbActive');
-      hmbElements[index].classList.remove('hmbPassive');
+  headerProds.forEach(headerProd => {
+    const liElements = headerProd.querySelectorAll('.hMA li');
+    const hmbElements = headerProd.querySelectorAll('.hMB');
+    liElements[0].classList.add('hmaactive');
+    hmbElements[0].classList.add('hmbActive');
+    liElements.forEach((li, index) => {
+      li.addEventListener('click', () => {
+        const activeLi = headerProd.querySelector('.hMA li.hmaactive');
+        const activeHmb = headerProd.querySelector('.hMB.hmbActive');
+        if (activeLi && activeHmb) {
+          activeLi.classList.remove('hmaactive');
+          activeHmb.classList.remove('hmbActive');
+          activeHmb.classList.add('hmbPassive');
+        }
+        li.classList.add('hmaactive');
+        hmbElements[index].classList.add('hmbActive');
+        hmbElements[index].classList.remove('hmbPassive');
+      });
     });
   });
-});
 
 headerServs.forEach(headerServ => {
   const liElements = headerServ.querySelectorAll('.hMA li');

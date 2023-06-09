@@ -39,38 +39,40 @@ class RecentWorksController extends Controller
       return redirect()->route('dashboard')->with('success', 'Recent works section created successfully!');
     }
 
-    public function update(Request $request, $id)
-    {
-        $recentWork = RecentWork::findOrFail($id);
+    // use Illuminate\Support\Facades\Storage;
 
-        //dd($request->all());
+public function update(Request $request, $id)
+{
+    $recentWork = RecentWork::findOrFail($id);
 
-        if ($request->hasFile('image')) {
-            $oldImagePath = public_path('images/recentWorks/') . $recentWork->imgsrc;
-
-            if (file_exists($oldImagePath)) {
-                unlink($oldImagePath);
-            }
-
-            $image = $request->file('image');
-
-            if ($image->isValid()) {
-                $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('images/recentWorks/'), $imageName);
-                $recentWork->imgsrc = $imageName;
-            } else {
-                return redirect()->back()->withErrors(['image' => 'The image upload failed.']);
-            }
+    if ($request->hasFile('image')) {
+        $oldImagePath = public_path('images/recentWorks/') . $recentWork->imgsrc;
+        if (file_exists($oldImagePath)) {
+            unlink($oldImagePath);
         }
 
-        $recentWork->imgalt = $request->input('imgalt');
-        $recentWork->titleA = $request->input('titleA');
-        $recentWork->titleB = $request->input('titleB');
-        $recentWork->description = $request->input('description');
-        $recentWork->save();
+        $image = $request->file('image');
+        if ($image->isValid()) {
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
 
-        return redirect()->route('dashboard')->with('success', 'Recent works section updated successfully!');
+            //Storage::disk('react_src')->put('images/recentWorks/' . $imageName, file_get_contents($image));
+            $image->move(public_path('images/recentWorks/'), $imageName);
+
+            $recentWork->imgsrc = $imageName;
+        } else {
+            return redirect()->back()->withErrors(['image' => 'The image upload failed.']);
+        }
     }
+
+    $recentWork->imgalt = $request->input('imgalt');
+    $recentWork->titleA = $request->input('titleA');
+    $recentWork->titleB = $request->input('titleB');
+    $recentWork->description = $request->input('description');
+    $recentWork->save();
+
+    return redirect()->route('dashboard')->with('success', 'Recent works section updated successfully!');
+}
+
 
 
 
@@ -87,3 +89,44 @@ class RecentWorksController extends Controller
       return redirect()->route('dashboard');
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    public function update(Request $request, $id)
+//     {
+//         $recentWork = RecentWork::findOrFail($id);
+//         //dd($request->all());
+//         if ($request->hasFile('image')) {
+//             $oldImagePath = public_path('images/recentWorks/') . $recentWork->imgsrc;
+//             if (file_exists($oldImagePath)) {
+//                 unlink($oldImagePath);
+//             }
+//             $image = $request->file('image');
+//             if ($image->isValid()) {
+//                 $imageName = time() . '.' . $image->getClientOriginalExtension();
+//                 $image->move(public_path('images/recentWorks/'), $imageName);
+//                 $recentWork->imgsrc = $imageName;
+//             } else {
+//                 return redirect()->back()->withErrors(['image' => 'The image upload failed.']);
+//             }
+//         }
+//         $recentWork->imgalt = $request->input('imgalt');
+//         $recentWork->titleA = $request->input('titleA');
+//         $recentWork->titleB = $request->input('titleB');
+//         $recentWork->description = $request->input('description');
+//         $recentWork->save();
+//         return redirect()->route('dashboard')->with('success', 'Recent works section updated successfully!');
+//     }

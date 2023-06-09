@@ -58,6 +58,14 @@ return [
 
     ],
 
+    // Custom Disk wagle created to upload images to the react frontend
+      // 'disks' => [
+      //   'react_src' => [
+      //       'driver' => 'local',
+      //       'root'   => '../../shang_front/src/',
+      //   ],
+      // ],
+
     /*
     |--------------------------------------------------------------------------
     | Symbolic Links

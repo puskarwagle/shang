@@ -32,7 +32,7 @@ class OurClientController extends Controller
     ]);
 
     $imageName = time().'.'.$request->image->extension();
-    $request->image->move(public_path('../shang_front/src/images/ourClients/'), $imageName);
+    $request->image->move(public_path('images/ourClients/'), $imageName);
 
     OurClient::create([
         'imgsrc' => $imageName,
@@ -51,7 +51,7 @@ class OurClientController extends Controller
         //dd($request->all());
 
         if ($request->hasFile('image')) {
-            $oldImagePath = public_path('../shang_front/src/images/ourClients/') . $ourClient->imgsrc;
+            $oldImagePath = public_path('images/ourClients/') . $ourClient->imgsrc;
             if (file_exists($oldImagePath)) {
                 unlink($oldImagePath);
             }
